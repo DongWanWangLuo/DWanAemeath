@@ -9,10 +9,10 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/rain-avatar.webp",
 
 	// 名字
-	name: "Rain",
+	name: "优秀",
 
 	// 个人签名
-	bio: "Hello, I'm Rain.",
+	bio: "Hello, I'm 优秀.",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -24,13 +24,13 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/Jarvis0227",
+			url: "https://github.com/DongWanWangLuo/DWanAemeath",
 			showName: false,
 		},
 		{
 			name: "Bilibili",
 			icon: "simple-icons:bilibili",
-			url: "https://space.bilibili.com/473321504?spm_id_from=333.1007.0.0",
+			url: "https://space.bilibili.com/496072842?spm_id_from=333.337.0.0",
 			showName: false,
 		},
 		{
@@ -42,7 +42,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Email",
 			icon: "fa7-solid:envelope",
-			url: "copy:1953549196@qq.com",
+			url: "copy:1991997798@qq.com",
 			showName: false,
 		},
 	],
