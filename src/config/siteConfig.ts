@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "人生的选择有很多种，只是有些选择是你不得不选的",
 
 	// Aemeath 主题版本
-	themeVersion: "V1.1.1",
+	themeVersion: "V1.0.0",
 
 	// 站点 URL
 	site_url: "https://dwancc.cn",
