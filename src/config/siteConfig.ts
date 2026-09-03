@@ -6,16 +6,16 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "朝朝听雨",
+	title: "DWan博客",
 
 	// 站点副标题
-	subtitle: "物物而不物于物，念念而不念于念",
+	subtitle: "人生的选择有很多种，只是有些选择是你不得不选的",
 
 	// Aemeath 主题版本
 	themeVersion: "V1.1.1",
 
 	// 站点 URL
-	site_url: "http://rainzt.cn",
+	site_url: "https://dwancc.cn",
 
 	// 站点描述
 	description:
@@ -78,10 +78,10 @@ export const siteConfig: SiteConfig = {
 		logo: {
 			type: "image",
 			value: "assets/images/chaoc-tingyu-avatar.webp",
-			alt: "朝朝听雨",
+			alt: "DWan博客",
 		},
 		// 导航栏标题
-		title: "朝朝听雨",
+		title: "DWan博客",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
@@ -189,7 +189,7 @@ export const siteConfig: SiteConfig = {
 		// Bilibili 配置
 		bilibili: {
 			// 你的 Bilibili 用户 UID
-			uid: "38932988",
+			uid: "496072842",
 		},
 		// TMDB 配置（可选，需要翻墙）
 		// tmdb: {
