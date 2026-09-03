@@ -9,7 +9,7 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/rain-avatar.webp",
 
 	// 名字
-	name: "优秀",
+	name: "万优秀",
 
 	// 个人签名
 	bio: "Hello, I'm 万优秀.",
