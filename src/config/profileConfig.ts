@@ -12,7 +12,7 @@ export const profileConfig: ProfileConfig = {
 	name: "优秀",
 
 	// 个人签名
-	bio: "Hello, I'm 优秀.",
+	bio: "Hello, I'm 万优秀.",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
