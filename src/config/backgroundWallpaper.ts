@@ -100,7 +100,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否允许用户通过控制面板切换横幅标题显示
 			switchable: true,
 			// 主页横幅主标题
-			title: "物物而不物于物，念念而不念于念；",
+			title: "人生的选择有很多种，只是有些选择是你不得不选的；",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
