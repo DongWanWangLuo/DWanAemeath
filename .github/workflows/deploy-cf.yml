@@ -3,10 +3,6 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
 
 jobs:
   build-and-deploy:
@@ -33,8 +29,9 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=aemeath-blog
+          projectName: aemeath-blog
+          workingDir: .
+          buildOutputDirectory: dist
+          env: prod
