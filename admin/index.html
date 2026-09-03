@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWan博客管理后台</title>
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" />
+</head>
+<body>
+  <script id="decap-cms-config" type="application/json">
+    {
+      "backend": {
+        "name": "github",
+        "repo": "DongWanWangLuo/DWanAemeath",
+        "branch": "main",
+        "auth_type": "pkce",
+        "app_id": "Iv23LiHuTbSQ7vUgQ5Xm"
+      },
+      "media_folder": "public/assets/uploads",
+      "public_folder": "/assets/uploads",
+      "collections": [
+        {
+          "name": "posts",
+          "label": "文章",
+          "folder": "src/content/posts",
+          "create": true,
+          "slug": "{{slug}}",
+          "fields": [
+            {"label": "标题", "name": "title", "widget": "string"},
+            {"label": "发布日期", "name": "published", "widget": "datetime"},
+            {"label": "描述", "name": "description", "widget": "text"},
+            {"label": "封面图", "name": "image", "widget": "image"},
+            {"label": "标签", "name": "tags", "widget": "list"},
+            {"label": "分类", "name": "category", "widget": "string"},
+            {"label": "草稿", "name": "draft", "widget": "boolean", "default": false},
+            {"label": "正文", "name": "body", "widget": "markdown"}
+          ]
+        }
+      ]
+    }
+  </script>
+  <script type="module">
+    import('https://cdn.jsdelivr.net/npm/decap-cms-app@^3.0.0/dist/decap-cms-app.js').then(({ default: CMS }) => {
+      const configEl = document.getElementById('decap-cms-config');
+      CMS.registerPreviewStyle(document.createElement('style'));
+      CMS.init({ config: JSON.parse(configEl.textContent) });
+    });
+  </script>
+</body>
+</html>
