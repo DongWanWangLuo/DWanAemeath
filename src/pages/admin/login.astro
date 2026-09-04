@@ -18,11 +18,9 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;bac
 .fg label{display:block;color:#cbd5e1;font-size:.875rem;font-weight:500;margin-bottom:6px}
 .fg input{width:100%;padding:10px 14px;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#f1f5f9;font-size:.9375rem;outline:none}
 .fg input:focus{border-color:#6366f1}
-.fg input::placeholder{color:#475569}
 .btn{width:100%;padding:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:8px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .err{background:#7f1d1d22;border:1px solid #991b1b;color:#fca5a5;padding:10px 14px;border-radius:8px;font-size:.875rem;margin-bottom:16px;display:none}
-.hint{color:#64748b;font-size:.75rem;margin-top:6px}
 .back{display:block;text-align:center;margin-top:24px;color:#64748b;font-size:.875rem;text-decoration:none}
 .back:hover{color:#94a3b8}
 </style>
@@ -33,23 +31,22 @@ body{min-height:100vh;display:flex;align-items:center;justify-content:center;bac
 <div class="err" id="err"></div>
 <form id="f">
 <div class="fg"><label>Username</label><input id="u" placeholder="admin" required/></div>
-<div class="fg"><label>Password</label><input id="p" type="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022" required/></div>
-<div class="fg"><label>GitHub PAT</label><input id="t" type="password" placeholder="ghp_xxx"/><p class="hint">Stored locally only.</p></div>
+<div class="fg"><label>Password</label><input id="p" type="password" placeholder="password" required/></div>
 <button class="btn" id="btn" type="submit">Login</button>
 </form>
-<a href="/" class="back">\u2190 Back to site</a>
+<a href="/" class="back">Back to site</a>
 </div>
 <script>
-if(localStorage.getItem("s")){location.href="/admin/"}
-const U="admin",P="dwan2024";
-const errEl=document.getElementById("err"),btn=document.getElementById("btn"),form=document.getElementById("f");
-form.addEventListener("submit",async e=>{
+if(document.cookie.includes("admin_session=")){location.href="/admin/"}
+var errEl=document.getElementById("err"),btn=document.getElementById("btn"),form=document.getElementById("f");
+form.addEventListener("submit",async function(e){
   e.preventDefault();
-  const u=document.getElementById("u").value.trim(),p=document.getElementById("p").value,t=document.getElementById("t").value.trim();
+  var u=document.getElementById("u").value.trim(),p=document.getElementById("p").value;
   errEl.style.display="none";btn.disabled=true;btn.textContent="Verifying...";
-  if(u!==U||p!==P){errEl.textContent="Invalid credentials";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}
-  if(t){try{const r=await fetch("https://api.github.com/user",{headers:{Authorization:"Bearer "+t}});if(!r.ok)throw 0;localStorage.setItem("tk",t)}catch{errEl.textContent="GitHub Token invalid";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}}
-  localStorage.setItem("s","1");location.href="/admin/";
+  var resp=await fetch("/api/admin/login/",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:u,password:p})});
+  var data=await resp.json().catch(function(){return {}});
+  if(data.ok){location.href="/admin/"}
+  else{errEl.textContent=data.error||"Invalid credentials";errEl.style.display="block";btn.disabled=false;btn.textContent="Login"}
 });
 </script>
 </body></html>

@@ -204,6 +204,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.1.0(@types/node@25.9.1)(esbuild@0.28.1)(jiti@2.7.0)(stylus@0.64.0)(terser@5.46.0)(tsx@4.22.4)(yaml@2.9.0))
+      '@types/better-sqlite3':
+        specifier: ^9.6.0
+        version: 9.6.0
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -2279,6 +2282,9 @@ packages:
 
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
+
+  '@types/better-sqlite3@9.6.0':
+    resolution: {integrity: sha512-ZEEwBSgMu7GYJOynoagg5X9JbxfL6dTJDsgViJIqh67jV44kyOr9RXfmFjLK5rzC4MWssP06t9hu/JwGDnUbCg==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -8191,6 +8197,10 @@ snapshots:
   '@tybys/wasm-util@0.10.2':
     dependencies:
       tslib: 2.8.1
+
+  '@types/better-sqlite3@9.6.0':
+    dependencies:
+      '@types/node': 25.9.1
 
   '@types/debug@4.1.12':
     dependencies:

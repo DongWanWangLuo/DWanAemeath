@@ -19,26 +19,9 @@ pnpm-debug.log*
 __pycache__/
 *.py[cod]
 
-# local package-manager caches and deployment archives
-.npm-cache/
-.pnpm-store/
-firefly-dist-*.tgz
-
 # environment variables
 .env
 .env.production
-ops/waline-ai-reviewer/.env*
-!ops/waline-ai-reviewer/.env.example
-ops/waline-ai-reviewer/config.json
-ops/waline-ai-reviewer/runtime.json
-ops/waline-ai-reviewer/smtp.json
-ops/waline-ai-reviewer/admin-password.json
-ops/waline-ai-reviewer/admin-sessions.json
-ops/waline-ai-reviewer/*.key
-ops/waline-ai-reviewer/*.db
-ops/waline-ai-reviewer/*.sqlite*
-waline/.env.local
-waline/smtp.json
 
 # macOS-specific files
 .DS_Store
@@ -54,19 +37,12 @@ yarn.lock
 *.iml
 .claude
 
-# docs
-Firefly-docs/
-Rainzt博客部署指南.md
-
-cache/
-package/
-.obsidian/
+# cache
+.cache/
 
 # accidental nested copy
-Firefly-master/
 */fix_*.py
 */fix_*.js
-*/fix_*.cjs
 */fix_*.ps1
 */ff.*
 */debug.py
@@ -75,11 +51,10 @@ Firefly-master/
 */step2.py
 */t.py
 */test2.py
-*/scripts/
 *.pyc
 __pycache__/
 node_modules/
 
-# admin server
+# admin server data
 admin-server/data/*.db-wal
 admin-server/data/*.db-shm
