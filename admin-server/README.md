@@ -4,16 +4,15 @@ Node.js + Hono admin backend for Firedre. Serves the admin panel UI and provides
 
 ## Quick Start
 
-`ash
+\\ash
 cp .env.example .env
 # Edit .env with your own secrets
 npm install
 node src/server.js
-`
-
+\\n
 访问 http://localhost:3001/admin 进入后台管理面板。
 
-默认账号: dmin / dmin123
+默认账号: admin / admin123
 
 ## API Endpoints
 
@@ -27,4 +26,3 @@ node src/server.js
 - GET /admin/site-links / POST /admin/site-links / DELETE /admin/site-links/:id
 - GET /admin/gallery / POST /admin/gallery / DELETE /admin/gallery/:id
 - GET /admin/session — 验证当前会话
-
