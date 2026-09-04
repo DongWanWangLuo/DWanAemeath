@@ -1,4 +1,4 @@
-name: Refresh and deploy blog
+﻿name: Refresh and deploy blog
 
 on:
   # GitHub 使用 UTC；每天 00:17 和 12:17 执行一次（北京时间 08:17 和 20:17）。
@@ -66,6 +66,10 @@ jobs:
           FRIENDS_FEED_WRITE_SNAPSHOT: "1"
         run: pnpm build
 
+      # 将 admin 管理后台目录复制到构建输出，使其可通过站点 URL 访问
+      - name: Copy admin panel to dist
+        run: cp -r admin dist/admin
+
       - name: Save refreshed RSS snapshot
         run: |
           set -euo pipefail
@@ -94,10 +98,6 @@ jobs:
             exit 1
           fi
 
-          # Secrets are sometimes pasted with Windows CRLF or literal "\\n"
-          # sequences. Normalize those harmless formatting differences before
-          # handing the key to OpenSSH; the secret must still be an
-          # unencrypted OpenSSH private key, not a .pub or .ppk file.
           DEPLOY_KEY="${DEPLOY_KEY//$'\r'/}"
           DEPLOY_KEY="${DEPLOY_KEY//\\n/$'\n'}"
           DEPLOY_KEY="${DEPLOY_KEY#\"}"
@@ -148,8 +148,6 @@ jobs:
           find "$SITE" -type d -exec chmod 755 {} \;
           find "$SITE" -type f -exec chmod 644 {} \;
 
-          # server-status.php is a read-only metrics endpoint. Keep its PHP-FPM
-          # route outside the static site so every atomic replacement preserves it.
           NGINX_SITE_CONF="/www/server/panel/vhost/nginx/firefly.conf"
           NGINX_STATUS_CONF="/www/server/panel/vhost/nginx/firefly-server-status.inc"
           PHP_SOCKET="$(find /tmp -maxdepth 1 -type s -name 'php-cgi-*.sock' -print -quit)"
@@ -183,7 +181,6 @@ jobs:
           fi
 
           rm -f "$ARCHIVE"
-          # 自动任务只保留最近 7 天的备份，避免长期运行占满磁盘。
           find "$BACKUP_ROOT" -maxdepth 1 -type d -name 'firefly-action-*' -mtime +7 -exec rm -rf -- {} +
           REMOTE_SCRIPT
 
