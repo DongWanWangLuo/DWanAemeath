@@ -1,0 +1,14 @@
+name = 'dw-an-worker'
+main = 'src/index.ts'
+compatibility_date = '2025-01-01'
+compatibility_flags = ['nodejs_compat']
+
+[vars]
+SESSION_SECRET = 'change-this-to-a-random-secret-string-in-production'
+ADMIN_USERNAME = 'admin'
+ADMIN_PASSWORD = 'admin123'
+
+[[d1_databases]]
+binding = 'DB'
+database_name = 'firedre-db'
+database_id = 'YOUR_D1_DATABASE_ID_HERE'

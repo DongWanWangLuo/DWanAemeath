@@ -58,3 +58,8 @@ node_modules/
 # admin server data
 admin-server/data/*.db-wal
 admin-server/data/*.db-shm
+
+# admin worker
+admin-worker/node_modules/
+admin-worker/.wrangler/
+
