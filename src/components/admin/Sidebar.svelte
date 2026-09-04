@@ -5,17 +5,17 @@ export let mobileOpen = false;
 function navItems() {
   return [
     { section: "Main" },
-    { id: "dashboard", icon: "\\ud83d\\udcca", label: "Dashboard" },
-    { id: "posts", icon: "\\ud83d\\udcd5", label: "Posts" },
+    { id: "dashboard", icon: "📊", label: "Dashboard" },
+    { id: "posts", icon: "📝", label: "Posts" },
     { section: "Configs" },
-    { id: "site", icon: "\\u2699\\ufe0f", label: "Site Config" },
-    { id: "profile", icon: "\\ud83d\\udc64", label: "Profile" },
-    { id: "wallpaper", icon: "\\ud83d\\uddbc\\ufe0f", label: "Wallpaper" },
-    { id: "announcement", icon: "\\ud83d\\udce2", label: "Announcement" },
-    { id: "sidebar", icon: "\\ud83d\\udcd0", label: "Sidebar" },
+    { id: "site", icon: "\u2699\ufe0f", label: "Site Config" },
+    { id: "profile", icon: "👤", label: "Profile" },
+    { id: "wallpaper", icon: "🖼️", label: "Wallpaper" },
+    { id: "announcement", icon: "📢", label: "Announcement" },
+    { id: "sidebar", icon: "📐", label: "Sidebar" },
     { section: "Content" },
-    { id: "friends", icon: "\\ud83d\\udd17", label: "Friends" },
-    { id: "music", icon: "\\ud83c\\udfb5", label: "Music" },
+    { id: "friends", icon: "🔗", label: "Friends" },
+    { id: "music", icon: "🎵", label: "Music" },
   ];
 }
 
@@ -29,7 +29,7 @@ function handleNav(id) {
 
 <div class="sidebar" class:open={mobileOpen}>
   <div class="sidebar-header">
-    <h2>"\\ud83d\\udee0\\ufe0f Admin"</h2>
+    <h2>"🛠️ Admin"</h2>
     <p>DWan Blog v6.13</p>
   </div>
   <nav class="sidebar-nav">
