@@ -64,3 +64,18 @@ package/
 
 # accidental nested copy
 Firefly-master/
+*/fix_*.py
+*/fix_*.js
+*/fix_*.cjs
+*/fix_*.ps1
+*/ff.*
+*/debug.py
+*/gen.py
+*/setup.py
+*/step2.py
+*/t.py
+*/test2.py
+*/scripts/
+*.pyc
+__pycache__/
+node_modules/
