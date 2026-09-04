@@ -1,0 +1,55 @@
+---
+export const prerender = true;
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Login - Admin</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0f172a;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.card{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:48px 40px;width:100%;max-width:420px;box-shadow:0 25px 50px rgba(0,0,0,.5)}
+.logo{text-align:center;margin-bottom:32px}
+.logo h1{color:#f1f5f9;font-size:1.5rem;font-weight:700}
+.logo p{color:#94a3b8;font-size:.875rem;margin-top:4px}
+.fg{margin-bottom:20px}
+.fg label{display:block;color:#cbd5e1;font-size:.875rem;font-weight:500;margin-bottom:6px}
+.fg input{width:100%;padding:10px 14px;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#f1f5f9;font-size:.9375rem;outline:none}
+.fg input:focus{border-color:#6366f1}
+.fg input::placeholder{color:#475569}
+.btn{width:100%;padding:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:8px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.err{background:#7f1d1d22;border:1px solid #991b1b;color:#fca5a5;padding:10px 14px;border-radius:8px;font-size:.875rem;margin-bottom:16px;display:none}
+.hint{color:#64748b;font-size:.75rem;margin-top:6px}
+.back{display:block;text-align:center;margin-top:24px;color:#64748b;font-size:.875rem;text-decoration:none}
+.back:hover{color:#94a3b8}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="logo"><h1>Admin Panel</h1><p>DWan Blog</p></div>
+<div class="err" id="err"></div>
+<form id="f">
+<div class="fg"><label>Username</label><input id="u" placeholder="admin" required/></div>
+<div class="fg"><label>Password</label><input id="p" type="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022" required/></div>
+<div class="fg"><label>GitHub PAT</label><input id="t" type="password" placeholder="ghp_xxx"/><p class="hint">Stored locally only.</p></div>
+<button class="btn" id="btn" type="submit">Login</button>
+</form>
+<a href="/" class="back">\u2190 Back to site</a>
+</div>
+<script>
+if(localStorage.getItem("s")){location.href="/admin/"}
+const U="admin",P="dwan2024";
+const errEl=document.getElementById("err"),btn=document.getElementById("btn"),form=document.getElementById("f");
+form.addEventListener("submit",async e=>{
+  e.preventDefault();
+  const u=document.getElementById("u").value.trim(),p=document.getElementById("p").value,t=document.getElementById("t").value.trim();
+  errEl.style.display="none";btn.disabled=true;btn.textContent="Verifying...";
+  if(u!==U||p!==P){errEl.textContent="Invalid credentials";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}
+  if(t){try{const r=await fetch("https://api.github.com/user",{headers:{Authorization:"Bearer "+t}});if(!r.ok)throw 0;localStorage.setItem("tk",t)}catch{errEl.textContent="GitHub Token invalid";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}}
+  localStorage.setItem("s","1");location.href="/admin/";
+});
+</script>
+</body></html>

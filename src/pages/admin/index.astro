@@ -1,0 +1,26 @@
+﻿---
+import AdminApp from "../../components/admin/AdminApp.svelte";
+export const prerender = true;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Admin - DWan Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400,500,600,700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f172a;--bg2:#1e293b;--bg3:#334155;--accent:#6366f1;--accent2:#818cf8;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:#334155}
+body{font-family:Inter,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="/admin/_adminClient.js" is:inline></script>
+<script is:inline>if(typeof localStorage!=="undefined"&&localStorage.getItem("s")&&!localStorage.getItem("tk"))location.href="/admin/login/"</script>
+<AdminApp client:load />
+</body>
+</html>

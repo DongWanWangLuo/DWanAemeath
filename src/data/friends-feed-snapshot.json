@@ -1,0 +1,1408 @@
+{
+  "version": 2,
+  "sources": [
+    {
+      "friendUrl": "https://rainzt.cn/",
+      "feedUrl": "https://rainzt.cn/rss.xml",
+      "feedUrls": [
+        "https://rainzt.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "自动上架系统：为跨境电商打造的高端批量发布中枢",
+          "link": "http://rainzt.cn/posts/auto-listing-system/",
+          "description": "一套围绕 BigSeller、Shopee 和 TikTok Shop 打造的跨境电商自动上架系统，把表格、图库、视频、AI 标题、店铺状态和发布流程串成可监控、可复用、可扩展的自动化产品。",
+          "publishedAt": "2026-07-09T00:00:00.000Z"
+        },
+        {
+          "title": "从母系社会到父权制度：亲缘、私有制与现代性别关系的演变(浅谈男女对立)",
+          "link": "http://rainzt.cn/posts/from-matriarchal-society-to-patriarchy/",
+          "description": "从亲缘确认、私有制和生产方式出发，浅谈母系亲缘结构、父权制度与现代男女对立背后的历史逻辑。",
+          "publishedAt": "2026-08-20T00:00:00.000Z"
+        },
+        {
+          "title": "我回望青春时，我的青春是最昂贵的； 我正值青春时，我的青春是最廉价的。",
+          "link": "http://rainzt.cn/posts/others/youth-most-expensive/youth-most-expensive/",
+          "description": "一篇关于校园、游戏、喜欢与告别的青春回望。",
+          "publishedAt": "2026-08-17T00:00:00.000Z"
+        },
+        {
+          "title": "朝朝听雨，岁岁有风",
+          "link": "http://rainzt.cn/posts/chao-chao-listening-rain-years-wind/",
+          "description": "今天不说遗憾，只讲讲我和她的故事。写给那段被照亮过的高中岁月，也写给如今终于学会从容回望的自己。",
+          "publishedAt": "2026-08-14T00:00:00.000Z"
+        },
+        {
+          "title": "Agent 赋予电商自动化：从业务规则到可控的自动上架框架",
+          "link": "http://rainzt.cn/posts/agent-ecommerce-automation/",
+          "description": "从一套自动上架系统的实践出发，拆解 AI Agent、Playwright、CDP 和 ERP 如何组合成一套可观察、可回滚、可扩展的跨境电商自动化框架。",
+          "publishedAt": "2026-08-09T00:00:00.000Z"
+        },
+        {
+          "title": "作品展示页动画实现原理",
+          "link": "http://rainzt.cn/posts/portfolio-showcase-animation-principles/",
+          "description": "从滚动读数、目标与渲染进度、分镜区间出发，拆解 Rainzt.cn 作品展示页当前的工程化实现：长滚动固定舞台、requestAnimationFrame 平滑、媒体解码、快门转场与内容可访问性边界。",
+          "publishedAt": "2026-07-27T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://daily.yybb.us/",
+      "feedUrl": "https://daily.yybb.us/index.xml",
+      "feedUrls": [
+        "https://daily.yybb.us/index.xml"
+      ],
+      "items": [
+        {
+          "title": "valaxy博客全局美化教程（一）",
+          "link": "https://daily.yybb.us/posts/valaxy/valaxy-1/",
+          "description": "<h3 id=\"本系列教程共十篇\">本系列教程共十篇</h3> <ul> <li><strong><a href=\"https://daily.yybb.us/posts/valaxy-1/\"><em>valaxy博客全局美化教程（一）</em></a>：<em>分类、标签、归档三个页面的美化教程</em></strong></li> <li><a href=\"https://daily.yybb.us/posts/valaxy-2/\">valaxy博客全局美化教程（二）</a>：首页公告栏美化，新增随机文章展示板块</li> <li><a href=\"https://daily.yybb.us/posts/valaxy-3/\">v",
+          "publishedAt": "2026-05-27T16:00:00.000Z"
+        },
+        {
+          "title": "艾雪周刊 V.07—openlist衍生项目和近期动态",
+          "link": "https://daily.yybb.us/posts/weekly/7/",
+          "description": "<h3 id=\"关于本刊\">关于本刊</h3> <p>这是<em>艾雪期刊</em>的第 07 期，作为一个独立系列进行更新，更新时间在周末，主要内容为周内内容汇集以及碎碎念，有时会分享一些有趣的项目，有时是一些生活的碎碎念</p>",
+          "publishedAt": "2026-08-22T10:00:00.000Z"
+        },
+        {
+          "title": "Rin博客魔改美化之-aiovtue",
+          "link": "https://daily.yybb.us/posts/blog/rin-aiovtue/",
+          "description": "<h3 id=\"简介\">简介</h3> <p>本期视频主要是分享一下最近鼓捣的一个东西，其实鼓捣了挺久了，只是最近才鼓捣好，就是雪之前部署了一个开源的博客项目-Rin，大家应该也听说过吧，之前很火的一个部署在cloudflare上面的动态博客项目，当时找遍互联网就看到这么个项目，别提多高兴了，就是雪发现的时候还很早，当时才刚出没多久，还是采用的前后端分离的部署，属实是有点难部署，然后雪还为此写了一个部署教程，或许你们看到过，那么现在呢，雪将这个项目的ui按照雪的主题做了魔改，页脚的地方还是保留的原项目的地址，respect~ ，本期就简单介绍介绍啦</p>",
+          "publishedAt": "2026-08-21T11:08:48.000Z"
+        },
+        {
+          "title": "艾雪周刊 V.06—Cloudflare Wallet 与动态博客新探索",
+          "link": "https://daily.yybb.us/posts/weekly/6/",
+          "description": "<h3 id=\"关于本刊\">关于本刊</h3> <p>这是<em>艾雪期刊</em>的第 06 期，作为一个独立系列进行更新，更新时间在周末，主要内容为周内内容汇集以及碎碎念，有时会分享一些有趣的项目，有时是一些生活的碎碎念</p>",
+          "publishedAt": "2026-08-15T04:00:10.000Z"
+        },
+        {
+          "title": "艾雪周刊 V.05—网站访问统计",
+          "link": "https://daily.yybb.us/posts/weekly/5/",
+          "description": "<h3 id=\"关于本刊\">关于本刊</h3> <p>这是<em>艾雪期刊</em>的第 05 期，作为一个独立系列进行更新，更新时间在周末，主要内容为周内内容汇集以及碎碎念，有时会分享一些有趣的项目，有时是一些生活的碎碎念</p>",
+          "publishedAt": "2026-08-08T11:36:14.000Z"
+        },
+        {
+          "title": "公开博客站点-typecho",
+          "link": "https://daily.yybb.us/posts/typecho-theme/aiovtue1.0/",
+          "description": "<h3 id=\"简介\">简介</h3> <p>长话短说，这是一个<strong>公开的博客站点</strong>，提供<strong>注册</strong>，注册默认拥有除人员编辑等敏感操作外的<strong>全部权限</strong>，大家可以随意注册使用和体验，注意<strong>不要</strong>发布违法乱纪的内容即可，由于是部署在免费的虚拟主机上的（周刊第四期提过，稳定性还行），因此稳定性的话大家也要清楚，但是只要服务还在，雪就会一直开放下去，除非有人滥用，造成一些无法挽回的后果会考虑关掉</p>",
+          "publishedAt": "2026-08-01T11:08:23.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://asteri5m.icu/",
+      "feedUrl": "https://asteri5m.icu/rss.xml",
+      "feedUrls": [
+        "https://asteri5m.icu/rss.xml",
+        "https://asteri5m.icu/feed.xml"
+      ],
+      "items": [
+        {
+          "title": "python实现全屏弹幕",
+          "link": "https://asteri5m.icu/archives/fff7d8fa-947e-4636-8783-d7dc3165c649",
+          "description": "最近刷视频刷到一个全屏弹幕的视频，所以我自己也做了一个。 先看视频：https://v.douyin.com/P8WIeYN3vsI/ 代码实现 源码如下 #!/usr/bin/env python3 import tkinter as tk import random import sys fro",
+          "publishedAt": "2025-10-29T08:30:29.000Z"
+        },
+        {
+          "title": "初入Mac，快速上手",
+          "link": "https://asteri5m.icu/archives/46cb7ec7-c25e-41ca-b5c0-7a2ab973b201",
+          "description": "在我之前的文章https://asteri5m.icu/archives/0e79ca43-2141-4c51-a4f5-ac0091866c6f中介绍了我在去年12月中旬入手了一台MacBook Air。 配置：M3芯片，16+512",
+          "publishedAt": "2025-01-18T15:44:24.000Z"
+        },
+        {
+          "title": "hdc使用指南",
+          "link": "https://asteri5m.icu/archives/81e0c0c4-8686-4aca-8187-701a4fbeb7fd",
+          "description": "hdc（HarmonyOS Device Connector）是为开发人员提供的用于调试的命令行工具，通过该工具可以在windows/linux/mac系统上与设备进行交互。 hdc分为三部分： client：运行在电脑端的进程，开发者在执行hdc命令时启动该进程，命令结束后进程退出。 server",
+          "publishedAt": "2025-01-15T17:42:26.000Z"
+        },
+        {
+          "title": "Mac优雅的截图姿势",
+          "link": "https://asteri5m.icu/archives/0e79ca43-2141-4c51-a4f5-ac0091866c6f",
+          "description": "前言 在去年12月初的时候，突然发现国补的活动，刚好的我又有买一个笔记本的需求，主要是办公用，公司配的笔记本电脑虽说也能用，但是性能越来越差，而且电池越来越拉垮，开会超过40min就没电了😭，每次都要带电源好麻烦(╥﹏╥) 作为一个重度米粉，我买的第一个本就是小米「小米笔记本Pro」2019款，那",
+          "publishedAt": "2025-01-01T15:04:44.000Z"
+        },
+        {
+          "title": "Python可以被玩到多骚？",
+          "link": "https://asteri5m.icu/archives/530d1ea2-ea26-4035-b7ed-ce4392900e0e",
+          "description": "来自知乎の提问 事情是这样的，我向往常一样打开电脑开始冲浪🏄，突然，发现一篇小有意思的知乎提问：谁会写这道Python啊？求求了? 我一看这标题，心想：“我会啊，我倒要看看是什么题，都快要给孩子难哭了” 这么一看，也没什么啊～这不是简简单单，我还能给你封装一下，要多少田字格都行",
+          "publishedAt": "2024-12-30T16:41:51.000Z"
+        },
+        {
+          "title": "2024年终总结",
+          "link": "https://asteri5m.icu/archives/a6dc4a9b-72fb-446e-93a0-418287f4807c",
+          "description": "在我们生活的这个三维世界中，还有额外的一个维度，有人认为它不存在，有人认为它不仅存在，还能穿越。我不会想那么多，我只感觉到，它走的愈来愈快了。至于是它真的走的太快了，还是我社畜生活太充裕带来的错觉，我无法求证，也无需求证。 因为我知道，这是特别的一年，离开校园的一年半，本来我是没有写日记，做总结的习",
+          "publishedAt": "2024-12-24T02:37:32.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.fwneko.com/",
+      "feedUrl": "https://blog.fwneko.com/rss.xml",
+      "feedUrls": [
+        "https://blog.fwneko.com/rss.xml",
+        "https://blog.fwneko.com/feed.xml",
+        "https://blog.fwneko.com/feed/",
+        "https://blog.fwneko.com/atom.xml"
+      ],
+      "items": [
+        {
+          "title": "将openlist映射到本地目录",
+          "link": "https://blog.fwneko.com/archives/0028",
+          "description": "安装rclone运行脚本安装rclone# Ubuntu / Debiansudo apt updatesudo apt install rclone -ycurl https://rclone.org/install.sh | bash配置rclone启动配置界面rclone config输入n新建remote输入remote名称openlist（可自定义）选择存储类型webdav 输入59输入url：http://127.0.0.1:8080/用户名 → 你的 OpenList DAV 用户名密码 → 你的 OpenList DAV 密码完成保存-q退出列出根目录rclone lsd openlist:挂载到本地目录挂载到本地目",
+          "publishedAt": "2026-01-14T15:56:34.000Z"
+        },
+        {
+          "title": "解决兰空图床套cdn优选后接口域名仍为http",
+          "link": "https://blog.fwneko.com/archives/0027",
+          "description": "套上cf优选或者cdn之后可能会显示服务器异常，无法上传图片，浏览器控制台报错：解决方法：编辑 .env 文件，追加一行：ASSET_URL=https://你的域名但是接口域名还是 http 的，所以在这个文件的 boot 方法里，lsky-pro/app/Providers/AppServiceProvider.php public function boot() { // 是否需要生成 env 文件 if (! file_exists(base_path('.env'))) { file_put_contents(base_path('.env'), file_get_contents(base_path('.env.exam",
+          "publishedAt": "2025-12-23T02:15:36.000Z"
+        },
+        {
+          "title": "Vless+Reality节点搭建",
+          "link": "https://blog.fwneko.com/archives/0026",
+          "description": "准备一台vps，最近赶上黑五，有很多便宜量大管饱适合搭建节点的vps上架，这里演示用的是RN一年10刀的一个1C1G的vps，位于美国西雅图。ssh链接工具，演示使用finallshell链接工具，点击跳转finalshell官网一个域名，免费或者自己买都行，我比较推荐自己去阿里云或者腾讯云买一个，.top域名都很便宜。这里演示域名为hanabi.fit基本配置将域名解析到你的服务器上，这里使用cloudflare演示。在dns记录中，点击添加记录，类型选择a，名称自定义,内容是你的vps的ip地址，取消勾选小黄云。建议添加两个，其中一个可以用来绑定1panel面板。购买完vps并安装好系统，建议debian12及以上或者比较新的U",
+          "publishedAt": "2025-12-07T04:23:13.000Z"
+        },
+        {
+          "title": "IOS免费下载小火箭",
+          "link": "https://blog.fwneko.com/archives/0025",
+          "description": "切换美区ID下载小火箭美区ID免费小火箭共享账号： 网站一 网站二 网站三 小火箭使用指南： 点击查看步骤 1：退出个人国区ID在手机页面找到Apple Store，点击退出个人国区ID。⚠️ 警告！！！不要登录iCloud，否则有锁机风险步骤 2：退出登录点击右上角图标后，滑动到底部，点击\"退出登录\"。步骤 3：通过Apple ID登录登出的页面从底部滑动到顶部，点击\"通过Apple ID登录\"。步骤 4：切换账号在弹框中，点击\"不是XXX?\"。步骤 5：输入账号信息在输入框中输入购买的账号后点击\"继续\"。步骤 6：输入密码再继续输入密码后，点击下方\"继续\"。⚠️ 注意：本步骤可能会出现Apple ID安全提示，切记不要登录iCl",
+          "publishedAt": "2025-12-07T04:01:08.000Z"
+        },
+        {
+          "title": "动态规划",
+          "link": "https://blog.fwneko.com/archives/0024",
+          "description": "什么是动态规划动态规划就是把一个大问题分成子问题，保存子问题的答案，在逐步推到最终答案的方法。简单理解就是一个问题能够分成多个小问题，小问题的答案影响下一个小问题的答案，一般情况大问题和小问题之间存在一定的函数关系，问题解决的关键就是拆分子问题找到他们之间的函数关系，即动态转移方程例题题目链接：70. 爬楼梯假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？示例 1：输入：n = 2输出：2解释：有两种方法可以爬到楼顶。1. 1 阶 + 1 阶2. 2 阶示例 2：输入：n = 3输出：3解释：有三种方法可以爬到楼顶。1. 1 阶 + 1 阶 + 1 阶2. 1 阶 ",
+          "publishedAt": "2025-12-05T04:12:45.000Z"
+        },
+        {
+          "title": "二分查找",
+          "link": "https://blog.fwneko.com/archives/0023",
+          "description": "题目题目链接：704. 二分查找给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果 target 存在返回下标，否则返回 -1。你必须编写一个具有 O(log n) 时间复杂度的算法。示例 1:输入: nums = [-1,0,3,5,9,12], target = 9输出: 4解释: 9 出现在 nums 中并且下标为 4示例 2:输入: nums = [-1,0,3,5,9,12], target = 2输出: -1解释: 2 不存在 nums 中因此返回 -1提示：你可以假设 nums 中的所有元素是不重复的。n 将在 [1, 10000]之间",
+          "publishedAt": "2025-11-16T20:14:19.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.talen.top/",
+      "feedUrl": "https://blog.talen.top/rss.xml",
+      "feedUrls": [
+        "https://blog.talen.top/rss.xml",
+        "https://blog.talen.top/atom.xml"
+      ],
+      "items": [
+        {
+          "title": "当身体被强制暂停",
+          "link": "https://blog.talen.top/posts/xxakfase",
+          "description": "生病的经历让我明白：别用\"不影响工作\"自欺，失眠、疼痛都是身体的警报，硬撑不是本事，及时重视才是。",
+          "publishedAt": "2026-06-06T13:12:04.000Z"
+        },
+        {
+          "title": "盘点开发者眼里的赛博大善人（一）",
+          "link": "https://blog.talen.top/posts/0oc34lqd",
+          "description": "很多项目停在了\"本地能跑\"到\"真正上线\"之间，本系列整理真正好用的免费资源，让你先把项目发出去",
+          "publishedAt": "2026-04-03T13:33:47.000Z"
+        },
+        {
+          "title": "博客系统 FlecBlog 现已正式开源",
+          "link": "https://blog.talen.top/posts/nem9jf8q",
+          "description": "一个现代化的全栈博客系统，集成了文章管理、评论互动、友链交换、动态发布、数据统计等完整功能。",
+          "publishedAt": "2026-03-12T16:10:15.000Z"
+        },
+        {
+          "title": "Windows 注册表原理与实战指南",
+          "link": "https://blog.talen.top/posts/3gkrg8et",
+          "description": "从系统底层逻辑出发，了解Windows注册表的本质结构，学习五大根键与六种数据类型，附有几个实操案例，逐步搞懂什么是注册表。",
+          "publishedAt": "2026-02-25T20:45:28.000Z"
+        },
+        {
+          "title": "GitHub Actions 自动化部署全攻略",
+          "link": "https://blog.talen.top/posts/ed2jfzfv",
+          "description": "本文介绍如何通过GitHub Actions搭建CI/CD自动化部署流程，解决手动部署耗时易错的问题。",
+          "publishedAt": "2026-01-31T23:13:28.000Z"
+        },
+        {
+          "title": "自研博客系统打造极致极简创作体验",
+          "link": "https://blog.talen.top/posts/xniailcy",
+          "description": "受限于Hexo的发布流程与分散的第三方服务，我决定打造一个一体化的博客系统。前端采用Nuxt4与Vue3，后端选用Gin框架与PgSQL，实现了用户认证、定制的md编辑器、内置评论动态等核心功能。本文完整回顾了从技术选型、开发权衡到最终上线的全栈实践，为拥有类似痛点的开发者提供一个可行的自建方案。",
+          "publishedAt": "2026-01-23T12:26:36.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "http://www.dreamcenter.top/",
+      "feedUrl": "https://www.dreamcenter.top/BlogRss.xml",
+      "feedUrls": [
+        "https://www.dreamcenter.top/BlogRss.xml",
+        "https://www.dreamcenter.top/DailyRss.xml"
+      ],
+      "items": [
+        {
+          "title": "通过AI分析了一下这几年我的小站内容",
+          "link": "https://www.dreamcenter.top/Blog/135",
+          "description": "<p>&nbsp; &nbsp; 自己做了一个Agent，自动抓取分析了这个小站的目前状态。感觉还可以，后续应该会上线给大家玩儿。<img class=\"eleImg\" data-emoji=\"[看戏]\" src=\"/emoji/cf.gif\" alt=\"[[看戏]]\"/></p><p><br/></p><h1>📊 个人知识库分析报告</h1> <h2>整体概览</h2> <table border=\"1\" cellpadding=\"5\" cellspacing=\"0\"> <tbody><tr><td>技术博客</td><td>132篇</td></tr> <tr><td>日常文章</td><td>34篇</td></tr> <t",
+          "publishedAt": "2026-07-31T23:52:34.000Z"
+        },
+        {
+          "title": "SQL查询长文本字段的索引策略",
+          "link": "https://www.dreamcenter.top/Blog/132",
+          "description": "<p>&nbsp; &nbsp; 在查询数据库数据时，经常会想要对一个很长的文本做匹配查询，当文本长度到达几千的时候，就无法建立索引了，这时候可以增加CHECKSUM字段建立索引，从而索引匹配。</p><p><br/></p><h1 id=\"pkg1n\">业务背景</h1><p>&nbsp; &nbsp; 先来说说一个现有的业务场景，公司的开票模块，通常需要对一些订单做开票处理，然而有的交易并不是只有一笔订单号，所以就要将若干的订单号组合在一起开票。在前辈的代码设计里，是直接将所有订单号以逗号分隔，放在一个字段sourceno里，随着业务的复杂化，现在最长的sourceno尽然都达到了1999字符！</p><p><br/></p><",
+          "publishedAt": "2026-07-10T17:18:41.000Z"
+        },
+        {
+          "title": "从零开始配置Cloudflare内网穿透",
+          "link": "https://www.dreamcenter.top/Blog/131",
+          "description": "<p>&nbsp; &nbsp; 在开始使用CloudFlare之前，还从未了解过原来CloudFlare是如此的强大。之前一直是使用的正规的云服务器，从域名解析、SSL证书签署续签、穿透内网等全部手动控制，到现在一键启用，从普通个人使用的角度来说，极大的提升了幸福指数。之前还自己写了SSL续签程序，结果现在可以完全托管在cloudflare，很是震撼。</p><p>&nbsp; &nbsp; 本文则是介绍CloudFlare的一个极其强大的功能——内网穿透。</p><h1 id=\"qd5o4\">域名配置</h1><p>&nbsp; &nbsp; 在一切动作之前，我们需要在CloudFlare配置一下个人的域名，后续的各个站点服务都",
+          "publishedAt": "2026-07-04T23:54:04.000Z"
+        },
+        {
+          "title": "Jellyfin刮削与字幕获取",
+          "link": "https://www.dreamcenter.top/Blog/129",
+          "description": "<p>&nbsp; &nbsp; 对于Jellyfin的基础搭建恕我不多赘述，直接说重点。<br/></p><p><br/></p><h1 id=\"uhvuj\">字幕用什么获取？</h1><p>安装插件&nbsp;<a href=\"https://github.com/91270/MeiamSubtitles.Release/raw/main/Plugin/manifest-stable.json\" target=\"_blank\">MeiamSubtitles</a>&nbsp;,项目地址：<a href=\"https://github.com/91270/MeiamSubtitles\" target=\"_blank\">GITHUB",
+          "publishedAt": "2026-06-19T03:23:34.000Z"
+        },
+        {
+          "title": "服务器搭建AI模型中心 | 含代理配置",
+          "link": "https://www.dreamcenter.top/Blog/128",
+          "description": "<p>&nbsp; &nbsp; 本文主要介绍如何搭建AI中枢，并且支持在国内服务器通过代理访问国外大模型。<br/></p><p>&nbsp; &nbsp; 随着AI的迅猛发展，市面上已经有了千奇百怪的LLM大模型，各有特色，正是百花齐放的胜景。但是随着手上接触到的大模型越来越多，如何便捷的统一管理变得非常重要，毕竟总不能到处兼容配置各个服务商吧！于是就在开源社区找到了这样一个项目 <a target=\"_blank\" href=\"https://github.com/QuantumNous/new-api\">New-Api</a>，其上游开源项目是 <a target=\"_blank\" href=\"https://github.",
+          "publishedAt": "2026-04-20T23:40:15.000Z"
+        },
+        {
+          "title": "Nuxt + EO + Nginx 透传获取用户真实IP",
+          "link": "https://www.dreamcenter.top/Blog/123",
+          "description": "<p>在基于 Nuxt 开发个人博客项目时，我遇到了一个核心痛点：<strong>生产环境通过路由代理转发请求后，后端服务始终无法获取用户真实 IP</strong>，要么固定显示服务器出口 IP，要么 IP 随机跳动，直接导致博客阅览量统计失真、当日点赞防刷机制完全失效。</p><p><br/></p><p>经过逐层排查，问题根源集中在<strong>Nuxt 路由代理配置、EdgeOne (EO) CDN 透传规则、Nginx 反向代理、后端 IP 获取逻辑</strong>四个环节的链路断裂。本文将完整复盘问题场景、根因分析与最终解决方案，帮助大家规避同类代理环境下的 IP 透传坑点。</p><p><br/></p><p><b",
+          "publishedAt": "2026-03-20T22:21:37.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://lemonadorable.github.io/",
+      "feedUrl": "https://lemonadorable.github.io/rss.xml",
+      "feedUrls": [
+        "https://lemonadorable.github.io/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "TheRustBook笔记",
+          "link": "https://lemonadorable.github.io/blog/note/therustbooknote",
+          "description": "TheRustBook笔记",
+          "publishedAt": "2026-05-01T00:00:00.000Z"
+        },
+        {
+          "title": "🌌 最终测试：超弦虚空接口",
+          "link": "https://lemonadorable.github.io/blog/test-mdx",
+          "description": "这是一个用于测试 Markdown/MDX 渲染、Mermaid 图表、数学公式以及各种复杂排版的测试文章。",
+          "publishedAt": "2026-01-10T00:00:00.000Z"
+        },
+        {
+          "title": "Astro Theme Iris：打造个人知识管理系统",
+          "link": "https://lemonadorable.github.io/blog/astro-theme-iris",
+          "description": "Astro Theme Iris 主题，包括强大的搜索系统、双链预览、知识图谱等功能",
+          "publishedAt": "2026-01-02T00:00:00.000Z"
+        },
+        {
+          "title": "LaTeX使用中的一些坑",
+          "link": "https://lemonadorable.github.io/blog/note/latex",
+          "description": "LaTeX使用过程中的一些常见问题和解决方案，包括编辑器推荐、模板资源和编码问题",
+          "publishedAt": "2025-06-02T05:33:30.000Z"
+        },
+        {
+          "title": "Word写论文的各种奇怪要求怎么解决",
+          "link": "https://lemonadorable.github.io/blog/note/word",
+          "description": "Word写论文时遇到的各种奇怪格式要求的解决方案，包括公式编号、交叉引用、域代码等",
+          "publishedAt": "2025-06-02T05:33:30.000Z"
+        },
+        {
+          "title": "光猫拨号下的OpenWrt旁路由探索",
+          "link": "https://lemonadorable.github.io/blog/flash/openwrt",
+          "description": "在光猫拨号环境下配置OpenWrt旁路由的完整指南，包括安装、配置和优化",
+          "publishedAt": "2025-03-08T22:19:29.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://detached.online/",
+      "feedUrl": "https://detached.online/rss.xml",
+      "feedUrls": [
+        "https://detached.online/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "评论系统方案横向对比",
+          "link": "https://detached.online/blog/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88%E6%A8%AA%E5%90%91%E5%AF%B9%E6%AF%94/",
+          "description": "Git 托管、自建后端、第三方托管、社交平台、自己写，五条路线二十多个方案逐个拆开比。数据存在谁那儿、读者留言要付出什么，这两件事决定了其余全部差异。附 2026-08-25 逐个仓库核过的活跃度。",
+          "publishedAt": "2026-08-25T00:00:00.000Z"
+        },
+        {
+          "title": "评论区的广告处置规则",
+          "link": "https://detached.online/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E7%9A%84%E5%B9%BF%E5%91%8A%E5%A4%84%E7%BD%AE%E8%A7%84%E5%88%99/",
+          "description": "这个站怎么对待评论：不预审、写完直接公开；遇到广告分两种处理——广告写在昵称和网址里的只改身份、评论本身留着，广告写在正文里的整条不展示。以及被误判了怎么办",
+          "publishedAt": "2026-08-21T00:00:00.000Z"
+        },
+        {
+          "title": "评论区完全指南：怎么用、怎么防伪装，以及它凭什么更稳了",
+          "link": "https://detached.online/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/",
+          "description": "本站评论区的一站式说明。匿名和注册差在哪、头像右下角那枚角标为什么是唯一伪造不了的信号、注册登录怎么走、头像怎么换、以及哪些情况下你会收到通知邮件。原本分散在三篇里的内容合成了这一篇。",
+          "publishedAt": "2026-08-19T00:00:00.000Z"
+        },
+        {
+          "title": "网站统计方案横向对比",
+          "link": "https://detached.online/blog/%E7%BD%91%E7%AB%99%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%A1%88%E6%A8%AA%E5%90%91%E5%AF%B9%E6%AF%94/",
+          "description": "GA4、Umami、Plausible、Cloudflare Web Analytics、GoAccess、Counterscale、GoatCounter、Clarity、PostHog 九个方案逐个拆开比，外加决定它们成败的 uBlock Origin。附脚本体积、大陆可达性、拦截规则三组实测数据",
+          "publishedAt": "2026-08-19T00:00:00.000Z"
+        },
+        {
+          "title": "本站可以换主题",
+          "link": "https://detached.online/blog/%E6%9C%AC%E7%AB%99%E5%8F%AF%E4%BB%A5%E6%8D%A2%E4%B8%BB%E9%A2%98/",
+          "description": "顶栏那个调色板图标里藏着什么：深浅色、四档页面背景、可以自己调的主色，以及首页卡片的排序。",
+          "publishedAt": "2026-08-17T00:00:00.000Z"
+        },
+        {
+          "title": "评论区头像是怎么跟着邮箱走的",
+          "link": "https://detached.online/blog/%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%A4%B4%E5%83%8F%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%9F%E7%9D%80%E9%82%AE%E7%AE%B1%E8%B5%B0%E7%9A%84/",
+          "description": "Gravatar、WeAvatar、Cravatar、Libravatar 分属哪几个阵营，邮箱怎么变成头像 URL，以及国内该换哪个源。",
+          "publishedAt": "2026-08-17T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://xiaoxi.ac.cn/",
+      "feedUrl": "https://xiaoxi.ac.cn/rss.xml",
+      "feedUrls": [
+        "https://xiaoxi.ac.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "婚姻里的伤害，法律究竟能看见多少？——谈离婚诉讼中的精神损害赔偿",
+          "link": "https://xiaoxi.ac.cn/post/202608238514",
+          "description": "当法律能够更加准确地识别这些看不见的伤害时，离婚损害赔偿制度所维护的，就不仅是一段已经结束的婚姻。它所维护的，是每一个身处婚姻关系中的人的人格、尊严与应当受到保护的合法权益。",
+          "publishedAt": "2026-08-22T18:07:00.000Z"
+        },
+        {
+          "title": "小曦的上海之旅",
+          "link": "https://xiaoxi.ac.cn/post/202608196229",
+          "description": "人生属于一场旅行，什么时候走到哪里，真不是你自己说了算的。但是走到哪里，就在哪里好好生活，好好的活下去，好好的去对待这个城市就足够了。",
+          "publishedAt": "2026-08-20T04:16:00.000Z"
+        },
+        {
+          "title": "一切都因为Github在国内无法稳定访问，因此我重构了评论组件！",
+          "link": "https://xiaoxi.ac.cn/post/202608176186",
+          "description": "有些文字写下之后，总希望能听见一点来自屏幕另一端的声音。一句回应，一场讨论，或者只是某个陌生人路过时留下的痕迹。于是，这一次，我决定在园子里留出这样一小块地方——不借住在别人的屋檐下，而是亲手搭起属于自己的评论区。让文章在落笔之后，还能继续生长。",
+          "publishedAt": "2026-08-17T11:02:00.000Z"
+        },
+        {
+          "title": "关于我照片多到溢出，于是我安装了immich来拯救我的照片！",
+          "link": "https://xiaoxi.ac.cn/post/202608178654",
+          "description": "喜欢山川湖海，也喜欢陌生城市里那些叫不上名字的街道；喜欢站在高处看云雾从群山之间缓慢经过，也喜欢一头钻进当地的博物馆，在一件件来自遥远年代的藏品前消磨掉整个下午。 于是走过的地方越来越多，照片也越来越多。 第一次把那些散落多年的照片重新铺陈在时间线上时，我忽然觉得，自己整理的似乎不再只是一些文件，而是一段段曾经真实经过的时间。",
+          "publishedAt": "2026-08-16T16:10:00.000Z"
+        },
+        {
+          "title": "用 ISBN 找书：这个小工具怎么用",
+          "link": "https://xiaoxi.ac.cn/post/202608152825",
+          "description": "书架上的每一本书，都有一个属于自己的小小坐标。书名会被记住，封面会被认出，而 ISBN 像一枚安静的暗号，把它们准确地连在一起。",
+          "publishedAt": "2026-08-15T06:08:00.000Z"
+        },
+        {
+          "title": "园子表情图标库使用说明",
+          "link": "https://xiaoxi.ac.cn/post/202608091300",
+          "description": "这里收集着园子里一点点画出来的小花、水果和各种奇奇怪怪的可爱图标，希望这些从园子里长出来的小东西，不只可以装点文章，也能给写字和阅读的人带来一点点好心情。",
+          "publishedAt": "2026-08-09T04:34:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.telyra.top/",
+      "feedUrl": "https://blog.telyra.top/rss.xml",
+      "feedUrls": [
+        "https://blog.telyra.top/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "3X-UI Xray新版REALITY导致Mihomo Timeout的解决记录",
+          "link": "https://blog.telyra.top/posts/xui-mihomo-timeout/",
+          "description": "记录Xray v26.7.x版本更新后REALITY节点与Mihomo系客户端兼容异常的原因与解决方式。",
+          "publishedAt": "2026-08-09T04:00:00.000Z"
+        },
+        {
+          "title": "静态博客获取Sub2API token用量数据",
+          "link": "https://blog.telyra.top/posts/sub2api_token_use/",
+          "description": "借助 Cloudflare Workers在本类型静态博客中获取Sub2API token使用数据",
+          "publishedAt": "2026-08-01T05:35:00.000Z"
+        },
+        {
+          "title": "静态博客获取微信读书数据",
+          "link": "https://blog.telyra.top/posts/wechatreading_api/",
+          "description": "在本类型静态博客中通过官方Skill接口获取微信读书的阅读数据。",
+          "publishedAt": "2026-08-01T05:02:00.000Z"
+        },
+        {
+          "title": "FastCtx：Codex Windows增强工具",
+          "link": "https://blog.telyra.top/posts/fastctx/",
+          "description": "借助mcp增强Windows版Codex(Chatgpt)文件读取、内容搜索、文件查找、批量替换和 Bash 命令执行的能力。",
+          "publishedAt": "2026-07-27T10:25:00.000Z"
+        },
+        {
+          "title": "OpenCode开启自定义Provider的WebScoket",
+          "link": "https://blog.telyra.top/posts/opencode-ws/",
+          "description": "借助底层openai路由，将provider ID改为openai，实现ws传输",
+          "publishedAt": "2026-07-16T03:05:00.000Z"
+        },
+        {
+          "title": "giffgaff验证码转发",
+          "link": "https://blog.telyra.top/posts/sms-forwarding/",
+          "description": "通过ESP32+中移ML307实现24h短信转发功能，方便在不插卡的情况下获取验证码",
+          "publishedAt": "2026-07-12T06:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://mingblog.site/",
+      "feedUrl": "https://mingblog.site/rss.xml",
+      "feedUrls": [
+        "https://mingblog.site/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "我试着把一张风景照变成一束花",
+          "link": "https://mingblog.site/posts/floraform-bouquet/",
+          "description": "最近做了一个叫 FloraForm 的小工具。上传一张照片，它会参考画面的颜色和构图设计花束，并给出效果图与花材清单。",
+          "publishedAt": "2026-08-12T00:00:00.000Z"
+        },
+        {
+          "title": "从尚未竣工到绿树成荫：广汉中学新校园的这几年",
+          "link": "https://mingblog.site/posts/guanghan-school-campus-years/",
+          "description": "一组按时间整理的照片，记录四川省广汉中学新校园从刚建成、逐步启用，到操场、礼堂和绿化慢慢完善的几年。",
+          "publishedAt": "2026-08-08T00:00:00.000Z"
+        },
+        {
+          "title": "把场景拆开，再重新相遇",
+          "link": "https://mingblog.site/posts/scene-notes-2026/",
+          "description": "分享三个把照片变成视觉笔记的 skill：提炼场景的骨架、重新收集碎片、为一张照片建立证据账本，以及它们各自产出的作品。",
+          "publishedAt": "2026-08-06T00:00:00.000Z"
+        },
+        {
+          "title": "把照片放回地图：我做了一个 Photo Walk",
+          "link": "https://mingblog.site/posts/photo-walk-chongqing-2023/",
+          "description": "用 2023 年的一天重庆影像，介绍我如何把散落在相册里的照片重新放回时间和地图，并导出成可以嵌入博客的交互作品。",
+          "publishedAt": "2026-07-21T00:00:00.000Z"
+        },
+        {
+          "title": "广汉十月：静态管理的昼与夜",
+          "link": "https://mingblog.site/posts/guanghan-october-2022/",
+          "description": "2022年10月的四川广汉，静态管理下空荡的街道、限时的出入证、凌晨等解封的人群。没有宏大叙事，只有那个秋天里零碎又真实的日常碎片。",
+          "publishedAt": "2026-07-07T00:00:00.000Z"
+        },
+        {
+          "title": "一些生活流水账——401厂、纪念品、蛙教练、美食",
+          "link": "https://mingblog.site/posts/401chang/",
+          "description": "好久没更新了，最近也没干什么大事，没什么主题，随便写写，给自己留个记录。 401厂：在废弃厂区里探险的一下午 四月初，和家人一起去了成都的401厂。说“探险”有些夸张，其实就是个半废弃的老军工厂，大部分区域都空着。 我好像一直对这种工业废墟情有独钟。不是喜欢那种阴森恐怖的感觉，而是喜欢那种时间静止的氛围。斑驳的砖墙、掉漆的门窗、长在墙缝里的野草，还有那些被遗…",
+          "publishedAt": "2026-06-18T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.blueke.top/",
+      "feedUrl": "https://blog.blueke.top/rss.xml",
+      "feedUrls": [
+        "https://blog.blueke.top/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "Blog常用书写格式记录",
+          "link": "https://blog.blueke.top/posts/blog-chang-yong-shu-xie-ge-shi-ji-lu/",
+          "description": "部分内容只适用于本博客",
+          "publishedAt": "2025-04-22T16:47:00.000Z"
+        },
+        {
+          "title": "在 Flutter 项目里折腾苹果的液态玻璃效果",
+          "link": "https://blog.blueke.top/posts/flutter-shi-xian-ye-tai-bo-li-xiao-guo/",
+          "description": "记录一次在 Flutter 项目中实现苹果液态玻璃效果的尝试，以及这次经历让我重新认识到 AI 在技术实践中的边界。",
+          "publishedAt": "2026-08-25T11:35:00.000Z"
+        },
+        {
+          "title": "从“宅斗庶女”看极端女权",
+          "link": "https://blog.blueke.top/posts/cong-zhai-dou-shu-nv-kan-ji-duan-nv-quan/",
+          "description": "从女频小说里的“庶女斗嫡女”出发，聊聊网络性别对立、受害者豁免，以及女性真正的自救方式。",
+          "publishedAt": "2026-08-23T10:19:00.000Z"
+        },
+        {
+          "title": "一期一会",
+          "link": "https://blog.blueke.top/posts/yi-qi-yi-hui/",
+          "description": "从一期一会想到中日文化中不同的关系观",
+          "publishedAt": "2026-08-20T13:13:00.000Z"
+        },
+        {
+          "title": "关于梦",
+          "link": "https://blog.blueke.top/posts/guan-yu-meng/",
+          "description": "梦是时光的底片，只对真正活过的片段显影。",
+          "publishedAt": "2026-08-15T10:31:00.000Z"
+        },
+        {
+          "title": "用 Vercel AI Gateway 给博客做一个 AI 摘要服务",
+          "link": "https://blog.blueke.top/posts/vercel-ai-blog-summary/",
+          "description": "使用 Vercel Functions、AI Gateway 和 Neon，为 Astro 博客实现带内容缓存、OIDC 鉴权和费用保护的 AI 摘要服务。",
+          "publishedAt": "2026-08-08T14:57:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://sssr7844.cc.cd/",
+      "feedUrl": "https://sssr7844.cc.cd/feed/",
+      "feedUrls": [
+        "https://sssr7844.cc.cd/feed/",
+        "https://sssr7844.cc.cd/feed/"
+      ],
+      "items": [
+        {
+          "title": "参观华强北博物馆",
+          "link": "https://sssr7844.cc.cd/179/%e5%8f%82%e8%a7%82%e5%8d%8e%e5%bc%ba%e5%8c%97%e5%8d%9a%e7%89%a9%e9%a6%86/",
+          "description": "引入 话说我在深圳好几年了（其实我一直都在），daddy也在华强北上班，但我其实我一直都不知道这里还有个博物馆。之前看过深圳地铁公 ... 参观华强北博物馆最先出现在sssr7844的博客。",
+          "publishedAt": "2026-08-26T01:26:50.000Z"
+        },
+        {
+          "title": "QwenPaw使用体验（外加白嫖服务器）",
+          "link": "https://sssr7844.cc.cd/177/qwenpaw%e4%bd%bf%e7%94%a8%e4%bd%93%e9%aa%8c%ef%bc%88%e5%a4%96%e5%8a%a0%e7%99%bd%e5%ab%96%e6%9c%8d%e5%8a%a1%e5%99%a8%ef%bc%89/",
+          "description": "一个很不错的云端Agent，甚至是免费的（还能白嫖服务器） 1.基本测试 QwenPaw可以完成正常的对话。but它的免费的模型基 ... QwenPaw使用体验（外加白嫖服务器）最先出现在sssr7844的博客。",
+          "publishedAt": "2026-08-19T07:38:58.000Z"
+        },
+        {
+          "title": "搭建自己的基岩版Minecraft服务器",
+          "link": "https://sssr7844.cc.cd/154/%e6%90%ad%e5%bb%ba%e8%87%aa%e5%b7%b1%e7%9a%84%e5%9f%ba%e5%b2%a9%e7%89%88minecraft%e6%9c%8d%e5%8a%a1%e5%99%a8/",
+          "description": "1.准备 首先先下载基岩版专用服务端，官网只提供最新版 虽然写着Linux仅限Ubuntu，但我目前用的Nyarch Linux（ ... 搭建自己的基岩版Minecraft服务器最先出现在sssr7844的博客。",
+          "publishedAt": "2026-08-12T07:09:47.000Z"
+        },
+        {
+          "title": "诺基亚：燃烧的平台",
+          "link": "https://sssr7844.cc.cd/125/nokiaburning-platform/",
+          "description": "“深夜，北海油田的钻井平台上，员工在爆炸声中惊醒，发现整个平台已经燃烧起来， 他已被熊熊的火焰包围。穿过浓烟和烈火，跑到平台边缘， ... 诺基亚：燃烧的平台最先出现在sssr7844的博客。",
+          "publishedAt": "2026-07-31T23:04:24.000Z"
+        },
+        {
+          "title": "廉价平板折腾记",
+          "link": "https://sssr7844.cc.cd/92/%e5%bb%89%e4%bb%b7%e5%b9%b3%e6%9d%bf%e6%8a%98%e8%85%be%e8%ae%b0/",
+          "description": "在网上看到了一个廉价二手平板，才几块钱，估计运费都不够。 到手了之后能发现是一个连标志都没有的..神秘平板。那就开始折腾吧！ 1. ... 廉价平板折腾记最先出现在sssr7844的博客。",
+          "publishedAt": "2026-07-28T05:08:28.000Z"
+        },
+        {
+          "title": "Hello world!",
+          "link": "https://sssr7844.cc.cd/1/hello-world/",
+          "description": "Welcome to WordPress. This is your first post. Edit or delete it, ... Hello world!最先出现在sssr7844的博客。",
+          "publishedAt": "2026-07-25T13:05:44.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://www.s17.cn/",
+      "feedUrl": "https://www.s17.cn/rss.xml",
+      "feedUrls": [
+        "https://www.s17.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "每人留下一句藏着遗憾的诗词，你脑海里最先",
+          "link": "https://pyq.s17.cn/post/post-20260813072151-f36671.html",
+          "description": "每人留下一句藏着遗憾的诗词，你脑海里最先浮现的是哪一句呢？ 我先来： “少年不识愁滋味， 不知人间有别离。” ![图片](https://statics.s17.cn/usr/uploads/moments/2026/08/17_6a7d000e9ba89_1786576910.jpg)",
+          "publishedAt": "2026-08-12T23:21:51.000Z"
+        },
+        {
+          "title": "大家还记得自己装的第一台主机吗？什么时候，什么配置，在哪里，又有谁陪着呢？这台主机和那时候陪着你的人",
+          "link": "https://pyq.s17.cn/post/post-20260722184857-9718a9.html",
+          "description": "大家还记得自己装的第一台主机吗？什么时候，什么配置，在哪里，又有谁陪着呢？这台主机和那时候陪着你的人，都还在你身边吗？ ![图片](https://statics.s17.cn/usr/uploads/moments/2026/07/17_6a60a018a56e9_1784717336.jpg) ![图片](https://statics.s17.cn/usr/uploads/moments/",
+          "publishedAt": "2026-07-22T10:48:57.000Z"
+        },
+        {
+          "title": "关于我的显卡接口被烧了这件事",
+          "link": "https://blog.s17.cn/post/27.html",
+          "description": "最近玩游戏总是会莫名其妙黑屏，紧接着再按鼠标就会出现滴滴滴的声音，随后就只能断电重启。起初我以为只是显卡驱动又掉了，但是在我重装了三五次显卡驱动后，我才反应过来不对劲：故障太过频繁，而且黑屏后显示器直接没有信号。 虽然这张卡买回来快三年了，但是只有在我刚买回来折腾降压的情况下才掉过，而且掉过几次后，我也就恢复默认用了。好巧不巧，我又埋头瞥了一眼机箱。好家伙，显卡怎么亮红灯了。 ![应该",
+          "publishedAt": "2026-07-19T22:17:27.000Z"
+        },
+        {
+          "title": "以前的情况：每个月都可以拿到一笔足够我生活开支的分红，",
+          "link": "https://pyq.s17.cn/post/post-20260616173206-62c7ea.html",
+          "description": "以前的情况：每个月都可以拿到一笔足够我生活开支的分红， 现在的情况：每个月都要倒贴一笔钱去补亏损，甚至还要出去给员工挣工资🤡 不知道还能坚持多久 ![图片](https://statics.s17.cn/usr/uploads/moments/2026/06/17_6a3118157ce09_1781602325.jpg)",
+          "publishedAt": "2026-06-16T09:32:06.000Z"
+        },
+        {
+          "title": "分享一下我的主页模板",
+          "link": "https://blog.s17.cn/post/26.html",
+          "description": "最近很多到访我网站的朋友，表示对我的个人主页这个仿电脑桌面的模板非常感兴趣，希望我可以分享给他们。 其实这也压根不是什么模板，只是我做的一个单页而已，如果想的话随随便便就能扒下来。不过碍于很多朋友不会操作，于是我抽空把这个单页剥离了出来，并且临时搭配了一个简易的后台管理面板，更加方便使用。 ![后台面板][1] ##图标 目前桌面的图标按钮支持 4 种加载方式： ###AJA",
+          "publishedAt": "2026-06-10T23:16:00.000Z"
+        },
+        {
+          "title": "机箱里住了一台拖拉机",
+          "link": "https://pyq.s17.cn/post/post-20260605235620-4508d1.html",
+          "description": "机箱里住了一台拖拉机",
+          "publishedAt": "2026-06-05T15:56:20.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://styunlen.cn/",
+      "feedUrl": "https://styunlen.cn/feed",
+      "feedUrls": [
+        "https://styunlen.cn/feed",
+        "https://styunlen.cn/feed"
+      ],
+      "items": [
+        {
+          "title": "我以为能给站点请个会动的吉祥物，结果来了个 64×64 的方块人",
+          "link": "https://styunlen.cn/archives/post-1824.html",
+          "description": "🤯 开场：一次“货不对板”的请客 先说结论：这个吉祥物，我请了两天，换了两次“技术方案”，最后它学会游泳了。 […]",
+          "publishedAt": "2026-08-22T01:54:00.000Z"
+        },
+        {
+          "title": "我的缓存会自己补货：LruLink 与三个并行功能分支",
+          "link": "https://styunlen.cn/archives/post-1819.html",
+          "description": "从三层缓存翻车到 LruLink 缓存状态机：GraphQL 查询合并省了 2.5 倍时间、WPGraphQL 静默 100 条上限、三个 feature 分支并行开发。",
+          "publishedAt": "2026-08-19T08:03:00.000Z"
+        },
+        {
+          "title": "Maltose：15 天重构博客，先写了 29 份 ADR 才敢写代码",
+          "link": "https://styunlen.cn/archives/post-1812.html",
+          "description": "15 天把博客从 WordPress 主题重构为 Astro headless 架构：浏览量计数翻车、安全审查四连、8 连击评论马拉松——以及 29 份 ADR 是怎么救了我的",
+          "publishedAt": "2026-08-19T06:37:49.000Z"
+        },
+        {
+          "title": "告别素材文件，WPF 内嵌视频实现高颜值动态窗口背景",
+          "link": "https://styunlen.cn/archives/post-1797.html",
+          "description": "你有没有见过一个 WPF 窗口，背景是动态视频，而且这个视频不是外部文件，而是编译在 EXE 里面的？ 今天我 […]",
+          "publishedAt": "2026-07-08T03:33:59.000Z"
+        },
+        {
+          "title": "如何让neovim 集成 jupyter",
+          "link": "https://styunlen.cn/archives/post-1711.html",
+          "description": "前言 虽然可以为jupyter安装 jupyter-lsp 插件，实现 python 的 lsp 相关功能，但 […]",
+          "publishedAt": "2026-02-05T04:28:33.000Z"
+        },
+        {
+          "title": "放弃吧？不！Hue 在 Linux ARM64 上的绝境求生指南",
+          "link": "https://styunlen.cn/archives/post-1745.html",
+          "description": "😇 前言 大数据课的坑娃实录：当 Hue 遇上 \"薛定谔的环境，本以为 Docker 是避风港，结果它把我推向 […]",
+          "publishedAt": "2025-11-30T12:05:45.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://lzh1.cn/",
+      "feedUrl": "https://lzh1.cn/rss.php",
+      "feedUrls": [
+        "https://lzh1.cn/rss.php"
+      ],
+      "items": [
+        {
+          "title": "给博客新增了一个项目",
+          "link": "https://lzh1.cn/?post=53",
+          "description": "我访问某个博客发现博主搞了论坛来给其他访客发布帖子，我发现程序有个微语配合上前台展示插件也可以就做了。 点击导航栏的树洞或者直接访问https://lzh1.cn/?plugin=mood 就可以发布文字。 发布文字登录方法： 1.注册用户可以直接登录，未注册先点导航栏【我的】进行注册然后修改用户名（系统的注册是无法修改用户名的） 2.电脑端直接点击右下角的第一个小人按钮转跳登录页面。 3.手机端先点击右下角的四个方块按钮，弹出一列后点击第一个小人按钮转跳登录页面。",
+          "publishedAt": "2026-08-22T16:42:49.000Z"
+        },
+        {
+          "title": "Trae突然开始使用积分了",
+          "link": "https://lzh1.cn/?post=52",
+          "description": "晚上打算做个插件的习惯性打开Trae开始让它生成插件，结果做到一半提示积分不足问了才知道现在开始积分不足就不能用了。",
+          "publishedAt": "2026-08-21T15:25:18.000Z"
+        },
+        {
+          "title": "重新启用登录评论并增加了认证功能",
+          "link": "https://lzh1.cn/?post=49",
+          "description": "最近评论广告猖獗然后又看到小曦的园子的评论有认证图标就打算自己也做一个。 认证图标采用是应用商店里的徽章生成器插件，颁发认证图标是自己做的一个插件对接官方用户系统。 友联以后注册的用户会给这个认证。 注册用户评论以后会给这个认证。 评论五条的用户会给这个认证。 如果有赞助商会给这个认证。 注册用户我都会给认证，如果没给就是没看后台可以提醒我一下。",
+          "publishedAt": "2026-08-19T13:03:23.000Z"
+        },
+        {
+          "title": "遭到虚假宣传了",
+          "link": "https://lzh1.cn/?post=46",
+          "description": "前几天刷快手看到卖苏打水的写着买一箱送一箱，结果到手是6瓶我气看订单发现默认选的是3瓶送3瓶，我问了元宝按照消保法来说一箱应该是12瓶或者24瓶，虽然一块多一瓶不贵但是太气人了。",
+          "publishedAt": "2026-08-18T04:13:34.000Z"
+        },
+        {
+          "title": "正式成为了共产党员",
+          "link": "https://lzh1.cn/?post=45",
+          "description": "今天下午党会我认真的朗诵了转正申请书，在在场所有党员的投票中以29票正式通过成为了共产党员。",
+          "publishedAt": "2026-08-16T10:38:04.000Z"
+        },
+        {
+          "title": "浏览其他人的博客",
+          "link": "https://lzh1.cn/?post=44",
+          "description": "最近一直在聚合平台以及友链页访问他人的博客。 我访问他人博客除了看名字介绍以外还会看一下头像图标，一些吸引我的头像和图标我会毫不犹豫的点进去。 我觉得头像都那么吸引人的话这个博客站长肯定是个很有趣的人。",
+          "publishedAt": "2026-08-16T02:41:24.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://wyjmew.cn/",
+      "feedUrl": "https://wyjmew.cn/feed/",
+      "feedUrls": [
+        "https://wyjmew.cn/feed/"
+      ],
+      "items": [
+        {
+          "title": "【废物利用】玩客云刷OpenWrt",
+          "link": "https://wyjmew.cn/awa/wky-OpenWrt",
+          "description": "本教程介绍ws1608玩客云刷OpenWrt步骤：需USB数据线、U盘、镊子等工具，先将OpenWrt固件用balenaEtcher写入U盘，再将U盘插入玩客云自行安装系统。非ws1608机型严...",
+          "publishedAt": "2026-08-21T02:54:00.000Z"
+        },
+        {
+          "title": "想了很久，最后还是决定发出来",
+          "link": "https://wyjmew.cn/awa/20260817",
+          "description": "作者未经许可引用了博主GTX690的鼠标样式资源，后在友链申请中因广告问题被拒改正，博主随后指责其盗用鼠标资源；作者立即道歉并邮件致歉，但未获回复，内心愧疚决定公开事件并认错。",
+          "publishedAt": "2026-08-17T01:27:00.000Z"
+        },
+        {
+          "title": "【旅行日记&amp;北京】Day1回家-我的2026暑假",
+          "link": "https://wyjmew.cn/awa/2026-trip-beijing-Day1",
+          "description": "作者2026暑假第一天：高铁早餐享泡椒笋泡面，10:57抵北京西站，午餐吃老北京炸酱面，15:02返回秦皇岛火车，晚餐分享，并带北京特产。",
+          "publishedAt": "2026-08-06T16:00:00.000Z"
+        },
+        {
+          "title": "【旅行日记&amp;重庆】Day4返程-我的2026暑假",
+          "link": "https://wyjmew.cn/awa/2026-trip-chongqing-Day4",
+          "description": "返程日结束重庆暑假行程：早间吃巧乐兹并分享，午餐享用火锅；下午乘高铁赴北京，途中吃披萨；晚间信号差无法上网后睡觉。",
+          "publishedAt": "2026-08-05T16:00:00.000Z"
+        },
+        {
+          "title": "【旅行日记&amp;重庆】Day3逛-我的2026暑假",
+          "link": "https://wyjmew.cn/awa/2026-trip-chongqing-Day3",
+          "description": "重庆旅行第三天：早餐后，列车因白海豚台风暴雨停运；下午热中逛街；晚餐后逛小吃街，买巧克力。",
+          "publishedAt": "2026-08-04T16:00:00.000Z"
+        },
+        {
+          "title": "【旅行日记&amp;重庆】Day2打卡-我的2026暑假",
+          "link": "https://wyjmew.cn/awa/2026-trip-chongqing-Day2",
+          "description": "在2026年重庆旅行第二天，博主7:20起床赏景观，多次打卡景点如鹅岭栈道，品尝美食饮李若桃吃火锅，因人多蜜雪冰城缺货，傍晚打卡胖猫，20:26吃西瓜结束。",
+          "publishedAt": "2026-08-03T16:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://www.luming.cool/",
+      "feedUrl": "https://www.luming.cool/rss.xml",
+      "feedUrls": [
+        "https://www.luming.cool/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "回复两年前给自己写的一封信",
+          "link": "https://www.luming.cool/posts/2026/08/a-reply-to-a-leter-i-wrote-to-myself-two-years-ago/",
+          "description": "在家闲来无事，便开始翻自己用过的本子。大多都是碎碎念，但唯独这么一篇，让我心里咯噔了一下。 它的主题是《给自己的一封信》，不是学校布置的作业，而是是母亲当时报名参加的“家庭教育培训班”送的本子，里面有一个“给自己的一封信”栏目，我当时恰巧有兴趣写罢了。 信件的内容如下： 未来的我： 你好！ 很高兴以这种方式和你对话。最近过得怎么样？父母是否健康安好？ 我是初...",
+          "publishedAt": "2026-08-25T21:00:00.000Z"
+        },
+        {
+          "title": "周记 8-1：中转站、域名",
+          "link": "https://www.luming.cool/posts/2026/08/weekly-8-1/",
+          "description": "好久没有碰过“周记”这种形式了，感觉自己浑浑噩噩的，每天起床、吃午饭、睡觉、吃晚饭，然后再熬夜补补作业，以此循环，半个月刷一下就过去了。我还是重启这个栏目，逼自己记录一下每周的事情吧。 本周挺空虚的，只做了两件事：中转站、续费域名。 中转站 是的，我（参与）开了家中转站。 我一直是各大 API 中转站的忠实用户，前前后后投进中转站保守也有七八百块钱了。无论是...",
+          "publishedAt": "2026-08-23T21:55:25.000Z"
+        },
+        {
+          "title": "发布了新主题：Eidolon",
+          "link": "https://www.luming.cool/posts/2026/08/new-theme-eidolon/",
+          "description": "Eidolon 是一款轻量、简洁且美观的 Astro 主题。基于 MIT License 开源。 在线体验地址：本站 或 Eidolonhttps://eidolon.luming.cool 快速上手教程见Eidolonhttps://eidolon.luming.cool。 GitHubhttps://github.com/virelyx258/Astro...",
+          "publishedAt": "2026-08-12T17:12:15.000Z"
+        },
+        {
+          "title": "Eidolon 主题短代码演示",
+          "link": "https://www.luming.cool/posts/2026/08/eidolon-short-code-preview/",
+          "description": "Eidolon 主题支持短代码。除兼容 Mirageshttps://get233.com/archives/mirages-intro.html 的全部短代码外，额外增加了“Tools”组件。 善于运用短代码可以使文章内容更丰富。 --- 短代码的统一书写形式： 直接在 MarkDown 源代码里书写即可，博客构建时会自动将其转换为对应样式。 --- 链接...",
+          "publishedAt": "2026-08-12T01:10:32.000Z"
+        },
+        {
+          "title": "那个和我一起听了 20 小时歌的女孩",
+          "link": "https://www.luming.cool/posts/2026/08/interesting-girl/",
+          "description": "暂且称呼她为“雨灯”吧，因为这是她的网名。 高一分班后，我们共同担任数学课代表。她脸盲，负责收作业，而我负责发作业。考试结束找本班答题卡时，我经常在旁边偷懒站着，看着她一人蹲着慢慢寻找。她发现后，笑骂两句，然后继续翻。 她几乎是随叫随到。每次考试结束，我都会立刻叫上她一起去抱参考答案。每次她都会来，即使被召唤时的表情是痛苦、嫌弃，抑或是沮丧；每次从办公室抱回...",
+          "publishedAt": "2026-08-06T22:34:40.000Z"
+        },
+        {
+          "title": "来自 BlogsClub 的鼠标垫",
+          "link": "https://www.luming.cool/posts/2026/08/mouse-pad-from-blogsclub/",
+          "description": "初次加入 BlogsClub，我还不怎么当回事，以为他只是一个普通的博客聚合平台，和“十年之约”、“笔墨迹”性质相同。 直到上个月的某一天，不知从谁口中，我得知 BlogsClub 有一个活动：凡是文章被“每月拾光”栏目收录过的博主，都可以凭借 0.01 积分兑换两张吉祥物鼠标垫。 我去兑换商店看了看，是真的，不过没有库存。他们说库存随缘补充。 于是，一段时...",
+          "publishedAt": "2026-08-04T10:35:11.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://linyu.live/",
+      "feedUrl": "https://linyu.live/feed/",
+      "feedUrls": [
+        "https://linyu.live/feed/"
+      ],
+      "items": [
+        {
+          "title": "《欢迎来到龙餐馆》强烈推荐！",
+          "link": "https://linyu.live/archives/131.html",
+          "description": "这真的是一部震撼人心的反战争片，以一间小小的中餐馆为开端，讲述战争中普通人的故事。 /* PictureOrder Gallery Styles */ ...",
+          "publishedAt": "2026-08-16T13:30:00.000Z"
+        },
+        {
+          "title": "五花肉＋杏鲍菇＋黄酒＝黄酒红烧肉～",
+          "link": "https://linyu.live/archives/127.html",
+          "description": "不得不说隔一段时间不吃就有点馋了，我向来就是既然心动，那就行动(社交除外)",
+          "publishedAt": "2026-07-31T12:35:00.000Z"
+        },
+        {
+          "title": "夏天真的太难了",
+          "link": "https://linyu.live/archives/125.html",
+          "description": "最近天气真的太热了，热到我只想24小时待在空调房里。 但偏偏我又是个“选择困难症”，在家待着还是出门去玩，一直都很纠结。更崩溃的是，最近几天胸前突然冒出一大片红疹，应该是过敏性皮炎，痒到怀疑人...",
+          "publishedAt": "2026-07-28T16:43:00.000Z"
+        },
+        {
+          "title": "记-晚安日记",
+          "link": "https://linyu.live/archives/120.html",
+          "description": "晚上失眠我总会听这段音频，虽然只有这一小段，但百听不厌。推荐给大家，我也在找这段音频的来源出处没找到，如果有朋友找到了同作者的其他音频希望可以告知一下！ :@(期待)[audio src=\"ht...",
+          "publishedAt": "2026-07-04T23:46:00.000Z"
+        },
+        {
+          "title": "绝望坡徒步挑战！",
+          "link": "https://linyu.live/archives/115.html",
+          "description": "昨晚刚眯了一会就被电话吵醒，说要去爬绝望坡。绝望坡。苏州绝望坡，位于江苏省苏州市虎丘区大阳山国家森林公园周边，是苏州本地知名的户外徒步与网红打卡地 。该地并非官方命名的独立山峰，而是大阳山徒步路...",
+          "publishedAt": "2026-06-28T04:48:00.000Z"
+        },
+        {
+          "title": "收到了一张来自远方的明信片",
+          "link": "https://linyu.live/archives/113.html",
+          "description": "今天早上快递给我打电话说有快递到了，下楼一看果然是我期盼已久的明信片送达。来自博友 虫虫 寄来的明信片。前些天，我在逛博客的时候看到了这个活动，然后参与了「时光慢递」明信片活动，很期待这样的明信...",
+          "publishedAt": "2026-06-23T01:44:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://www.chenyicheng.cn/",
+      "feedUrl": "https://chenyicheng.cn/rss.xml",
+      "feedUrls": [
+        "https://chenyicheng.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "塔沟那些年-2014前言",
+          "link": "https://www.chenyicheng.cn/article/tagou-2014-preface",
+          "description": "从江西广丰到河南登封，一个少年的武术求学之路。一、缘起一个江西少年与塔沟的交集我是江西上饶广丰桐畈镇的一个孩子。按道理说，我不应该知道塔沟这所远在河南登封的武术学校——一个赣东小镇的少年，和中原腹地的一所武校，八竿子打不着。但命运就是这样，偏偏让我和它产生了交集。牵起这根线的人，是我大爷。他和我爷爷",
+          "publishedAt": "2026-08-20T21:54:00.000Z"
+        },
+        {
+          "title": "塔沟那些年-2014下半年",
+          "link": "https://www.chenyicheng.cn/article/tagou-2014-half-year",
+          "description": "一、三号楼，我可真是小瞧你了。续接上回，我被安排在了这个三号楼。那年散打新生应该都安排在这里——一个临时的落脚点，有一个教练负责管着。班级是按报名顺序凑的，人数到了五十就分一个班，前五十位成立一个班级，剩下的继续留着等下一个教练来，凑齐了再分。所以在没分班之前，所有人都堆在三号楼里等着。那天下午老爸",
+          "publishedAt": "2026-08-20T21:53:00.000Z"
+        },
+        {
+          "title": "塔沟那些年-2015整年",
+          "link": "https://www.chenyicheng.cn/article/tagou-2015-full-year",
+          "description": "有趣的一年",
+          "publishedAt": "2026-08-20T21:52:00.000Z"
+        },
+        {
+          "title": "塔沟那些年-2016整年",
+          "link": "https://www.chenyicheng.cn/article/tagou-2016-full-year",
+          "description": "压抑的一年",
+          "publishedAt": "2026-08-20T21:51:00.000Z"
+        },
+        {
+          "title": "塔沟那些年-2017毕业&后记",
+          "link": "https://www.chenyicheng.cn/article/tagou-2017-full-year",
+          "description": "浮躁的毕业季",
+          "publishedAt": "2026-08-20T21:50:00.000Z"
+        },
+        {
+          "title": "vhAstro-Theme评论系统：兜兜转转最后选了Twikoo+Netlify.md",
+          "link": "https://www.chenyicheng.cn/article/comment-twikoo-netlify",
+          "description": "这篇不是教程，部署流程直接去看Twikoo官方文档-Netlify部署，写得比我清楚。我主要记录一下自己在几个方案之间来回折腾的过程，以及最后真正部署时踩到的2个坑，给后面打算走同一条路的人提个醒。几个方案怎么选的，为什么最后是Netlify评论系统选的时候我把常见的几个都过了一遍，有的只瞟了一眼，",
+          "publishedAt": "2026-08-17T21:17:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://wowtang.top/",
+      "feedUrl": "https://wowtang.top/feed.xml",
+      "feedUrls": [
+        "https://wowtang.top/feed.xml"
+      ],
+      "items": [
+        {
+          "title": "「浅谈」时代峰峻造星乱象：低龄逐利之下，追星早已失了底线",
+          "link": "https://wowtang.top/post/sdfj/",
+          "description": "引言 养成系追星的初衷，本是温柔陪伴、见证少年成长、汲取正向力量。但回看如今时代峰峻的饭圈生态，只剩下无休止的疯狂、越界与戾气。低龄化造星、未成年暧昧化玩梗、线下暴力冲突、无脑跟风对立，种种乱象层层叠加。我们不得不质问：资本无底线收割少年，粉丝无边界放纵狂热，到底是谁毁掉了追星本该有的纯粹？ 一、极致低龄造星：到底还要把年龄压到多低？ 时代峰峻主打的养成系，早已从“少年逐梦”变成了“幼龄收割流量”。 十二三岁、十四五岁，一群还在接受义务教育、心智尚未定型、三观尚未成熟的孩子，被提前推入名利场、聚光灯和舆论漩涡。 我忍不住质问一句刺耳的话：按照这个趋势，下一代练习生，难道真的要从受精卵开始筛选？ 资本为了拉长养成周期、绑定粉丝长久消费",
+          "publishedAt": "2026-08-20T07:51:38.000Z"
+        },
+        {
+          "title": "Twikoo 评论管理后台 魔改版 · 开源版1.0 重磅发布",
+          "link": "https://wowtang.top/post/Twikoo-comment-management-1.0/",
+          "description": "Twikoo 评论管理后台 · 开源版 一个开箱即用的 Twikoo 评论系统管理面板，原版UI较简陋，我们提供美观、响应式的后台界面，支持评论审核、配置管理、数据导入导出、深色主题等特性。无需额外安装，仅需一个 HTML 文件即可部署。 Github仓库：https://github.com/wowtang/Twikoo-comment-management 📖 项目简介 本项目是一个基于 Twikoo 评论引擎的纯前端管理面板，所有代码整合在 index.html 中。它通过调用 Twikoo 的官方 JavaScript SDK，实现以下功能： 登录验证（固定账号 + 自定义密码） 评论列表查看、审核（通过 / 隐藏）、删除",
+          "publishedAt": "2026-08-11T16:32:21.000Z"
+        },
+        {
+          "title": "「工具推荐」TRAE：字节跳动自研AI原生IDE编程软件（非广告）",
+          "link": "https://wowtang.top/post/ToolRec_trae1/",
+          "description": "絮絮叨叨 这个中考完的暑假，终于有时间来da’li（搭理、打理、……）我的博客网站。 这个网站除了每年的“定时闹钟”「Good bye！YYYY」外，似乎已经“荒废”很久了，我一直以来的博客梦早已被学业、人际死死压在底下。如果不是雨云与西数多次发来域名续费提醒，我的域名早就过期失效，整个站点也会彻底从互联网里消失。 前两天静下心打理博客时才恍然发现，我一直使用的原版Gridea框架，已经足足停更四年多。基础写文、一键部署GitHub Pages这类基础功能尚且可以正常运转，但老旧的Electron底层架构长年无人升级，新版主题兼容漏洞、底层安全缺陷全都搁置不管，日常还频繁出现站点同步失败的问题，我便萌生了更换整套博客生态、自行修改主",
+          "publishedAt": "2026-07-21T12:32:51.000Z"
+        },
+        {
+          "title": "「闲言碎语」202607-中考后的胡思乱想",
+          "link": "https://wowtang.top/post/talking_202607/",
+          "description": "中考出分那天，我正躺在医院病房里，看着手机屏幕，我不知如何面对出分短信。 曾经的一模、二模、很长一段时间里，我稳居班级前列，大大小小的考试稳居上游，我自己也早早规划好了高一的学习节奏、选课方向，甚至畅想过重点班里浓厚的学习氛围。我把那所理想高中当成了必然的归宿，以为一路稳步往前走，就不会有意外。 可这次中考，我狠狠摔了一跤。发挥失常，各科分数都远低于日常模拟水准，特别是理科，排名断崖式下滑。最终收到的录取通知书，是一所我从前从未列入备选、甚至很少主动了解的普通高中。 这些天整日闲散在家，虽然有数不清的暑假作业，但早已失去了刷题的紧迫感，也没有考前紧绷的神经，大把空闲时间反倒让人心里空落落的。翻着从前的成绩单，看着曾经稳居前排的名次，",
+          "publishedAt": "2026-07-19T15:02:42.000Z"
+        },
+        {
+          "title": "浅谈：一些关于今年华语辩论世界杯的看法",
+          "link": "https://wowtang.top/post/2026CDWC_talk1/",
+          "description": "引言 看了今年的2026CDWC，心生一些想法，和大家谈谈 纯业外人士个人看法，如意见不同，敬请谅解！（求放过） 高校锐评 1. 清北 最典型“正确但无聊”。全程套理论、堆框架、堆学术名词，四平八稳不敢冒险。打青年情绪题完全脱离普通人生活，高高在上、悬浮感极强。优点稳，缺点毫无灵气、毫无共情、毫无记忆点，赢比赛靠资历分，不靠观点赢人。 2. 人大 模板化最严重的学校。任何辩题最后都强行扯社会结构、时代压力、阶层焦虑。万能公式答题，个体视角极差。聊亲密关系、自我和解完全不会，只会说教，听多了审美疲劳，圈内吐槽“万能宏观复读机”。 3. 海外名校（剑桥、新国立、哈佛） 脑洞大、视角新，但严重水土不服。完全不懂国内青年真实困境，聊内卷、求",
+          "publishedAt": "2026-07-19T04:25:05.000Z"
+        },
+        {
+          "title": "Good bye！2025",
+          "link": "https://wowtang.top/post/goodbye2025/",
+          "description": "岁序更替，华章日新；凡是过往，皆为序章。愿今年所有的遗憾，都是明年惊喜的铺垫。2026，愿生活温暖顺遂，所求皆如愿，所行化坦途。",
+          "publishedAt": "2025-12-31T16:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://codevfun.work/",
+      "feedUrl": "https://codevfun.work/feed.xml",
+      "feedUrls": [
+        "https://codevfun.work/feed.xml"
+      ],
+      "items": [
+        {
+          "title": "Godot：微型游戏的目录别摊成一锅",
+          "link": "https://codevfun.work/writing/godot-project-folders",
+          "description": "scenes、actors、ui、audio 分开。uid 文件跟着资源走。十个文件时就要定规矩。",
+          "publishedAt": "2026-09-04T04:00:00.000Z"
+        },
+        {
+          "title": "Godot：导出 HTML5 塞进博客",
+          "link": "https://codevfun.work/writing/godot-export-html5",
+          "description": "Web 导出要开线程和 CORS 注意项。放进 Next 的 public 目录，用 iframe 包一层。",
+          "publishedAt": "2026-09-03T04:00:00.000Z"
+        },
+        {
+          "title": "Godot：做一局只有十秒的小游戏",
+          "link": "https://codevfun.work/writing/godot-ten-second-loop",
+          "description": "微型游戏的核心是一局规则。Timer 到点结算，比做开放世界先练手。",
+          "publishedAt": "2026-09-02T04:00:00.000Z"
+        },
+        {
+          "title": "Godot：ConfigFile 记下最高分",
+          "link": "https://codevfun.work/writing/godot-configfile-highscore",
+          "description": "user:// 才能写盘。JSON 能用，ConfigFile 更适合几个键值。别往 res:// 里 save。",
+          "publishedAt": "2026-09-01T04:00:00.000Z"
+        },
+        {
+          "title": "Godot：切关卡不要 pause 整个树硬切",
+          "link": "https://codevfun.work/writing/godot-change-scene",
+          "description": "change_scene_to_file 足够微型游戏。门口用 Area2D，目标场景做成导出路径。",
+          "publishedAt": "2026-08-31T04:00:00.000Z"
+        },
+        {
+          "title": "Godot：音效别直接拖进脚本路径",
+          "link": "https://codevfun.work/writing/godot-audio-stream-player",
+          "description": "AudioStreamPlayer 当节点，stream 用导出。同时两声用 Autoload 或再实例化一个播放器。",
+          "publishedAt": "2026-08-30T04:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://baiyangmu.xyz/",
+      "feedUrl": "https://baiyangmu.xyz/rss.xml",
+      "feedUrls": [
+        "https://baiyangmu.xyz/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "星舰全传：最大，还要最便宜",
+          "link": "https://baiyangmu.xyz/post/4",
+          "description": "人类最大的运载火箭，目标偏偏是最低的发射成本。不锈钢、甲烷、筷子回收，都是为这一件事服务的。",
+          "publishedAt": "2026-08-10T04:19:19.000Z"
+        },
+        {
+          "title": "旅行者2号“大爆炸”：213亿公里外的省电手术",
+          "link": "https://baiyangmu.xyz/post/8",
+          "description": "NASA一次性重组供电架构，省出近10瓦电力，让213亿公里外的旅行者2号至少再撑一年。每一瓦电都是科学寿命。",
+          "publishedAt": "2026-07-24T13:08:00.000Z"
+        },
+        {
+          "title": "长十乙首飞：中国火箭第一次“自己飞回来”",
+          "link": "https://baiyangmu.xyz/post/7",
+          "description": "一二级分离6分钟后，一子级在海上被一张“网”接住。全球首次海上网系回收，中国火箭从一次性走向可复用的起点。",
+          "publishedAt": "2026-07-12T12:15:00.000Z"
+        },
+        {
+          "title": "千帆星座：中国版星链的组网速度战",
+          "link": "https://baiyangmu.xyz/post/6",
+          "description": "6月两连发都在给同一张网铺卫星。对标星链的千帆星座进入组网提速期，低轨圈地，不快不行。",
+          "publishedAt": "2026-06-26T13:33:00.000Z"
+        },
+        {
+          "title": "力箭一号第14发：商业火箭的“航班化”时代",
+          "link": "https://baiyangmu.xyz/post/5",
+          "description": "遥十四一箭8星入轨，力箭系列累计105星。真正值得注意的是背后的“航班化”模式：固定发射场、标准化流程、高频排班，发射正变得像订机票。",
+          "publishedAt": "2026-06-18T12:47:00.000Z"
+        },
+        {
+          "title": "从空白服务器到星空驿站",
+          "link": "https://baiyangmu.xyz/post/1",
+          "description": "为什么自己搭网站，以及这个站是怎么搭起来的：Flask、SQLite、一台服务器，和一片纯黑的星空。",
+          "publishedAt": "2026-05-11T09:10:14.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.xeiu.top/",
+      "feedUrl": "https://blog.xeiu.top/feed",
+      "feedUrls": [
+        "https://blog.xeiu.top/feed"
+      ],
+      "items": [
+        {
+          "title": "记录维修一辆手动挡125摩托的过程",
+          "link": "https://blog.xeiu.top/archives/846",
+          "description": "前言 某天突发奇想想弄辆手动挡125摩托骑一下，于是想到我爸那辆吃灰很久的那辆125摩托。 我对这辆摩托的记忆 […]",
+          "publishedAt": "2026-08-17T06:35:32.000Z"
+        },
+        {
+          "title": "当我站在人生的某个十字路口上–对过去的总结与对未来的思考",
+          "link": "https://blog.xeiu.top/archives/837",
+          "description": "前言 我也不知道该如何确定本文的文体，反正就是我人生中的一个阶段性的小总结，带一点对未来的思考。 均以博主本人 […]",
+          "publishedAt": "2026-08-17T05:46:28.000Z"
+        },
+        {
+          "title": "2026上半年总结",
+          "link": "https://blog.xeiu.top/archives/832",
+          "description": "线下面基 总共面了五人，三人在广州面的，俩人在惠州面的。 分别是：RuiFeng、BakaBing、SALTW […]",
+          "publishedAt": "2026-07-04T17:12:56.000Z"
+        },
+        {
+          "title": "惠州游记·二",
+          "link": "https://blog.xeiu.top/archives/825",
+          "description": "接上文，上文可以到 惠州游记·一 查看。 本篇应该是惠州西湖专题。 本文图片过多，初次加载或许很慢。 惠州西湖 […]",
+          "publishedAt": "2026-06-25T13:26:40.000Z"
+        },
+        {
+          "title": "惠州游记·一",
+          "link": "https://blog.xeiu.top/archives/603",
+          "description": "偶然乘兴便逛了下惠州西湖以及水东街，但水东街并未仔细的逛，因此也没留下很多照片。 本文按照浏览顺序来描述所到达 […]",
+          "publishedAt": "2026-06-16T14:14:25.000Z"
+        },
+        {
+          "title": "[DN42] DN42上geoip的搭建过程",
+          "link": "https://blog.xeiu.top/archives/524",
+          "description": "Github仓库地址：Xe-iu/dn42-geoip — Github 起因 偶然乘兴，在群聊内 […]",
+          "publishedAt": "2025-08-23T14:52:43.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.8765777.xyz/",
+      "feedUrl": "https://blog.8765777.xyz/rss.xml",
+      "feedUrls": [
+        "https://blog.8765777.xyz/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "最近在筹备大事，水篇说说awa",
+          "link": "https://blog.8765777.xyz/talks/talk_edweex83wrpe/",
+          "description": "最近在筹备大事，水篇说说awa",
+          "publishedAt": "2026-08-21T20:26:00.000Z"
+        },
+        {
+          "title": "沃雅妮莎！",
+          "link": "https://blog.8765777.xyz/posts/post-20260816-sybika/",
+          "description": "ovo",
+          "publishedAt": "2026-08-16T00:00:00.000Z"
+        },
+        {
+          "title": "至冬",
+          "link": "https://blog.8765777.xyz/talks/talk_sszhfdnz2lp3/",
+          "description": "至冬",
+          "publishedAt": "2026-08-12T05:17:00.000Z"
+        },
+        {
+          "title": "可以临摹万字的书法学习软件",
+          "link": "https://blog.8765777.xyz/posts/post-20260812-81yfte/",
+          "description": "绝对不是为了写小情书才做的！！！",
+          "publishedAt": "2026-08-12T00:00:00.000Z"
+        },
+        {
+          "title": "原神马上要更新至冬冬辣",
+          "link": "https://blog.8765777.xyz/talks/talk_sszhfdnz2lp4/",
+          "description": "原神马上要更新至冬冬辣",
+          "publishedAt": "2026-08-10T23:17:00.000Z"
+        },
+        {
+          "title": "准备这几天写个RSS朋友圈页面",
+          "link": "https://blog.8765777.xyz/talks/talk_y4upwbg9hstl/",
+          "description": "准备这几天写个RSS朋友圈页面",
+          "publishedAt": "2026-08-10T15:47:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://whitebear.im/",
+      "feedUrl": "https://whitebear.im/feed/",
+      "feedUrls": [
+        "https://whitebear.im/feed/"
+      ],
+      "items": [
+        {
+          "title": "近期小记",
+          "link": "https://whitebear.im/archives/27/",
+          "description": "好久没更新文章了，也不是懒（就是懒，划掉），说说近期日常吧。",
+          "publishedAt": "2026-07-30T13:56:00.000Z"
+        },
+        {
+          "title": "BlogsClub 二周年啦~",
+          "link": "https://whitebear.im/archives/25/",
+          "description": "很快，感觉眨眨眼的功夫，BlogsClub就从一岁的‌蹒跚学步成长为两岁的‌牙牙学语（hhh",
+          "publishedAt": "2026-05-01T13:01:00.000Z"
+        },
+        {
+          "title": "2025年末总结",
+          "link": "https://whitebear.im/archives/22/",
+          "description": "这是我第一次写年末总结，不是最后一次！回想上一次发文章已是十月份的事情了。时间过得很快，感觉眨眨眼的功夫就过完了一年四季。",
+          "publishedAt": "2025-12-17T13:56:00.000Z"
+        },
+        {
+          "title": "近况",
+          "link": "https://whitebear.im/archives/21/",
+          "description": "标题改了无数次，最后还是以“近况为题”吧",
+          "publishedAt": "2025-10-05T14:08:00.000Z"
+        },
+        {
+          "title": "写在建立BlogsClub博客俱乐部一周年之际",
+          "link": "https://whitebear.im/archives/20/",
+          "description": "虽然从BlogsClub建立到现在，其实已经过了一周年，现在只是补上而已233熟悉我的人都知道，代码是我的爱好，从维护Typecho主题到建立博客俱乐部，都是因为爱好，爱好所产生的动力是巨大的，...",
+          "publishedAt": "2025-09-08T13:33:02.000Z"
+        },
+        {
+          "title": "Typecho整合Memos打造哔哔空间",
+          "link": "https://whitebear.im/archives/15/",
+          "description": "前些天简单整合Memos形成了自己的哔哔空间，有些朋友说能不能分享一下，正好今天有空，就水一篇文章好了",
+          "publishedAt": "2025-05-13T06:40:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.0c0.ren/",
+      "feedUrl": "https://blog.0c0.ren/feed/",
+      "feedUrls": [
+        "https://blog.0c0.ren/feed/"
+      ],
+      "items": [
+        {
+          "title": "UnifiedCard - Typecho 1.3.0 链接卡片插件",
+          "link": "https://blog.0c0.ren/archives/11/",
+          "description": "虽然 Typecho 本来就有很多在正文插入链接就可以显示卡片的插件，但是大部分都在 Typecho 1.3.0 下或多或少地出现了一些奇奇怪怪的 bug，同时也没有对主播想要的网站进行支持",
+          "publishedAt": "2026-08-20T06:13:00.000Z"
+        },
+        {
+          "title": "不懂就问，这个游戏是按键拍的最响就算赢吗",
+          "link": "https://blog.0c0.ren/archives/8/",
+          "description": "再拆机就给你挂到本地引诱群里第一次写舞萌相关的日常，感觉有点水水的，质量好低，不知道有没有用的说感冒终于算是好一点点了，起码头不晕了，也算是恢复到了平时的状态 😭",
+          "publishedAt": "2026-08-16T08:29:00.000Z"
+        },
+        {
+          "title": "上学坏 😡😭",
+          "link": "https://blog.0c0.ren/archives/6/",
+          "description": "太不妙了，旅游回来，感觉没过几天就得上学了 😭本来计划趁这段时间去多玩玩舞萌的，舞萌吃太可怕了。",
+          "publishedAt": "2026-08-14T12:12:00.000Z"
+        },
+        {
+          "title": "使用 AList 和中国移动云盘打造便宜大碗云盘",
+          "link": "https://blog.0c0.ren/archives/4/",
+          "description": "睿站大会员价格好贵，但国内云盘的价格太逆天了，要么存储空间小，要么还限速 😡家庭版 Microsoft 365 价格确实还可以接受，但是国内访问不稳定，还要开梯子绝望之时，发现原本无恶不作的中国...",
+          "publishedAt": "2026-08-13T14:31:00.000Z"
+        },
+        {
+          "title": "建站第一天",
+          "link": "https://blog.0c0.ren/archives/3/",
+          "description": "其实我还没想好这个 blog 该写点什么，其实在很久的以前已经建过 blog 了，但总是因为没钱或者懒得更新，到最后直接似掉 😭",
+          "publishedAt": "2026-08-12T16:10:00.000Z"
+        },
+        {
+          "title": "欢迎使用 Typecho",
+          "link": "https://blog.0c0.ren/archives/1/",
+          "description": "如果您看到这篇文章,表示您的 blog 已经安装成功.",
+          "publishedAt": "2026-08-12T15:20:44.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.weasel6.cn/",
+      "feedUrl": "https://blog.weasel6.cn/rss.xml",
+      "feedUrls": [
+        "https://blog.weasel6.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "《斩神之凡尘神域Ⅱ》观后感",
+          "link": "https://blog.weasel6.cn/posts/cartoon-zhanshen2/",
+          "description": "制作在线，剧情注水，前半季耍帅凹造型，后半程才找回第一季的味道",
+          "publishedAt": "2026-08-25T10:36:00.000Z"
+        },
+        {
+          "title": "游玩日记·第二期",
+          "link": "https://blog.weasel6.cn/posts/life-second/",
+          "description": "记录近期日常：广州返程被导航坑到错过城际、游戏抽卡欧气爆棚、七夕与老婆吃烧烤",
+          "publishedAt": "2026-08-19T11:16:00.000Z"
+        },
+        {
+          "title": "旧貌换新颜：近期博客的装修汇总",
+          "link": "https://blog.weasel6.cn/posts/blog-decoration/",
+          "description": "重新给博客装修了一番，现在总体比较喜欢",
+          "publishedAt": "2026-08-15T10:34:00.000Z"
+        },
+        {
+          "title": "来自BlogsClub的惊喜：“穿梭”与“拾光”主题鼠标垫开箱",
+          "link": "https://blog.weasel6.cn/posts/blogsclub-monthly-picks/",
+          "description": "非常感谢BlogsClub送来的礼物",
+          "publishedAt": "2026-08-11T12:55:00.000Z"
+        },
+        {
+          "title": "从2007到2026，QQ拼音陪伴我的19年",
+          "link": "https://blog.weasel6.cn/posts/qqpinyin/",
+          "description": "回忆起从智能ABC、搜狗到QQ拼音的经历，因QQ等级加速而结缘，一用便是19年。虽已小众，却承载着从年少游戏到成家立业的时光。",
+          "publishedAt": "2026-08-06T17:06:00.000Z"
+        },
+        {
+          "title": "游玩日记·第一期",
+          "link": "https://blog.weasel6.cn/posts/life-first/",
+          "description": "这两天难得没工作，出门转悠转悠放松一下",
+          "publishedAt": "2026-07-29T13:03:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://blog.yujiay.wang/",
+      "feedUrl": "https://blog.yujiay.wang/atom.xml",
+      "feedUrls": [
+        "https://blog.yujiay.wang/atom.xml"
+      ],
+      "items": [
+        {
+          "title": "《Hello C++》4.8 数组的替代品",
+          "link": "https://blog.yujiay.wang/bookHelloCpp/HelloCpp/4-8_ArrayAlternatives/",
+          "description": "本文介绍 C++ 中常见的数组替代品 std::vector 与 std::array，并与传统数组进行比较，帮助读者理解它们在大小管理、使用方式和适用场景上的差异。",
+          "publishedAt": "2026-08-20T09:18:00.000Z"
+        },
+        {
+          "title": "《Hello C++》4.7 指针的更多用法",
+          "link": "https://blog.yujiay.wang/bookHelloCpp/HelloCpp/4-7_PointerMore/",
+          "description": "本文继续讲解 C++ 指针的进阶用法，介绍指针运算、指针与字符串、使用 new 创建动态结构，以及自动存储、静态存储和动态存储的区别，帮助读者更深入理解指针和内存管理。",
+          "publishedAt": "2026-08-20T05:53:00.000Z"
+        },
+        {
+          "title": "《Hello C++》4.6 指针",
+          "link": "https://blog.yujiay.wang/bookHelloCpp/HelloCpp/4-6_Pointer/",
+          "description": "本文讲解 C++ 指针的基本概念、声明与初始化方式、指针的常见风险，以及指针与数字、new 与 delete、动态数组等核心内容，帮助读者理解指针在内存管理中的作用。",
+          "publishedAt": "2026-08-09T11:13:00.000Z"
+        },
+        {
+          "title": "《Hello C++》4.5 枚举",
+          "link": "https://blog.yujiay.wang/bookHelloCpp/HelloCpp/4-5_Enum/",
+          "description": "本文介绍 C++ 枚举类型的基本概念、定义方式和使用场景，讲解传统枚举与 enum class 的区别，并通过状态值、星期与方向等示例帮助读者理解枚举在程序中表达有限集合数据的优势。",
+          "publishedAt": "2026-08-09T11:08:00.000Z"
+        },
+        {
+          "title": "Hexo安知鱼主题开启AI摘要",
+          "link": "https://blog.yujiay.wang/tech/techPractice/AISummary/",
+          "description": "本教程详细介绍如何为你的安知鱼博客添加AI摘要功能。利用hexo-ai-summary-liushen插件，在安知鱼主题中替代洪墨AI，通过OpenAI、DeepSeek等低价或免费AI接口实现文章摘要自动生成。包含完整配置步骤、参数说明、备份重要性和例外处理方案，帮助博客主优化SEO并节省成本。",
+          "publishedAt": "2026-02-14T12:05:30.000Z"
+        },
+        {
+          "title": "爆火的背后OpenClaw真的适合你吗？",
+          "link": "https://blog.yujiay.wang/osp/OpenClaw/",
+          "description": "本文深度解析OpenClaw从Clawd到现象级项目的演变、其“感知-思考-行动”的自主循环能力，并揭示其背后触目惊心的提示词注入、隐私泄露与生态系统安全风险，探讨便利性与控制权的终极权衡。",
+          "publishedAt": "2026-02-01T09:53:00.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://www.nanzhiy.cn/",
+      "feedUrl": "https://www.nanzhiy.cn/rss.xml",
+      "feedUrls": [
+        "https://www.nanzhiy.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "Halo 官方 MCP 插件上手体验",
+          "link": "https://www.nanzhiy.cn/archives/halo-mcp-plugin-tiyan",
+          "description": "Halo 官方发布 MCP Server 插件，让 AI 可以直接管理博客。作者第一时间上手：控制台创建访问密钥，可按工具勾选权限、设置有效期和 IP 白名单；把插件链接和密钥交给 WorkBuddy 自动配置，点一下信任即接通。文章、独立页、分类、标签、评论的读写与审核都能靠对话完成，权限比 CLI 细且控制台留有调用记录。相比 Halo CLI 这条外部工具链，插件是站上的原生接口，日常管理更省心。插件目前仍是 beta，但主干功能稳定，本文即由 AI 出大纲、作者再优化而成。",
+          "publishedAt": "2026-08-25T12:35:17.000Z"
+        },
+        {
+          "title": "将服务器交给AI：WorkBuddy 接入宝塔面板 MCP 实战指南",
+          "link": "https://www.nanzhiy.cn/archives/NVObtSwG",
+          "description": "宝塔面板13.0.0版本新增MCP服务，将面板运维能力通过MCP协议开放给外部AI Agent调用。MCP（Model Context Protocol）是Anthropic开源的标准协议，首批提供31项工具覆盖网站、数据库、系统等7类操作。接入后，AI可直接调用宝塔API执行查日志、看资源、配网站等任务，无需手动登录面板操作。配置需满足面板稳定版12.0或正式版13.0、Python 3.13环境，并放行8765端口设置IP白名单。支持在WorkBuddy等外部Agent中接入，也可与面板内置AI助手并行使用，实现自然语言驱动的运维操作。",
+          "publishedAt": "2026-08-14T04:22:37.000Z"
+        },
+        {
+          "title": "Ethereal 主题近期更新一览：v1.0.1 到 v1.0.6",
+          "link": "https://www.nanzhiy.cn/archives/HsCzmprw",
+          "description": "本文系统梳理了 Halo 主题 Ethereal 近期版本（v1.0.1至v1.0.6）的更新日志。重点介绍了从 v1.0.3 开始的核心功能增强与体验优化：重构了朋友圈页面，采用时间轴布局并优化了信息展示逻辑；全新设计了带有动画角色交互的登录认证界面；新增了公告小组件、文章打赏与分享海报、以及友情链接自助提交功能。同时，各版本也进行了统一UI样式、优化动画交互、修复安全漏洞等多项改进，提升了主题的整体美观度与易用性。",
+          "publishedAt": "2026-08-03T05:44:47.000Z"
+        },
+        {
+          "title": "Ethereal主题，发布了",
+          "link": "https://www.nanzhiy.cn/archives/NrAe6wDy",
+          "description": "本文回顾了 Halo 主题 Ethereal 的诞生历程。作者因在 Halo 生态中难以寻觅心仪界面，受 Fuwari 审美启发，基于移植版尝试开发。为突破功能局限，参考 Firefly 引入三栏布局及天气、统计等灵活小组件，并优化 Banner、友链申请等细节。经过多次迭代，最终形成功能丰富且视觉空灵的 Ethereal 主题，目前已上架 Halo 应用商店。该主题旨在满足用户对美观与实用性的双重需求，为选择 Fuwari 风格的 Halo 用户提供了高质量替代方案。",
+          "publishedAt": "2026-07-22T11:58:11.000Z"
+        },
+        {
+          "title": "热了这么多天，今早终于凉快了",
+          "link": "https://www.nanzhiy.cn/archives/icc1xs2x",
+          "description": "经历连续一周多的酷热高温，气温曾高达39至40度，令人难以忍受。昨日虽预报降雨却未兑现，今晨起床却发现雨水已至。地面湿润积水，树叶挂满水珠显得生机勃勃。最显著的变化是风向转凉，清晨推门即感清凉，与之前的热浪扑面截然不同。当前气温降至33度，虽仍偏高，但相比前几日犹如换季，舒适度大幅提升。尽管气象部门预告数日后气温将回升至37度以上，作者主张把握当下，先享受这份难得的凉爽惬意。",
+          "publishedAt": "2026-07-17T01:30:00.000Z"
+        },
+        {
+          "title": "微PE工具箱：一款纯净、精悍的装机维护利器",
+          "link": "https://www.nanzhiy.cn/archives/gCnOu252",
+          "description": "微PE工具箱凭借无广告、无捆绑及工具实用的特点，成为系统维护的首选工具。本文指导用户通过官网下载V2.3版本（适配主流新电脑），并使用8GB以上U盘制作启动盘，安装过程需确认盘符以免误删数据。针对正常开机状态，可通过系统设置中的高级启动引导进入；若系统崩溃无法开机，则需在BIOS启动菜单中按F12等快捷键选择U盘启动。该方案无需复杂配置，默认选项即可满足需求，为用户提供稳定、纯净且高效的系统安装与应急修复环境。",
+          "publishedAt": "2026-07-16T07:53:07.000Z"
+        }
+      ]
+    },
+    {
+      "friendUrl": "https://notes.iamcrl.cn/",
+      "feedUrl": "https://notes.iamcrl.cn/rss.xml",
+      "feedUrls": [
+        "https://notes.iamcrl.cn/rss.xml"
+      ],
+      "items": [
+        {
+          "title": "【公告】站点大更新！",
+          "link": "https://notes.iamcrl.cn/posts/new-blog/",
+          "description": "来不及解释了！",
+          "publishedAt": "2026-08-24T00:00:00.000Z"
+        },
+        {
+          "title": "【原创】要开学了，怎么才能保住火花？",
+          "link": "https://notes.iamcrl.cn/posts/how-to-keep-streak-before-school/",
+          "description": "在GitHub上找到了一个自动续火花的项目",
+          "publishedAt": "2026-08-18T00:00:00.000Z"
+        },
+        {
+          "title": "【原创】我的高二生活",
+          "link": "https://notes.iamcrl.cn/posts/my-second-year-of-high-school/",
+          "description": "今天是2026年8月11日，距离开学已不到一个月。最近偶然间阅读了[路明笔记](https://www.luming.cool/ \"路明笔记\")的文章，忽然也想记录、回顾一下我的高二。讲真的，高二这一年过得很快，记忆中很多事好像是刚刚发生一样。 ### 参观高一新生军训 高一开学时我们是没有操场用的，去年，也就是高二上学期开学，学校终于启用了新操场和新食堂。我们很想去看看梦寐以求的操场，可由于高一军训，操场暂时不对我们开放，我们的体育课也只能和以前没有操场的时候一样的架空层上。2025年9月5日的一节体育课，我们乘着自由活动的时候悄悄潜伏到操场的楼梯那想瞄一眼新操场顺便看看高一的同学们受到了怎样的“磨难”，尽管我们再小心还是被教官发",
+          "publishedAt": "2026-08-12T00:00:00.000Z"
+        },
+        {
+          "title": "【投稿?】那些事",
+          "link": "https://notes.iamcrl.cn/posts/those-things/",
+          "description": "...",
+          "publishedAt": "2026-08-10T00:00:00.000Z"
+        },
+        {
+          "title": "【原创】终于把平板修好了！",
+          "link": "https://notes.iamcrl.cn/posts/finally-fixed-the-ipad/",
+          "description": "闲着没事把iPad mini 1这个老古董修好了",
+          "publishedAt": "2026-07-30T00:00:00.000Z"
+        },
+        {
+          "title": "【原创】关于AI的一些思考",
+          "link": "https://notes.iamcrl.cn/posts/thoughts-on-ai/",
+          "description": "AI...对我们而言是怎么样的呢",
+          "publishedAt": "2026-07-21T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
