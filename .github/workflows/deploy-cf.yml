@@ -28,6 +28,4 @@ jobs:
 
       - name: Build site
         run: pnpm run build
-
-      - name: Copy admin panel to dist
-        run: cp -r admin dist/admin
+
