@@ -1,5 +1,6 @@
 ---
 export const prerender = true;
+import AdminApp from "../../components/admin/AdminApp.svelte";
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -23,6 +24,6 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)}textarea{min-
 </head>
 <body>
 <div id="app"></div>
-<script type="module" src="/admin/AdminApp.svelte.js"></script>
+<AdminApp client:load />
 </body>
 </html>
