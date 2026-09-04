@@ -4,6 +4,7 @@ import * as path from "node:path";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import DisplaySettings from "@/components/controls/DisplaySettingsIntegrated.svelte";
+import AdminPanel from "@/components/admin/AdminPanel.svelte";
 import FontSwitch from "@/components/controls/FontSwitch.svelte";
 import LightDarkSwitch from "@/components/controls/LightDarkSwitch.svelte";
 import Search from "@/components/controls/Search.svelte";
@@ -177,6 +178,7 @@ if (isLocalSrcLogo) {
                         </button>
                 )}
                 {/* @ts-ignore */}
+                <button aria-label="Admin Panel" class="theme-btn btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="admin-panel-switch"><Icon is:inline name="fa7-solid:gear" class="text-[1.25rem]"></Icon></button>
                 <LightDarkSwitch client:load></LightDarkSwitch>
                 <button aria-label="Menu" aria-controls="nav-menu-panel" aria-expanded="false" name="Nav Menu" class="menu-btn btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90" id="nav-menu-switch">
                     <span></span>
@@ -191,6 +193,7 @@ if (isLocalSrcLogo) {
             </div>
         )}
         <DisplaySettings client:load></DisplaySettings>
+        <AdminPanel />
     </div>
     <!-- Keep the drawer outside the glass shell: backdrop-filter creates a
          containing block for fixed descendants on mobile. -->
@@ -301,9 +304,8 @@ function loadButtonScript() {
     }
 
     document.addEventListener("click", function(event) {
-        const panels = ["display-setting", "nav-menu-panel", "music-nav-panel", "theme-mode-panel"];
-        const buttons = ["display-settings-switch", "nav-menu-switch", "music-player-switch", "scheme-switch"];
-
+        const panels = ["display-setting", "nav-menu-panel", "music-nav-panel", "theme-mode-panel", "admin-panel-overlay"];
+        const buttons = ["display-settings-switch", "nav-menu-switch", "music-player-switch", "scheme-switch", "admin-panel-switch"];
         panels.forEach((id, index) => {
             const panel = document.getElementById(id);
             const button = document.getElementById(buttons[index]);

@@ -78,7 +78,7 @@ export const friendsProjects: FriendLink[] = [
 // 友链配置
 export const friendsConfig: FriendLink[] = [
 	{
-		title: "朝朝听雨",
+		title: "DWan博客",
 		imgurl: "https://rainzt.cn/zzty.png",
 		desc: "物物而不物于物，念念而不念于念",
 		siteurl: "https://rainzt.cn/",

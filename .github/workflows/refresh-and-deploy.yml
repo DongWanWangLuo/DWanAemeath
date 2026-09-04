@@ -66,9 +66,6 @@ jobs:
           FRIENDS_FEED_WRITE_SNAPSHOT: "1"
         run: pnpm build
 
-      # 将 admin 管理后台目录复制到构建输出，使其可通过站点 URL 访问
-      - name: Copy admin panel to dist
-        run: cp -r admin dist/admin
 
       - name: Save refreshed RSS snapshot
         run: |

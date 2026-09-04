@@ -1,0 +1,45 @@
+---
+// Admin login page
+import AdminPanel from '@/components/admin/AdminPanel.svelte';
+
+let password = '';
+let error = '';
+
+function handleLogin() {
+  const stored = localStorage.getItem('dw_admin_password');
+  if (!stored) {
+    const hash = btoa(password);
+    localStorage.setItem('dw_admin_password', hash);
+    sessionStorage.setItem('dw_admin_session', '1');
+    window.location.href = '/';
+  } else if (btoa(password) === stored) {
+    sessionStorage.setItem('dw_admin_session', '1');
+    window.location.href = '/';
+  } else {
+    error = '密码错误';
+  }
+}
+---
+
+<div class="login-page">
+  <div class="login-box">
+    <h1>DWan博客 - 后台管理</h1>
+    <p class="subtitle">请输入密码以访问管理面板</p>
+    <input type="password" placeholder="密码" bind:value={password} on:keydown={|e| if (e.key === 'Enter') handleLogin()} />
+    {#if error}<p class="error">{error}</p>{/if}
+    <button on:click={handleLogin}>登录</button>
+    <p class="hint">首次使用请设置密码</p>
+  </div>
+  <AdminPanel />
+</div>
+
+<style>
+  .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg, #f8fafc); }
+  .login-box { background: var(--card-bg, #fff); border-radius: 16px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.1); width: 360px; text-align: center; }
+  .login-box h1 { margin: 0 0 8px; font-size: 1.5rem; }
+  .subtitle { color: var(--text-secondary, #6b7280); margin: 0 0 24px; font-size: 0.9rem; }
+  input { width: 100%; padding: 12px 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; margin-bottom: 12px; font-size: 1rem; background: var(--input-bg, #f9fafb); color: var(--text-main); }
+  button { width: 100%; padding: 12px; background: var(--primary, #6366f1); color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; }
+  .error { color: #dc2626; font-size: 0.85rem; margin-bottom: 12px; }
+  .hint { color: var(--text-muted, #9ca3af); font-size: 0.8rem; margin-top: 16px; }
+</style>
