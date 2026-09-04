@@ -48,7 +48,7 @@ form.addEventListener("submit",async e=>{
   const u=document.getElementById("u").value.trim(),p=document.getElementById("p").value,t=document.getElementById("t").value.trim();
   errEl.style.display="none";btn.disabled=true;btn.textContent="Verifying...";
   if(u!==U||p!==P){errEl.textContent="Invalid credentials";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}
-  if(t){try{const r=await fetch("https://api.github.com/user",{headers:{Authorization:Bearer }});if(!r.ok)throw 0;localStorage.setItem("tk",t)}catch{errEl.textContent="GitHub Token invalid";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}}
+  if(t){try{const r=await fetch("https://api.github.com/user",{headers:{Authorization:"Bearer "+t}});if(!r.ok)throw 0;localStorage.setItem("tk",t)}catch{errEl.textContent="GitHub Token invalid";errEl.style.display="block";btn.disabled=false;btn.textContent="Login";return}}
   localStorage.setItem("s","1");location.href="/admin/";
 });
 </script>
