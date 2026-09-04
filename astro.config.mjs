@@ -117,7 +117,7 @@ export default defineConfig({
 			ignore: (targetUrl) => {
 				const targetPath = targetUrl.split(/[?#]/)[0] || "/";
 				const currentPath = window.location.pathname;
-				return targetPath === "/portfolio/" || currentPath === "/portfolio/";
+				return targetPath.startsWith("/admin/") || currentPath.startsWith("/admin/") || targetPath === "/portfolio/" || currentPath === "/portfolio/";
 			},
 			updateHead: true,
 			updateBodyClass: false,
