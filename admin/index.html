@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -153,14 +153,11 @@
   ]
 }
   </script>
-  <script type="module">
-    import('https://cdn.jsdelivr.net/npm/decap-cms-app@^3.0.0/dist/decap-cms-app.js').then(({ default: CMS }) => {
-      const configEl = document.getElementById('decap-cms-config');
-      CMS.init({ config: JSON.parse(configEl.textContent) });
-      document.getElementById('loading').style.display = 'none';
-    }).catch(err => {
-      document.getElementById('loading').textContent = '加载失败，请刷新重试。' + err.message;
-    });
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    var configEl = document.getElementById('decap-cms-config');
+    CMS.init({ config: JSON.parse(configEl.textContent) });
+    document.getElementById('loading').style.display = 'none';
   </script>
 </body>
 </html>
