@@ -1,376 +1,127 @@
-backend:
+﻿backend:
   name: github
   repo: DongWanWangLuo/DWanAemeath
   branch: main
-  open_authoring: false
+  auth_type: pkce
+  app_id: "Iv23LiHuTbSQ7vUgQ5Xm"
 
-site_url: https://www.dwancc.cn
-display_url: https://www.dwancc.cn
-logo_url: https://www.dwancc.cn/favicon.ico
-
-# 媒体文件夹配置 - 使用现有图片目录
-media_folder: "public/assets/images"
-public_folder: "/assets/images"
-
-editor:
-  preview: true
-  preview_style: css
-  tools:
-    - name: markdown-wysiwyg
-      display: "Markdown (WYSIWYG)"
-    - name: markdown
-      display: "Markdown (Raw)"
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
-  # ========== 内容管理 ==========
-
-  # 博客文章
+  # ===== 文章管理 =====
   - name: "posts"
     label: "文章"
     folder: "src/content/posts"
     create: true
     slug: "{{slug}}"
-    summary: "{{year}}-{{month}}-{{day}} - {{title}}"
+    identifier_field: "title"
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "摘要", name: "summary", widget: "string", required: false}
-      - {label: "分类", name: "category", widget: "string", required: false, hint: "如：博客改造、随笔、前端动画"}
-      - label: "标签"
-        name: "tags"
-        widget: "list"
-        required: false
-        allow_add: true
-        allow_delete: true
-        compact: true
-        default: []
-        field: {label: "标签", name: "tag", widget: "string"}
-      - {label: "封面图", name: "coverImage", widget: "image", required: false}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "状态", name: "draft", widget: "boolean", default: false}
-      - {label: "是否置顶", name: "sticky", widget: "boolean", default: false}
-      - {label: "阅读时间(分钟)", name: "readingTime", widget: "number", required: false}
-      - {label: "内容", name: "body", widget: "markdown", minimal: true}
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "published", widget: "datetime" }
+      - { label: "最后更新时间", name: "updated", widget: "datetime", required: false }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "AI 摘要", name: "aiSummary", widget: "text", required: false }
+      - { label: "封面图", name: "image", widget: "image", required: false }
+      - { label: "标签", name: "tags", widget: "list", required: false }
+      - { label: "分类", name: "category", widget: "string", required: false }
+      - { label: "草稿状态", name: "draft", widget: "boolean", default: false }
+      - { label: "置顶", name: "pinned", widget: "boolean", default: false }
+      - { label: "正文", name: "body", widget: "markdown" }
 
-  # 作品展示序列
-  - name: "showcases"
-    label: "作品展示"
-    folder: "src/content/showcases"
-    create: true
-    slug: "{{slug}}"
+  # ===== 站点基础配置 =====
+  - name: "siteConfig"
+    label: "站点基础配置"
+    file: "src/config/siteConfig.ts"
+    editor: { preview: false }
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "缩略图", name: "thumbnail", widget: "image", required: false}
-- {label: "总滚动高度(VH)", name: "scrollHeight", widget: "number", default: 600}
-      - label: "分镜配置"
-        name: "panels"
-        widget: "list"
-        summary: "{{id}} - {{type}}"
-        fields:
-          - {label: "分镜ID", name: "id", widget: "string"}
-          - label: "类型"
-            name: "type"
-            widget: "select"
-            options: ["image", "video", "text", "mixed", "shutter"]
-            default: "image"
-          - label: "媒体文件"
-            name: "media"
-            widget: "object"
-            required: false
-            fields:
-              - {label: "图片", name: "image", widget: "image", required: false}
-              - {label: "视频URL", name: "video", widget: "string", required: false}
-              - {label: "标题", name: "title", widget: "string", required: false}
-              - {label: "描述", name: "description", widget: "string", required: false}
-          - {label: "持续时间比例", name: "duration", widget: "number", default: 0.2, min: 0.01, max: 1, step: 0.01}
-          - label: "转场效果"
-            name: "effect"
-            widget: "select"
-            options: ["fade", "slide", "zoom", "shutter"]
-            default: "fade"
+      - { label: "站点标题", name: "title", widget: "string" }
+      - { label: "站点副标题", name: "subtitle", widget: "string" }
+      - { label: "站点 URL", name: "site_url", widget: "string" }
+      - { label: "站点描述", name: "description", widget: "text" }
+      - { label: "主题色色相 (0-360)", name: "themeColor.hue", widget: "number" }
+      - { label: "页面宽度 (rem)", name: "pageWidth", widget: "number" }
+      - { label: "关键词列表", name: "keywords", widget: "list" }
 
-  # 朋友圈动态
-  - name: "moments"
-    label: "朋友圈"
-    folder: "src/content/moments"
-    create: true
-    slug: "{{slug}}"
+  # ===== 壁纸配置 =====
+  - name: "backgroundWallpaper"
+    label: "壁纸配置"
+    file: "src/config/backgroundWallpaper.ts"
+    editor: { preview: false }
     fields:
-      - {label: "内容", name: "content", widget: "markdown"}
-      - label: "图片"
-        name: "images"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "图片", name: "url", widget: "image"}
-          - {label: "描述", name: "caption", widget: "string", required: false}
-      - {label: "发布时间", name: "date", widget: "datetime"}
-      - {label: "位置", name: "location", widget: "string", required: false}
-      - {label: "心情", name: "mood", widget: "string", required: false}
-      - {label: "状态", name: "draft", widget: "boolean", default: false}
+      - { label: "壁纸模式", name: "mode", widget: "select", options: ["banner", "fullscreen", "overlay", "none"] }
+      - { label: "首页横幅标题", name: "homeText.title", widget: "string" }
+      - { label: "横幅副标题列表", name: "homeText.subtitle", widget: "list" }
+      - { label: "打字机效果", name: "homeText.typewriter.enable", widget: "boolean" }
+      - { label: "背景音乐开关", name: "playerEnable", widget: "boolean" }
 
-  # ========== 站点设置 ==========
-  - name: "settings"
-    label: "站点设置"
-    files:
-      # 基础设置
-- file: "src/config/siteConfig.ts"
-        label: "基础信息"
-        name: "site"
-        fields:
-          - label: "站点信息"
-            name: "site"
-            widget: "object"
-            fields:
-              - {label: "站点标题", name: "title", widget: "string", default: "DWan博客"}
-              - {label: "站点描述", name: "description", widget: "string", default: "开发、写作与记录"}
-              - {label: "站点关键词", name: "keywords", widget: "list", default: ["博客", "技术", "Astro"]}
-              - {label: "作者", name: "author", widget: "string", default: "万优秀"}
-              - {label: "语言", name: "lang", widget: "string", default: "zh-CN"}
-              - {label: "时区", name: "timezone", widget: "string", default: "Asia/Shanghai"}
+  # ===== 个人资料配置 =====
+  - name: "profileConfig"
+    label: "个人资料"
+    file: "src/config/profileConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "姓名", name: "name", widget: "string" }
+      - { label: "英文名", name: "englishName", widget: "string" }
+      - { label: "头像", name: "avatar", widget: "image" }
+      - { label: "简介", name: "bio", widget: "text" }
+      - { label: "GitHub 链接", name: "links.github", widget: "string" }
+      - { label: "Bilibili 链接", name: "links.bilibili", widget: "string" }
+      - { label: "邮箱", name: "links.email", widget: "string" }
 
-          - label: "SEO设置"
-            name: "seo"
-            widget: "object"
-            fields:
-              - {label: "OG图片", name: "ogImage", widget: "image", required: false}
-              - {label: "Twitter卡片", name: "twitterCard", widget: "select", options: ["summary", "summary_large_image"], default: "summary_large_image"}
-              - {label: "robots.txt", name: "robotsContent", widget: "code", language: "text", default: "User-agent: *\nAllow: /"}
+  # ===== 导航栏配置 =====
+  - name: "navBarConfig"
+    label: "导航栏配置"
+    file: "src/config/navBarConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "导航栏标题", name: "title", widget: "string" }
+      - { label: "Logo 类型", name: "logo.type", widget: "select", options: ["image", "icon", "url"] }
+      - { label: "Logo 值", name: "logo.value", widget: "string" }
 
-          - label: "统计设置"
-            name: "analytics"
-            widget: "object"
-            fields:
-              - {label: "Google Analytics ID", name: "gtag", widget: "string", required: false}
-              - {label: "Baidu统计ID", name: "baidu", widget: "string", required: false}
-              - {label: "Umami ID", name: "umami", widget: "string", required: false}
+  # ===== 友链配置 =====
+  - name: "friendsConfig"
+    label: "友情链接"
+    file: "src/config/friendsConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "友链列表", name: "links", widget: "list", fields: [
+          { label: "标题", name: "title", widget: "string" },
+          { label: "描述", name: "desc", widget: "string" },
+          { label: "头像", name: "imgurl", widget: "image" },
+          { label: "链接", name: "siteurl", widget: "string" },
+          { label: "标签", name: "tags", widget: "list" }
+        ]}
 
-      # 个人资料
-      - file: "src/config/profileConfig.ts"
-        label: "个人资料"
-        name: "profile"
-        fields:
-          - {label: "显示名称", name: "name", widget: "string", default: "万优秀"}
-          - {label: "称呼", name: "nickname", widget: "string", default: "优秀"}
-          - {label: "简介", name: "bio", widget: "string", default: "Hello, I'm 万优秀."}
-- {label: "头像", name: "avatar", widget: "image"}
-          - {label: "格言", name: "quote", widget: "string", required: false}
-          - label: "社交链接"
-            name: "social"
-            widget: "object"
-            fields:
-              - {label: "GitHub", name: "github", widget: "string", required: false}
-              - {label: "Twitter", name: "twitter", widget: "string", required: false}
-              - {label: "邮箱", name: "email", widget: "string", required: false}
-              - {label: "QQ", name: "qq", widget: "string", required: false}
-              - {label: "微信", name: "wechat", widget: "string", required: false}
-              - {label: "Bilibili", name: "bilibili", widget: "string", required: false}
+  # ===== 音乐配置 =====
+  - name: "musicConfig"
+    label: "音乐播放器"
+    file: "src/config/musicConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "播放器开关", name: "enable", widget: "boolean" }
+      - { label: "歌曲列表", name: "playlist", widget: "list", fields: [
+          { label: "歌曲名", name: "title", widget: "string" },
+          { label: "歌手", name: "artist", widget: "string" },
+          { label: "歌词文件", name: "lrc", widget: "string" },
+          { label: "音频文件", name: "url", widget: "string" }
+        ]}
 
-      # 导航菜单
-      - file: "src/config/navBarConfig.ts"
-        label: "导航菜单"
-        name: "navbar"
-        fields:
-          - label: "菜单项"
-            name: "items"
-            widget: "list"
-            summary: "{{label}}"
-            fields:
-              - {label: "标签", name: "label", widget: "string"}
-              - {label: "链接", name: "link", widget: "string"}
-              - {label: "图标", name: "icon", widget: "string", required: false}
-              - {label: "是否新窗口", name: "blank", widget: "boolean", default: false}
-              - {label: "排序", name: "order", widget: "number", default: 0}
-              - label: "子菜单"
-                name: "children"
-                widget: "list"
-                required: false
-                fields:
-                  - {label: "标签", name: "label", widget: "string"}
-                  - {label: "链接", name: "link", widget: "string"}
+  # ===== 公告配置 =====
+  - name: "announcementConfig"
+    label: "首页公告"
+    file: "src/config/announcementConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "公告开关", name: "enable", widget: "boolean" }
+      - { label: "公告内容", name: "content", widget: "text" }
+      - { label: "背景图", name: "bgImage", widget: "image" }
 
-      # 侧边栏
-      - file: "src/config/sidebarConfig.ts"
-        label: "侧边栏"
-        name: "sidebar"
-        fields:
-          - label: "位置"
-            name: "position"
-            widget: "select"
-            options: ["left", "right", "both", "none"]
-            default: "right"
-          - label: "组件配置"
-            name: "widgets"
-widget: "list"
-            summary: "{{type}}"
-            fields:
-              - {label: "组件类型", name: "type", widget: "select", options: ["profile", "categories", "tags", "archive", "calendar", "stats", "music", "links", "announcement"]}
-              - {label: "标题", name: "title", widget: "string", required: false}
-              - {label: "显示数量", name: "limit", widget: "number", required: false}
-
-      # 音乐播放器
-      - file: "src/config/musicConfig.ts"
-        label: "音乐播放器"
-        name: "music"
-        fields:
-          - {label: "是否启用", name: "enabled", widget: "boolean", default: false}
-          - {label: "默认音量", name: "volume", widget: "number", default: 0.5}
-          - label: "歌单"
-            name: "songs"
-            widget: "list"
-            summary: "{{name}}"
-            fields:
-              - {label: "歌曲名", name: "name", widget: "string"}
-              - {label: "歌手", name: "artist", widget: "string", required: false}
-              - {label: "歌曲URL", name: "url", widget: "string"}
-              - {label: "封面图", name: "cover", widget: "image", required: false}
-
-      # 壁纸设置
-      - file: "src/config/backgroundWallpaper.ts"
-        label: "壁纸设置"
-        name: "wallpaper"
-        fields:
-          - label: "模式"
-            name: "mode"
-            widget: "select"
-            options: ["banner", "fullscreen", "transparent", "solid"]
-            default: "banner"
-          - label: "壁纸列表"
-            name: "wallpapers"
-            widget: "list"
-            summary: "{{title}}"
-            fields:
-              - {label: "图片URL", name: "url", widget: "string"}
-              - {label: "缩略图", name: "thumbnail", widget: "image", required: false}
-              - {label: "标题", name: "title", widget: "string", required: false}
-          - {label: "是否启用轮播", name: "enableCarousel", widget: "boolean", default: true}
-          - {label: "切换间隔(秒)", name: "carouselInterval", widget: "number", default: 5}
-
-      # 主题色设置
-- file: "src/config/index.ts"
-        label: "主题设置"
-        name: "theme"
-        fields:
-          - label: "主题色相"
-            name: "themeHue"
-            widget: "picker"
-            default: 250
-            fields:
-              - {label: "色相", name: "hue", widget: "range", min: 0, max: 360, step: 1}
-          - label: "亮色主题"
-            name: "light"
-            widget: "object"
-            fields:
-              - {label: "背景色", name: "background", widget: "color", format: "hex", default: "#ffffff"}
-              - {label: "文字色", name: "text", widget: "color", format: "hex", default: "#1a1a2e"}
-              - {label: "主色", name: "primary", widget: "color", format: "hex", default: "#6366f1"}
-              - {label: "辅色", name: "secondary", widget: "color", format: "hex", default: "#8b5cf6"}
-          - label: "暗色主题"
-            name: "dark"
-            widget: "object"
-            fields:
-              - {label: "背景色", name: "background", widget: "color", format: "hex", default: "#0f0f1a"}
-              - {label: "文字色", name: "text", widget: "color", format: "hex", default: "#e2e8f0"}
-              - {label: "主色", name: "primary", widget: "color", format: "hex", default: "#818cf8"}
-              - {label: "辅色", name: "secondary", widget: "color", format: "hex", default: "#a78bfa"}
-
-      # 字体设置
-      - file: "src/config/fontConfig.ts"
-        label: "字体设置"
-        name: "font"
-        fields:
-          - label: "正文字体"
-            name: "bodyFont"
-            widget: "select"
-            options:
-              - ["Noto Sans SC", "思源黑体"]
-              - ["Zen Maru Gothic", "圆体"]
-              - ["Inter", "Inter"]
-              - ["system-ui", "系统默认"]
-            default: "Zen Maru Gothic"
-          - label: "代码字体"
-            name: "codeFont"
-            widget: "select"
-            options:
-              - ["JetBrains Mono", "JetBrains Mono"]
-              - ["Fira Code", "Fira Code"]
-              - ["system-mono", "系统默认"]
-default: "JetBrains Mono"
-
-      # 特效设置
-      - file: "src/config/effectsConfig.ts"
-        label: "特效设置"
-        name: "effects"
-        fields:
-          - label: "樱花特效"
-            name: "sakura"
-            widget: "object"
-            fields:
-              - {label: "是否启用", name: "enabled", widget: "boolean", default: false}
-              - {label: "密度", name: "density", widget: "number", default: 30, min: 0, max: 100}
-              - {label: "速度", name: "speed", widget: "number", default: 1, min: 0.1, max: 5, step: 0.1}
-          - label: "粒子特效"
-            name: "particles"
-            widget: "object"
-            fields:
-              - {label: "是否启用", name: "enabled", widget: "boolean", default: false}
-              - {label: "数量", name: "count", widget: "number", default: 50}
-              - {label: "颜色", name: "color", widget: "color", format: "hex", default: "#6366f1"}
-          - label: "鼠标特效"
-            name: "mouse"
-            widget: "object"
-            fields:
-              - {label: "点击特效", name: "clickEffect", widget: "select", options: ["none", "heart", "star", "sparkle"], default: "none"}
-              - {label: "追踪特效", name: "trailEffect", widget: "boolean", default: false}
-
-      # 评论设置
-      - file: "src/config/commentConfig.ts"
-        label: "评论设置"
-        name: "comment"
-        fields:
-          - {label: "是否启用", name: "enabled", widget: "boolean", default: true}
-          - {label: "评论系统", name: "provider", widget: "select", options: ["waline", "giscus", "twikoo", "none"], default: "waline"}
-          - label: "Waline配置"
-            name: "waline"
-            widget: "object"
-            fields:
-              - {label: "ServerURL", name: "serverURL", widget: "string"}
-              - {label: "语言", name: "lang", widget: "string", default: "zh-CN"}
-              - {label: "预览功能", name: "preview", widget: "boolean", default: true}
-- {label: "允许匿名", name: "allowAnonymous", widget: "boolean", default: true}
-              - {label: "评论分页", name: "pageSize", widget: "number", default: 20}
-              - {label: "点赞功能", name: "like", widget: "boolean", default: true}
-              - {label: "回复功能", name: "reply", widget: "boolean", default: true}
-              - {label: "评论排序", name: "commentOrder", widget: "select", options: ["newest", "oldest"], default: "newest"}
-          - label: "Giscus配置"
-            name: "giscus"
-            widget: "object"
-            fields:
-              - {label: "Repo", name: "repo", widget: "string"}
-              - {label: "Repo ID", name: "repoId", widget: "string"}
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Category ID", name: "categoryId", widget: "string"}
-              - {label: "语言", name: "lang", widget: "string", default: "zh-CN"}
-              - {label: "主题", name: "theme", widget: "select", options: ["light", "dark", "preferred_color_scheme"], default: "preferred_color_scheme"}
-
-      # 友链设置
-      - file: "src/config/friendsConfig.ts"
-        label: "友链管理"
-        name: "friends"
-        fields:
-          - label: "友链列表"
-            name: "links"
-            widget: "list"
-            summary: "{{name}}"
-            fields:
-              - {label: "站点名称", name: "name", widget: "string"}
-              - {label: "站点URL", name: "url", widget: "string"}
-              - {label: "描述", name: "description", widget: "string"}
-              - {label: "头像", name: "avatar", widget: "image", required: false}
-              - {label: "排序", name: "order", widget: "number", default: 0}
-              - {label: "是否展示", name: "visible", widget: "boolean", default: true}
-          - label: "申请友链配置"
-            name: "applyConfig"
-            widget: "object"
-            fields:
-              - {label: "审核方式", name: "reviewMode", widget: "select", options: ["auto", "manual"], default: "manual"}
+  # ===== 侧边栏配置 =====
+  - name: "sidebarConfig"
+    label: "侧边栏配置"
+    file: "src/config/sidebarConfig.ts"
+    editor: { preview: false }
+    fields:
+      - { label: "侧边栏开关", name: "enable", widget: "boolean" }
+      - { label: "内容", name: "items", widget: "list" }
