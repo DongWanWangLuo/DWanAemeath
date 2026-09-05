@@ -1,0 +1,1107 @@
+{
+  "site": {
+    "title": "DWan博客",
+    "subtitle": "人生的选择有很多种，只是有些选择是你不得不选的",
+    "themeVersion": "V1.0.0",
+    "site_url": "https://dwancc.cn",
+    "description": "Aemeath 是一款基于 Astro 深度定制的个人博客主题，融合了鸣潮视觉、技术记录、工具展示与私人写作，承载我的开发历程和日常思考。",
+    "keywords": [
+      "Rain",
+      "Fuwari",
+      "Astro",
+      "ACGN",
+      "博客",
+      "技术博客",
+      "静态博客"
+    ],
+    "themeColor": {
+      "hue": 240,
+      "fixed": false,
+      "defaultMode": "system"
+    },
+    "pageWidth": 112,
+    "card": {
+      "border": true,
+      "followTheme": false
+    },
+    "favicon": [
+      {
+        "src": "/favicon/chaoc-tingyu-avatar-512.png?v=20260823",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/favicon/chaoc-tingyu-avatar-192.png?v=20260823",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/favicon/chaoc-tingyu-avatar-180.png?v=20260823",
+        "sizes": "180x180"
+      },
+      {
+        "src": "/favicon/chaoc-tingyu-avatar-32.png?v=20260823",
+        "sizes": "32x32"
+      }
+    ],
+    "navbar": {
+      "logo": {
+        "type": "image",
+        "value": "assets/images/chaoc-tingyu-avatar.webp",
+        "alt": "DWan博客"
+      },
+      "title": "DWan博客",
+      "widthFull": false,
+      "menuAlign": "center",
+      "followTheme": false,
+      "stickyNavbar": true
+    },
+    "siteStartDate": "2026-07-08",
+    "timezone": "Asia/Shanghai",
+    "pages": {
+      "friends": true,
+      "sponsor": true,
+      "guestbook": true,
+      "bangumi": true,
+      "gallery": true,
+      "anime": true
+    },
+    "categoryBar": true,
+    "foldArticle": true,
+    "postListLayout": {
+      "defaultMode": "grid",
+      "mobileDefaultMode": "grid",
+      "showTags": true,
+      "tagCount": 2,
+      "descriptionLines": 2,
+      "showStatsIcons": true,
+      "allowSwitch": true,
+      "grid": {
+        "masonry": false,
+        "columnWidth": 340
+      }
+    },
+    "post": {
+      "rehypeCallouts": {
+        "theme": "github",
+        "enablePythonMarkdownAdmonitions": false
+      },
+      "showLastModified": true,
+      "outdatedThreshold": 30,
+      "sharePoster": true,
+      "generateOgImages": false
+    },
+    "bangumi": {
+      "userId": "1143164",
+      "mode": "dynamic",
+      "apiUrl": "https://bgmapi.anibt.net",
+      "subjectBaseUrl": "https://bgmmi.anibt.net/subject/",
+      "categoryOrder": [
+        "anime",
+        "book",
+        "music",
+        "game"
+      ]
+    },
+    "anime": {
+      "bilibili": {
+        "uid": "496072842"
+      }
+    },
+    "pagination": {
+      "postsPerPage": 12
+    },
+    "imageOptimization": {
+      "formats": "webp",
+      "quality": 85,
+      "noReferrerDomains": [
+        "*.hdslb.com",
+        "*.bilibili.com"
+      ]
+    },
+    "lang": "zh_CN"
+  },
+  "effects": {
+    "enable": false,
+    "switchable": true,
+    "sakuraNum": 21,
+    "limitTimes": -1,
+    "size": {
+      "min": 0.5,
+      "max": 1.1
+    },
+    "opacity": {
+      "min": 0.3,
+      "max": 0.9
+    },
+    "speed": {
+      "horizontal": {
+        "min": -1.7,
+        "max": -1.2
+      },
+      "vertical": {
+        "min": 1.5,
+        "max": 2.2
+      },
+      "rotation": 0.03,
+      "fadeSpeed": 0.03
+    },
+    "zIndex": 100
+  },
+  "wallpaper": {
+    "mode": "fullscreen",
+    "switchable": false,
+    "playerEnable": true,
+    "src": {
+      "desktop": [
+        "/assets/images/wallpaper/wallpaper-01.webp",
+        "/assets/images/wallpaper/wallpaper-25.webp",
+        "/assets/images/wallpaper/wallpaper-26.webp",
+        "/assets/images/wallpaper/wallpaper-27.webp",
+        "/assets/images/wallpaper/wallpaper-28.webp",
+        "/assets/images/wallpaper/wallpaper-29.webp",
+        "/assets/images/wallpaper/wallpaper-30.webp",
+        "/assets/images/wallpaper/wallpaper-31.webp",
+        "/assets/images/wallpaper/wallpaper-32.webp",
+        "/assets/images/wallpaper/wallpaper-33.webp",
+        "/assets/images/wallpaper/wallpaper-34.webp",
+        "/assets/images/wallpaper/wallpaper-35.webp",
+        "/assets/images/wallpaper/wallpaper-36.webp",
+        "/assets/images/wallpaper/wallpaper-37.webp",
+        "/assets/images/wallpaper/wallpaper-38.webp",
+        "/assets/images/wallpaper/wallpaper-39.webp",
+        "/assets/images/wallpaper/wallpaper-40.webp",
+        "/assets/images/wallpaper/wallpaper-41.webp",
+        "/assets/images/wallpaper/wallpaper-42.webp",
+        "/assets/images/wallpaper/wallpaper-43.webp",
+        "/assets/images/wallpaper/wallpaper-44.webp",
+        "/assets/images/wallpaper/wallpaper-45.webp",
+        "/assets/images/wallpaper/wallpaper-46.webp",
+        "/assets/images/wallpaper/wallpaper-47.webp",
+        "/assets/images/wallpaper/wallpaper-02.webp",
+        "/assets/images/wallpaper/wallpaper-03.webp",
+        "/assets/images/wallpaper/wallpaper-04.webp",
+        "/assets/images/wallpaper/wallpaper-05.webp",
+        "/assets/images/wallpaper/wallpaper-06.webp",
+        "/assets/images/wallpaper/wallpaper-07.webp",
+        "/assets/images/wallpaper/wallpaper-08.webp",
+        "/assets/images/wallpaper/wallpaper-09.webp",
+        "/assets/images/wallpaper/wallpaper-10.webp",
+        "/assets/images/wallpaper/wallpaper-11.webp",
+        "/assets/images/wallpaper/wallpaper-12.webp",
+        "/assets/images/wallpaper/wallpaper-13.webp",
+        "/assets/images/wallpaper/wallpaper-14.webp",
+        "/assets/images/wallpaper/wallpaper-15.webp",
+        "/assets/images/wallpaper/wallpaper-16.webp",
+        "/assets/images/wallpaper/wallpaper-17.webp",
+        "/assets/images/wallpaper/wallpaper-18.webp",
+        "/assets/images/wallpaper/wallpaper-19.webp",
+        "/assets/images/wallpaper/wallpaper-20.webp",
+        "/assets/images/wallpaper/wallpaper-21.webp",
+        "/assets/images/wallpaper/wallpaper-22.webp",
+        "/assets/images/wallpaper/wallpaper-23.webp",
+        "/assets/images/wallpaper/wallpaper-24.webp"
+      ],
+      "mobile": [
+        "/assets/images/wallpaper/wallpaper-mobile-01.webp",
+        "/assets/images/wallpaper/wallpaper-mobile-02.webp",
+        "/assets/images/wallpaper/wallpaper-mobile-03.webp",
+        "/assets/images/wallpaper/wallpaper-01.webp",
+        "/assets/images/wallpaper/wallpaper-25.webp",
+        "/assets/images/wallpaper/wallpaper-26.webp",
+        "/assets/images/wallpaper/wallpaper-27.webp",
+        "/assets/images/wallpaper/wallpaper-28.webp",
+        "/assets/images/wallpaper/wallpaper-29.webp",
+        "/assets/images/wallpaper/wallpaper-30.webp",
+        "/assets/images/wallpaper/wallpaper-31.webp",
+        "/assets/images/wallpaper/wallpaper-32.webp",
+        "/assets/images/wallpaper/wallpaper-33.webp",
+        "/assets/images/wallpaper/wallpaper-34.webp",
+        "/assets/images/wallpaper/wallpaper-35.webp",
+        "/assets/images/wallpaper/wallpaper-36.webp",
+        "/assets/images/wallpaper/wallpaper-37.webp",
+        "/assets/images/wallpaper/wallpaper-38.webp",
+        "/assets/images/wallpaper/wallpaper-39.webp",
+        "/assets/images/wallpaper/wallpaper-40.webp",
+        "/assets/images/wallpaper/wallpaper-41.webp",
+        "/assets/images/wallpaper/wallpaper-42.webp",
+        "/assets/images/wallpaper/wallpaper-43.webp",
+        "/assets/images/wallpaper/wallpaper-44.webp",
+        "/assets/images/wallpaper/wallpaper-45.webp",
+        "/assets/images/wallpaper/wallpaper-46.webp",
+        "/assets/images/wallpaper/wallpaper-47.webp",
+        "/assets/images/wallpaper/wallpaper-02.webp",
+        "/assets/images/wallpaper/wallpaper-03.webp",
+        "/assets/images/wallpaper/wallpaper-04.webp",
+        "/assets/images/wallpaper/wallpaper-05.webp",
+        "/assets/images/wallpaper/wallpaper-06.webp",
+        "/assets/images/wallpaper/wallpaper-07.webp",
+        "/assets/images/wallpaper/wallpaper-08.webp",
+        "/assets/images/wallpaper/wallpaper-09.webp",
+        "/assets/images/wallpaper/wallpaper-10.webp",
+        "/assets/images/wallpaper/wallpaper-11.webp",
+        "/assets/images/wallpaper/wallpaper-12.webp",
+        "/assets/images/wallpaper/wallpaper-13.webp",
+        "/assets/images/wallpaper/wallpaper-14.webp",
+        "/assets/images/wallpaper/wallpaper-15.webp",
+        "/assets/images/wallpaper/wallpaper-16.webp",
+        "/assets/images/wallpaper/wallpaper-17.webp",
+        "/assets/images/wallpaper/wallpaper-18.webp",
+        "/assets/images/wallpaper/wallpaper-19.webp",
+        "/assets/images/wallpaper/wallpaper-20.webp",
+        "/assets/images/wallpaper/wallpaper-21.webp",
+        "/assets/images/wallpaper/wallpaper-22.webp",
+        "/assets/images/wallpaper/wallpaper-23.webp",
+        "/assets/images/wallpaper/wallpaper-24.webp"
+      ],
+      "playerUrl": [
+        "https://www.image2url.com/r2/default/videos/1781765166391-f2ba6648-1597-40e0-9f0a-6768ae39e574.mp4"
+      ]
+    },
+    "common": {
+      "dimOpacity": 0.2,
+      "playerMode": "random",
+      "homeText": {
+        "enable": false,
+        "switchable": true,
+        "title": "人生的选择有很多种，只是有些选择是你不得不选的；",
+        "titleSize": "3.8rem",
+        "subtitle": [
+          "把重复交给脚本，把思考留给自己。",
+          "工具负责提速，判断与创造仍然属于人。",
+          "在每一次调试里，把复杂留给代码，把从容还给生活。",
+          "记录解决问题的过程，也收藏一路生长的痕迹。",
+          "自动化不是替代双手，而是为真正重要的事腾出时间。",
+          "让 AI 参与工作，把真实的感受留在文字里。"
+        ],
+        "subtitleSize": "1.5rem",
+        "typewriter": {
+          "enable": true,
+          "speed": 100,
+          "deleteSpeed": 50,
+          "pauseTime": 2000
+        }
+      },
+      "navbar": {
+        "transparentMode": "semifull",
+        "enableBlur": true,
+        "blur": 5
+      },
+      "waves": {
+        "enable": {
+          "desktop": false,
+          "mobile": false
+        },
+        "switchable": true
+      },
+      "gradient": {
+        "enable": {
+          "desktop": false,
+          "mobile": false
+        },
+        "height": "10%",
+        "switchable": true
+      },
+      "carousel": {
+        "enable": true,
+        "interval": 5000,
+        "transitionEffect": "zoom",
+        "switchable": true
+      }
+    },
+    "banner": {
+      "position": "0% 20%"
+    },
+    "overlay": {
+      "switchable": {
+        "opacity": true,
+        "blur": true,
+        "cardOpacity": true
+      },
+      "zIndex": -1,
+      "opacity": 0.8,
+      "blur": 10,
+      "cardOpacity": 0.5
+    },
+    "fullscreen": {
+      "position": "center"
+    }
+  },
+  "music": {
+    "showInNavbar": true,
+    "mode": "local",
+    "volume": 0.7,
+    "playMode": "list",
+    "showLyrics": true,
+    "meting": {
+      "api": "https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r",
+      "server": "netease",
+      "type": "playlist",
+      "id": "10046455237",
+      "auth": "",
+      "fallbackApis": [
+        "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id",
+        "https://api.moeyao.cn/meting/?server=:server&type=:type&id=:id"
+      ]
+    },
+    "local": {
+      "playlist": [
+        {
+          "name": "小小奇迹",
+          "artist": "鸣潮先约电台 / jixwang / 飞行雪绒",
+          "url": "/assets/music/小小奇迹 - 鸣潮先约电台.mp3",
+          "cover": "/assets/music/cover/小小奇迹.webp",
+          "lrc": "/assets/music/lrc/小小奇迹 - 鸣潮先约电台.lrc"
+        }
+      ]
+    }
+  },
+  "comment": {
+    "type": "waline",
+    "twikoo": {
+      "envId": "https://twikoo.vercel.app",
+      "lang": "zh-CN",
+      "visitorCount": true,
+      "jsUrl": "https://cdn.jsdelivr.net/npm/twikoo@1.7.13/dist/twikoo.min.js",
+      "cssUrl": "/assets/css/twikoo-custom.css"
+    },
+    "waline": {
+      "serverURL": "https://rainzt.cn/waline",
+      "lang": "zh-CN",
+      "emoji": [
+        "https://unpkg.com/@waline/emojis@1.4.0/weibo",
+        "https://unpkg.com/@waline/emojis@1.4.0/bilibili",
+        "https://unpkg.com/@waline/emojis@1.4.0/bmoji"
+      ],
+      "login": "enable",
+      "requiredMeta": [
+        "nick",
+        "mail"
+      ],
+      "visitorCount": true
+    },
+    "artalk": {
+      "server": "https://artalk.example.com/",
+      "locale": "zh-CN",
+      "visitorCount": true
+    },
+    "giscus": {
+      "repo": "CuteLeaf/Firefly",
+      "repoId": "R_kgD2gfdFGd",
+      "category": "General",
+      "categoryId": "DIC_kwDOKy9HOc4CegmW",
+      "mapping": "title",
+      "strict": "0",
+      "reactionsEnabled": "1",
+      "emitMetadata": "1",
+      "inputPosition": "top",
+      "lang": "zh-CN",
+      "loading": "lazy"
+    },
+    "disqus": {
+      "shortname": "firefly"
+    }
+  },
+  "footer": {
+    "enable": true
+  },
+  "profile": {
+    "avatar": "assets/images/rain-avatar.webp",
+    "name": "万优秀",
+    "bio": "Hello, I'm 万优秀.",
+    "links": [
+      {
+        "name": "GitHub",
+        "icon": "fa7-brands:github",
+        "url": "https://github.com/DongWanWangLuo/DWanAemeath",
+        "showName": false
+      },
+      {
+        "name": "Bilibili",
+        "icon": "simple-icons:bilibili",
+        "url": "https://space.bilibili.com/496072842?spm_id_from=333.337.0.0",
+        "showName": false
+      },
+      {
+        "name": "微信",
+        "icon": "fa7-brands:weixin",
+        "url": "copy:19065346944",
+        "showName": false
+      },
+      {
+        "name": "Email",
+        "icon": "fa7-solid:envelope",
+        "url": "copy:1991997798@qq.com",
+        "showName": false
+      }
+    ]
+  },
+  "nav": {
+    "links": [
+      {
+        "name": "主页",
+        "url": "/",
+        "icon": "material-symbols:home"
+      },
+      {
+        "name": "文章",
+        "url": "#",
+        "icon": "material-symbols:article",
+        "children": [
+          {
+            "name": "归档",
+            "url": "/archive/",
+            "icon": "material-symbols:archive"
+          },
+          {
+            "name": "分类",
+            "url": "/categories/",
+            "icon": "material-symbols:folder-open-rounded"
+          },
+          {
+            "name": "标签",
+            "url": "/tags/",
+            "icon": "material-symbols:tag-rounded"
+          }
+        ]
+      },
+      {
+        "name": "更新日志",
+        "url": "/changelog/",
+        "icon": "material-symbols:history-edu-rounded"
+      },
+      {
+        "name": "友链",
+        "url": "/friends/",
+        "icon": "material-symbols:group",
+        "pageKey": "friends"
+      },
+      {
+        "name": "朋友圈",
+        "url": "/moments/",
+        "icon": "material-symbols:rss-feed-rounded"
+      },
+      {
+        "name": "留言",
+        "url": "/guestbook/",
+        "icon": "material-symbols:chat",
+        "pageKey": "guestbook"
+      },
+      {
+        "name": "我的",
+        "url": "#",
+        "icon": "material-symbols:person",
+        "children": [
+          {
+            "name": "相册",
+            "url": "/gallery/",
+            "icon": "material-symbols:photo-library",
+            "pageKey": "gallery"
+          },
+          {
+            "name": "追番",
+            "url": "/anime/",
+            "icon": "material-symbols:live-tv",
+            "pageKey": "anime"
+          },
+          {
+            "name": "番组计划",
+            "url": "/bangumi/",
+            "icon": "material-symbols:movie",
+            "pageKey": "bangumi"
+          },
+          {
+            "name": "工具",
+            "url": "/tools/",
+            "icon": "material-symbols:construction-rounded"
+          }
+        ]
+      },
+      {
+        "name": "关于",
+        "url": "#",
+        "icon": "material-symbols:info",
+        "children": [
+          {
+            "name": "打赏",
+            "url": "/sponsor/",
+            "icon": "material-symbols:favorite",
+            "pageKey": "sponsor"
+          },
+          {
+            "name": "关于我",
+            "url": "/about/",
+            "icon": "material-symbols:person"
+          }
+        ]
+      }
+    ]
+  },
+  "announcement": {
+    "title": "📢 欢迎来访者",
+    "content": "👋🏻 Hi，我是优秀，也是DWan博客的站长，欢迎来到我的博客！这里是分享知识、交流想法的地方。希望你能在这里找到有价值的内容！",
+    "closable": true,
+    "link": {
+      "enable": true,
+      "text": "了解更多",
+      "url": "/about/",
+      "external": false
+    }
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "microsoftClarityId": "",
+    "umamiAnalytics": {
+      "websiteId": "e76c6069-3117-42a1-8508-d374b2175108",
+      "scriptUrl": "https://cloud.umami.is/script.js",
+      "shareId": "T1uusJRzfxbuxBLK",
+      "shareApiBase": "https://cloud.umami.is/analytics/us",
+      "historicalStats": {
+        "visitors": 590,
+        "pageviews": 921
+      },
+      "showPageViews": false,
+      "showSiteStats": true,
+      "replaysScriptUrl": "https://umami.rainzt.cn/recorder.js",
+      "trackOutboundLinks": true,
+      "collectWebVitals": false,
+      "replays": {
+        "enabled": false,
+        "sampleRate": 0.15,
+        "maskLevel": "moderate",
+        "maxDuration": 300000,
+        "blockSelector": ""
+      }
+    },
+    "la51Analytics": {
+      "Id": "",
+      "sdkUrl": "",
+      "ck": "",
+      "autoTrack": false,
+      "hashMode": false,
+      "screenRecord": true
+    }
+  },
+  "coverImage": {
+    "enableInPost": true,
+    "randomCoverImage": {
+      "enable": false,
+      "apis": [
+        "https://t.alcy.cc/pc",
+        "https://www.dmoe.cc/random.php",
+        "https://uapis.cn/api/v1/random/image?category=acg&type=pc"
+      ],
+      "fallback": "assets/images/cover.webp",
+      "showLoading": false
+    }
+  },
+  "font": {
+    "enable": true,
+    "selected": [
+      "system"
+    ],
+    "bannerTitleFont": "--font-zen-maru-gothic",
+    "bannerSubtitleFont": "--font-inter",
+    "navbarTitleFont": "",
+    "codeFont": "--font-jetbrains-mono",
+    "subsetFonts": {
+      "--font-greatvibes": {
+        "extraChars": ""
+      }
+    }
+  },
+  "license": {
+    "enable": true,
+    "name": "CC BY-NC-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "gallery": {
+    "albums": [
+      {
+        "id": "wuthering-waves",
+        "name": "Wuthering Waves",
+        "description": "潮声掠过索拉里斯的旷野，也把旅途中遇见的角色、城市与片刻光影留在这里。",
+        "location": "Solaris-3",
+        "date": "2026-07-24",
+        "tags": [
+          "Wuthering Waves",
+          "鸣潮",
+          "游戏摄影"
+        ],
+        "cover": "/assets/images/wallpaper/wallpaper-25.webp"
+      },
+      {
+        "id": "firefly-2026",
+        "name": "可爱流萤",
+        "description": "飞萤之火自无梦的长夜亮起，绽放在终竟的明天。",
+        "location": "崩坏：星穹铁道",
+        "date": "2026-01-01",
+        "tags": [
+          "崩坏星穹铁道",
+          "流萤"
+        ]
+      },
+      {
+        "id": "encrypted-test",
+        "name": "加密相册示例",
+        "description": "这是一个加密相册的示例，设置了访问密码，只有输入正确的密码才能查看相册内容。",
+        "location": "崩坏：星穹铁道",
+        "date": "2026-02-01",
+        "tags": [
+          "加密相册",
+          "示例"
+        ],
+        "password": "123456",
+        "passwordHint": "示例密码123456"
+      }
+    ],
+    "columnWidth": 240
+  },
+  "sponsor": {
+    "title": "",
+    "description": "",
+    "usage": "您的打赏将用于服务器维护、内容创作和功能开发，帮助我持续提供优质内容。",
+    "showSponsorsList": false,
+    "showComment": true,
+    "showButtonInPost": true,
+    "methods": [
+      {
+        "name": "支付宝",
+        "icon": "fa7-brands:alipay",
+        "qrCode": "/assets/images/sponsor/alipay.webp",
+        "link": "",
+        "description": "使用 支付宝 扫码打赏",
+        "enabled": true
+      },
+      {
+        "name": "微信",
+        "icon": "fa7-brands:weixin",
+        "qrCode": "/assets/images/sponsor/wechat.webp",
+        "link": "",
+        "description": "使用 微信 扫码打赏",
+        "enabled": true
+      }
+    ],
+    "sponsors": []
+  },
+  "sidebar": {
+    "enable": true,
+    "position": "both",
+    "tabletSidebar": "left",
+    "hideSidebarOnPostPage": false,
+    "showBothSidebarsOnPostPage": true,
+    "leftComponents": [
+      {
+        "type": "profile",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": true
+      },
+      {
+        "type": "announcement",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": true
+      },
+      {
+        "type": "quoteOfTheDay",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": false
+      },
+      {
+        "type": "music",
+        "enable": true,
+        "position": "sticky",
+        "showOnPostPage": true
+      },
+      {
+        "type": "categories",
+        "enable": true,
+        "position": "sticky",
+        "showOnPostPage": true,
+        "specificConfig": {
+          "collapseThreshold": 5
+        }
+      },
+      {
+        "type": "tags",
+        "enable": true,
+        "position": "sticky",
+        "showOnPostPage": true,
+        "specificConfig": {
+          "collapseThreshold": 10
+        }
+      }
+    ],
+    "rightComponents": [
+      {
+        "type": "timeGreeting",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": false
+      },
+      {
+        "type": "stats",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": true
+      },
+      {
+        "type": "siteInfo",
+        "enable": true,
+        "position": "top",
+        "showOnPostPage": true,
+        "specificConfig": {
+          "siteInfo": {
+            "buildPlatform": "Astro 静态构建 · Debian + 宝塔 Nginx",
+            "unknownBuildPlatform": "Astro 静态构建 · Debian + 宝塔 Nginx"
+          }
+        }
+      },
+      {
+        "type": "calendar",
+        "enable": true,
+        "showTitle": false,
+        "position": "sticky",
+        "showOnPostPage": false,
+        "specificConfig": {
+          "calendar": {
+            "showHeatmap": true
+          }
+        }
+      },
+      {
+        "type": "sidebarToc",
+        "enable": true,
+        "position": "sticky",
+        "showOnPostPage": true,
+        "hideOnNonPostPage": true
+      },
+      {
+        "type": "advertisement",
+        "enable": false,
+        "showTitle": false,
+        "position": "sticky",
+        "showOnPostPage": true,
+        "specificConfig": {
+          "ad": {
+            "image": {
+              "src": "/assets/images/ad/ad1.webp",
+              "alt": "广告横幅",
+              "link": "https://haoka.lot-ml.com/plugreg.html?agentid=1423316",
+              "external": true
+            },
+            "closable": false,
+            "displayCount": -1,
+            "padding": {
+              "all": "1rem"
+            }
+          }
+        }
+      },
+      {
+        "type": "advertisement",
+        "enable": false,
+        "position": "sticky",
+        "showOnPostPage": true,
+        "specificConfig": {
+          "ad": {
+            "title": "支持博主",
+            "content": "如果您觉得本站内容对您有帮助，欢迎支持我们的创作！您的支持是我们持续更新的动力。",
+            "link": {
+              "text": "支持一下",
+              "url": "about/",
+              "external": false
+            },
+            "closable": false,
+            "displayCount": -1
+          }
+        }
+      },
+      {
+        "type": "scheduleProgress",
+        "enable": true,
+        "position": "sticky",
+        "showOnPostPage": false
+      }
+    ],
+    "mobileBottomComponents": [
+      {
+        "type": "profile",
+        "enable": true,
+        "showOnPostPage": false
+      },
+      {
+        "type": "announcement",
+        "enable": true,
+        "showOnPostPage": false
+      },
+      {
+        "type": "music",
+        "enable": true,
+        "showOnPostPage": false
+      },
+      {
+        "type": "categories",
+        "enable": true,
+        "showOnPostPage": false,
+        "specificConfig": {
+          "collapseThreshold": 5
+        }
+      },
+      {
+        "type": "tags",
+        "enable": true,
+        "showOnPostPage": false,
+        "specificConfig": {
+          "collapseThreshold": 10
+        }
+      },
+      {
+        "type": "stats",
+        "enable": true,
+        "showOnPostPage": false
+      },
+      {
+        "type": "siteInfo",
+        "enable": true,
+        "showOnPostPage": false,
+        "specificConfig": {
+          "siteInfo": {
+            "buildPlatform": "Astro 静态构建 · Debian + 宝塔 Nginx",
+            "unknownBuildPlatform": "Astro 静态构建 · Debian + 宝塔 Nginx"
+          }
+        }
+      }
+    ]
+  },
+  "pio": {
+    "live2d": {
+      "enable": false,
+      "model": [
+        {
+          "path": "/pio/models/live2d/snow_miku/model.json",
+          "volume": 0,
+          "scale": 1,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "path": "https://model.hacxy.cn/cat-black/model.json",
+          "volume": 0,
+          "scale": 1,
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "position": "bottom-left",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "primaryColor": "var(--l2d-msg-bg)",
+      "transitionDuration": 1500,
+      "transitionType": "slide",
+      "menus": {
+        "items": [
+          {
+            "icon": "mdi:home",
+            "label": "返回主页",
+            "action": "home"
+          },
+          {
+            "icon": "mdi:arrow-up",
+            "label": "返回顶部",
+            "action": "scrollToTop"
+          },
+          {
+            "icon": "mdi:bed",
+            "label": "休眠",
+            "action": "sleep"
+          },
+          {
+            "icon": "mdi:swap-horizontal",
+            "label": "切换模型",
+            "action": "switchModel"
+          },
+          {
+            "icon": "mdi:github",
+            "label": "GitHub",
+            "action": "github"
+          }
+        ],
+        "align": "right"
+      },
+      "tips": {
+        "enable": true,
+        "welcomeMessage": [
+          "你好呀！",
+          "欢迎来到我的世界！"
+        ],
+        "messages": [
+          "有什么需要帮助的吗？",
+          "今天天气真不错呢！",
+          "要不要一起玩游戏？",
+          "记得按时休息哦！"
+        ],
+        "duration": 3000,
+        "interval": 6000,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "responsive": {
+        "hideOnMobile": true,
+        "mobileBreakpoint": 768
+      }
+    },
+    "spine": {
+      "enable": false,
+      "model": {
+        "path": "/pio/models/spine/firefly/1310.json",
+        "scale": 1,
+        "x": 0,
+        "y": 0
+      },
+      "position": {
+        "corner": "bottom-left",
+        "offsetX": 0,
+        "offsetY": 0
+      },
+      "size": {
+        "width": 135,
+        "height": 165
+      },
+      "interactive": {
+        "enabled": true,
+        "clickAnimations": [
+          "emoji_0",
+          "emoji_1",
+          "emoji_2",
+          "emoji_3",
+          "emoji_4",
+          "emoji_5"
+        ],
+        "clickMessages": [
+          "你好呀！我是流萤~",
+          "今天也要加油哦！✨",
+          "想要一起去看星空吗？🌟",
+          "记得要好好休息呢~",
+          "有什么想对我说的吗？💫",
+          "让我们一起探索未知的世界吧！🚀",
+          "每一颗星星都有自己的故事~⭐",
+          "希望能带给你温暖和快乐！💖"
+        ],
+        "messageDisplayTime": 3000,
+        "idleAnimations": [
+          "idle",
+          "emoji_0",
+          "emoji_1",
+          "emoji_3",
+          "emoji_4"
+        ],
+        "idleInterval": 8000
+      },
+      "responsive": {
+        "hideOnMobile": true,
+        "mobileBreakpoint": 768
+      },
+      "zIndex": 1000,
+      "opacity": 1
+    }
+  },
+  "plantuml": {
+    "enable": true,
+    "server": "https://www.plantuml.com/plantuml",
+    "lightTheme": "",
+    "darkTheme": "cyborg"
+  },
+  "portfolio": {
+    "enabledStorageKey": "rainzt.home-portfolio-intro-enabled.v1",
+    "characterStorageKey": "rainzt.home-portfolio-intro-character.v1",
+    "topBannerStorageKey": "rainzt.home-portfolio-intro-top-banner.v1",
+    "bottomBannerStorageKey": "rainzt.home-portfolio-intro-bottom-banner.v1",
+    "defaultEnabled": true,
+    "defaultCharacterId": "character-03",
+    "defaultTopBannerId": "wuthering",
+    "defaultBottomBannerId": "wuthering",
+    "defaultMobileTopBannerId": "wuthering",
+    "defaultMobileBottomBannerId": "wuthering",
+    "banners": {
+      "desktop": {
+        "top": [
+          {
+            "id": "wuthering",
+            "label": "千咲",
+            "src": "/assets/images/home-truncated/intro-banner-top-wuthering.webp"
+          },
+          {
+            "id": "original",
+            "label": "菲比",
+            "src": "/assets/images/home-truncated/b-2.webp"
+          }
+        ],
+        "bottom": [
+          {
+            "id": "wuthering",
+            "label": "千咲爱弥斯菲比",
+            "src": "/assets/images/home-truncated/intro-banner-bottom-wuthering.webp"
+          },
+          {
+            "id": "original",
+            "label": "弗洛洛达妮娅菲比",
+            "src": "/assets/images/home-truncated/b-3.webp"
+          }
+        ]
+      },
+      "mobile": {
+        "top": [
+          {
+            "id": "wuthering",
+            "label": "千咲",
+            "src": "/assets/images/home-truncated/intro-banner-mobile-top-wuthering.webp"
+          }
+        ],
+        "bottom": [
+          {
+            "id": "wuthering",
+            "label": "千咲爱弥斯菲比",
+            "src": "/assets/images/home-truncated/intro-banner-mobile-bottom-wuthering.webp"
+          }
+        ]
+      }
+    },
+    "characters": [
+      {
+        "id": "character-01",
+        "label": "爱弥斯",
+        "src": "/assets/images/home-truncated/character-01.webp",
+        "thumbnail": "/assets/images/home-truncated/character-01.webp"
+      },
+      {
+        "id": "character-02",
+        "label": "爱弥斯",
+        "src": "/assets/images/home-truncated/character-02.webp",
+        "thumbnail": "/assets/images/home-truncated/character-02.webp"
+      },
+      {
+        "id": "character-03",
+        "label": "千咲（默认）",
+        "src": "/assets/images/home-truncated/character-03.webp",
+        "thumbnail": "/assets/images/home-truncated/character-03.webp"
+      },
+      {
+        "id": "character-04",
+        "label": "爱弥斯",
+        "src": "/assets/images/home-truncated/character-04.webp",
+        "thumbnail": "/assets/images/home-truncated/character-04.webp"
+      },
+      {
+        "id": "character-original",
+        "label": "菲比",
+        "src": "/assets/images/home-truncated/b-1.webp",
+        "thumbnail": "/assets/images/home-truncated/b-1.webp"
+      }
+    ]
+  }
+}
