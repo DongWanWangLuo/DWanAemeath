@@ -303,6 +303,16 @@ function loadButtonScript() {
         };
     }
 
+    let adminPanelBtn = document.getElementById("admin-panel-switch");
+    if (adminPanelBtn) {
+        adminPanelBtn.onclick = function () {
+            let adminPanel = document.getElementById("admin-panel-overlay");
+            if (adminPanel) {
+                adminPanel.classList.toggle("float-panel-closed");
+            }
+        };
+    }
+
     document.addEventListener("click", function(event) {
         const panels = ["display-setting", "nav-menu-panel", "music-nav-panel", "theme-mode-panel", "admin-panel-overlay"];
         const buttons = ["display-settings-switch", "nav-menu-switch", "music-player-switch", "scheme-switch", "admin-panel-switch"];
