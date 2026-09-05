@@ -65,6 +65,7 @@
   try { const t = localStorage.getItem("dw_admin_github_token"); if(t) githubToken = t; const r = localStorage.getItem("dw_admin_github_repo"); if(r) githubRepo = r; } catch(e) {}
 </script>
 
+  <div class="admin-full">
   <div class="admin-content">
     {#if activeTab === "site"}
       <div class="tab-panel">
