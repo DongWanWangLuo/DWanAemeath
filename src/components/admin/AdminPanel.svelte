@@ -39,6 +39,18 @@
 
   function toggleTab(tab) { activeTab = tab; open = true; }
 
+  function onHueInput(e) { hue = Number(e.target.value); adminConfig.setStoredHue(hue); }
+  function onThemeChange(e) { theme = e.target.value; adminConfig.setStoredTheme(theme); }
+  function onWallpaperModeChange(e) { wallpaperMode = e.target.value; adminConfig.setStoredWallpaperMode(wallpaperMode); }
+  function onPostLayoutChange(e) { postLayout = e.target.value; adminConfig.setStoredPostLayout(postLayout); }
+  function onSakuraChange(e) { sakura = e.target.checked; adminConfig.setStoredSakuraEnabled(sakura); }
+  function onWavesChange(e) { waves = e.target.checked; adminConfig.setStoredWavesEnabled(waves); }
+  function onGradientChange(e) { gradient = e.target.checked; adminConfig.setStoredGradientEnabled(gradient); }
+  function onBannerTitleChange(e) { bannerTitle = e.target.checked; adminConfig.setStoredBannerTitleEnabled(bannerTitle); }
+  function onCarouselChange(e) { carousel = e.target.checked; adminConfig.setStoredCarouselEnabled(carousel); }
+  function onCategoryBarChange(e) { categoryBar = e.target.checked; adminConfig.setStoredCategoryBar(categoryBar); }
+  function onShowTagsChange(e) { showTags = e.target.checked; adminConfig.setStoredShowTags(showTags); }
+
   function syncToGitHub() {
     adminConfig.setGitHubToken(githubToken);
     adminConfig.setGitHubRepo(githubRepo);
@@ -51,38 +63,39 @@
       syncMessage = "同步完成（演示）";
     }, 1000);
   }
-</script><div class="admin-overlay" class={open} on:click={|e| if (e.target === e.currentTarget) open = false}>
+</script>
+<div class:list={["admin-overlay", open]} on:click={(e) => e.target === e.currentTarget && (open = false)}>
   <div class="admin-panel">
     <div class="admin-header">
       <h2>后台管理</h2>
-      <button class="close-btn" on:click={open = false} aria-label="关闭">&times;</button>
+      <button class="close-btn" on:click={() => open = false} aria-label="关闭">&times;</button>
     </div>
     <div class="admin-tabs">
-      <button class="tab {activeTab === 'appearance'}" on:click={toggleTab('appearance')}>外观</button>
-      <button class="tab {activeTab === 'wallpaper'}" on:click={toggleTab('wallpaper')}>壁纸</button>
-      <button class="tab {activeTab === 'effects'}" on:click={toggleTab('effects')}>特效</button>
-      <button class="tab {activeTab === 'settings'}" on:click={toggleTab('settings')}>设置</button>
-      <button class="tab {activeTab === 'posts'}" on:click={toggleTab('posts')}>文章</button>
-      <button class="tab {activeTab === 'github'}" on:click={toggleTab('github')}>同步</button>
+      <button class:active={activeTab === "appearance"} on:click={() => toggleTab("appearance")}>外观</button>
+      <button class:active={activeTab === "wallpaper"} on:click={() => toggleTab("wallpaper")}>壁纸</button>
+      <button class:active={activeTab === "effects"} on:click={() => toggleTab("effects")}>特效</button>
+      <button class:active={activeTab === "settings"} on:click={() => toggleTab("settings")}>设置</button>
+      <button class:active={activeTab === "posts"} on:click={() => toggleTab("posts")}>文章</button>
+      <button class:active={activeTab === "github"} on:click={() => toggleTab("github")}>同步</button>
     </div>
     <div class="admin-content">
-      {#if activeTab === 'appearance'}
+      {#if activeTab === "appearance"}
         <section>
           <h3>主题色</h3>
-          <input type="range" min="0" max="360" bind:value={hue} on:input={|e| hue = Number(e.currentTarget.value); adminConfig.setStoredHue(hue)} />
+          <input type="range" min="0" max="360" bind:value={hue} on:input={onHueInput} />
           <span>{hue}</span>
           <h3>亮/暗色模式</h3>
-          <select bind:value={theme} on:change={|e| theme = e.currentTarget.value; adminConfig.setStoredTheme(theme)}>
+          <select bind:value={theme} on:change={onThemeChange}>
             <option value="light">浅色</option>
             <option value="dark">深色</option>
             <option value="system">跟随系统</option>
           </select>
         </section>
       {/if}
-      {#if activeTab === 'wallpaper'}
+      {#if activeTab === "wallpaper"}
         <section>
           <h3>壁纸模式</h3>
-          <select bind:value={wallpaperMode} on:change={|e| wallpaperMode = e.currentTarget.value; adminConfig.setStoredWallpaperMode(wallpaperMode)}>
+          <select bind:value={wallpaperMode} on:change={onWallpaperModeChange}>
             <option value="banner">横幅壁纸</option>
             <option value="fullscreen">全屏壁纸</option>
             <option value="overlay">透明覆盖</option>
@@ -90,28 +103,28 @@
           </select>
         </section>
       {/if}
-      {#if activeTab === 'effects'}
+      {#if activeTab === "effects"}
         <section>
           <h3>动画特效</h3>
-          <label><input type="checkbox" bind:checked={sakura} on:change={|e| adminConfig.setStoredSakuraEnabled(sakura)} /> 樱花特效</label>
-          <label><input type="checkbox" bind:checked={waves} on:change={|e| adminConfig.setStoredWavesEnabled(waves)} /> 水波纹动画</label>
-          <label><input type="checkbox" bind:checked={gradient} on:change={|e| adminConfig.setStoredGradientEnabled(gradient)} /> 渐变过渡</label>
-          <label><input type="checkbox" bind:checked={bannerTitle} on:change={|e| adminConfig.setStoredBannerTitleEnabled(bannerTitle)} /> 首页横幅标题</label>
-          <label><input type="checkbox" bind:checked={carousel} on:change={|e| adminConfig.setStoredCarouselEnabled(carousel)} /> 壁纸轮播</label>
+          <label><input type="checkbox" bind:checked={sakura} on:change={onSakuraChange} /> 樱花特效</label>
+          <label><input type="checkbox" bind:checked={waves} on:change={onWavesChange} /> 水波纹动画</label>
+          <label><input type="checkbox" bind:checked={gradient} on:change={onGradientChange} /> 渐变过渡</label>
+          <label><input type="checkbox" bind:checked={bannerTitle} on:change={onBannerTitleChange} /> 首页横幅标题</label>
+          <label><input type="checkbox" bind:checked={carousel} on:change={onCarouselChange} /> 壁纸轮播</label>
         </section>
       {/if}
-      {#if activeTab === 'settings'}
+      {#if activeTab === "settings"}
         <section>
           <h3>文章布局</h3>
-          <select bind:value={postLayout} on:change={|e| postLayout = e.currentTarget.value; adminConfig.setStoredPostLayout(postLayout)}>
+          <select bind:value={postLayout} on:change={onPostLayoutChange}>
             <option value="list">列表模式</option>
             <option value="grid">网格模式</option>
           </select>
-          <label><input type="checkbox" bind:checked={categoryBar} on:change={|e| adminConfig.setStoredCategoryBar(categoryBar)} /> 分类导航栏</label>
-          <label><input type="checkbox" bind:checked={showTags} on:change={|e| adminConfig.setStoredShowTags(showTags)} /> 文章列表显示标签</label>
+          <label><input type="checkbox" bind:checked={categoryBar} on:change={onCategoryBarChange} /> 分类导航栏</label>
+          <label><input type="checkbox" bind:checked={showTags} on:change={onShowTagsChange} /> 文章列表显示标签</label>
         </section>
       {/if}
-      {#if activeTab === 'posts'}
+      {#if activeTab === "posts"}
         <section>
           <h3>文章管理</h3>
           <p>文章内容存储在 <code>src/content/posts/</code> 目录下。</p>
@@ -119,7 +132,7 @@
           <p style="margin-top:16px"><strong>待开发：</strong>富文本编辑器集成（Vditor）</p>
         </section>
       {/if}
-      {#if activeTab === 'github'}
+      {#if activeTab === "github"}
         <section>
           <h3>GitHub 同步</h3>
           <p>填入 GitHub Token 和仓库信息以启用配置同步。</p>
