@@ -35,10 +35,10 @@
     if (!stored) {
       localStorage.setItem('dw_admin_password', btoa(pw));
       sessionStorage.setItem('dw_admin_session', '1');
-      window.location.href = '/';
+      window.location.href = "/admin";
     } else if (btoa(pw) === stored) {
       sessionStorage.setItem('dw_admin_session', '1');
-      window.location.href = '/';
+      window.location.href = "/admin";
     } else {
       errEl.textContent = '密码错误';
     }

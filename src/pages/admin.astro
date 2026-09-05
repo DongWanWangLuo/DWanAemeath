@@ -1,0 +1,265 @@
+---
+// Admin dashboard page - password protected
+---
+
+<div class="admin-page">
+  <div class="admin-container">
+    <div class="admin-sidebar">
+      <h2>后台管理</h2>
+      <nav class="admin-nav">
+        <a href="#appearance" class="nav-item active" data-tab="appearance">外观设置</a>
+        <a href="#wallpaper" class="nav-item" data-tab="wallpaper">壁纸管理</a>
+        <a href="#effects" class="nav-item" data-tab="effects">特效控制</a>
+        <a href="#settings" class="nav-item" data-tab="settings">网站设置</a>
+        <a href="#posts" class="nav-item" data-tab="posts">文章管理</a>
+        <a href="#sync" class="nav-item" data-tab="sync">数据同步</a>
+      </nav>
+      <div class="admin-footer">
+        <button id="logout-btn" class="logout-btn">退出登录</button>
+        <a href="/" class="back-link">返回网站</a>
+      </div>
+    </div>
+    <div class="admin-main">
+      <div id="tab-appearance" class="tab-content active">
+        <h3>外观设置</h3>
+        <div class="setting-group">
+          <label class="setting-label">主题色相</label>
+          <input type="range" id="hue-slider" min="0" max="360" value="240" />
+          <span id="hue-value">240</span>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label">亮/暗色模式</label>
+          <select id="theme-select">
+            <option value="light">浅色</option>
+            <option value="dark">深色</option>
+            <option value="system">跟随系统</option>
+          </select>
+        </div>
+      </div>
+      <div id="tab-wallpaper" class="tab-content">
+        <h3>壁纸管理</h3>
+        <div class="setting-group">
+          <label class="setting-label">壁纸模式</label>
+          <select id="wallpaper-mode">
+            <option value="banner">横幅壁纸</option>
+            <option value="fullscreen" selected>全屏壁纸</option>
+            <option value="overlay">透明覆盖</option>
+            <option value="none">纯色背景</option>
+          </select>
+        </div>
+      </div>
+      <div id="tab-effects" class="tab-content">
+        <h3>特效控制</h3>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="sakura-toggle" /> 樱花特效</label>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="waves-toggle" /> 水波纹动画</label>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="gradient-toggle" /> 渐变过渡</label>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="banner-title-toggle" /> 首页横幅标题</label>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="carousel-toggle" /> 壁纸轮播</label>
+        </div>
+      </div>
+      <div id="tab-settings" class="tab-content">
+        <h3>网站设置</h3>
+        <div class="setting-group">
+          <label class="setting-label">文章布局</label>
+          <select id="post-layout">
+            <option value="list">列表模式</option>
+            <option value="grid" selected>网格模式</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="category-bar-toggle" checked /> 分类导航栏</label>
+        </div>
+        <div class="setting-group">
+          <label class="setting-label"><input type="checkbox" id="show-tags-toggle" checked /> 文章列表显示标签</label>
+        </div>
+      </div>
+      <div id="tab-posts" class="tab-content">
+        <h3>文章管理</h3>
+        <p>文章内容存储在 <code>src/content/posts/</code> 目录下。</p>
+        <p style="color:#888;font-size:0.85rem">通过 GitHub 同步后，可直接编辑本地 Markdown 文件后提交变更。</p>
+        <p style="margin-top:16px"><strong>待开发：</strong>富文本编辑器集成（Vditor）</p>
+      </div>
+      <div id="tab-sync" class="tab-content">
+        <h3>数据同步</h3>
+        <div class="setting-group">
+          <label class="setting-label">GitHub Token</label>
+          <input type="text" id="github-token" placeholder="ghp_xxxxxxxxxxxx" />
+        </div>
+        <div class="setting-group">
+          <label class="setting-label">仓库名</label>
+          <input type="text" id="github-repo" placeholder="DongWanWangLuo/DWanAemeath" />
+        </div>
+        <button id="sync-btn" class="sync-btn">同步到 GitHub</button>
+        <p id="sync-status" style="margin-top:12px;color:#888;font-size:0.85rem"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .admin-page { min-height: 100vh; background: var(--bg, #f8fafc); }
+  .admin-container { display: flex; min-height: 100vh; }
+  .admin-sidebar { width: 240px; background: var(--card-bg, #fff); border-right: 1px solid var(--border, #e5e7eb); display: flex; flex-direction: column; position: fixed; left: 0; top: 0; height: 100vh; overflow-y: auto; }
+  .admin-sidebar h2 { margin: 0; padding: 20px; font-size: 1.2rem; border-bottom: 1px solid var(--border, #e5e7eb); color: var(--text-main, #1a1a1a); }
+  .admin-nav { flex: 1; padding: 12px; }
+  .nav-item { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text-secondary, #6b7280); text-decoration: none; font-size: 0.9rem; margin-bottom: 4px; cursor: pointer; }
+  .nav-item:hover { background: var(--bg, #f8fafc); color: var(--text-main, #1a1a1a); }
+  .nav-item.active { background: var(--primary, #6366f1); color: #fff; }
+  .admin-footer { padding: 16px; border-top: 1px solid var(--border, #e5e7eb); }
+  .logout-btn { width: 100%; padding: 8px; background: transparent; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; cursor: pointer; color: var(--text-secondary, #6b7280); font-size: 0.85rem; margin-bottom: 8px; }
+  .logout-btn:hover { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
+  .back-link { display: block; text-align: center; font-size: 0.85rem; color: var(--text-muted, #9ca3af); text-decoration: none; }
+  .back-link:hover { color: var(--primary, #6366f1); }
+  .admin-main { margin-left: 240px; flex: 1; padding: 32px 40px; max-width: 900px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .tab-content h3 { margin: 0 0 24px; font-size: 1.1rem; color: var(--text-main, #1a1a1a); }
+  .setting-group { margin-bottom: 20px; }
+  .setting-label { display: block; font-size: 0.85rem; color: var(--text-muted, #9ca3af); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 600; }
+  .setting-label input[type="checkbox"] { margin-right: 8px; }
+  input[type="range"] { width: 100%; accent-color: var(--primary, #6366f1); }
+  select, input[type="text"] { width: 100%; padding: 10px 12px; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; background: var(--input-bg, #f9fafb); color: var(--text-main, #1a1a1a); font-size: 0.95rem; box-sizing: border-box; }
+  .sync-btn { padding: 12px 24px; background: var(--primary, #6366f1); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; margin-top: 8px; }
+  .sync-btn:hover { opacity: 0.9; }
+  code { background: var(--bg, #f8fafc); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  @media (max-width: 768px) {
+    .admin-sidebar { width: 200px; }
+    .admin-main { margin-left: 200px; padding: 20px; }
+  }
+</style>
+
+<script>
+  // Check login status
+  if (sessionStorage.getItem('dw_admin_session') !== '1') {
+    window.location.href = '/admin-login';
+  }
+
+  // Tab navigation
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const tab = this.dataset.tab;
+      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    });
+  });
+
+  // Theme color hue
+  const hueSlider = document.getElementById('hue-slider');
+  const hueValue = document.getElementById('hue-value');
+  hueSlider.addEventListener('input', function() {
+    const v = this.value;
+    hueValue.textContent = v;
+    document.querySelector(':root').style.setProperty('--hue', v);
+    localStorage.setItem('dw_admin_hue', v);
+  });
+
+  // Theme mode
+  const themeSelect = document.getElementById('theme-select');
+  themeSelect.addEventListener('change', function() {
+    const t = this.value;
+    localStorage.setItem('dw_admin_theme', t);
+    document.documentElement.setAttribute('data-theme', t);
+    window.dispatchEvent(new CustomEvent('dw_theme_change', { detail: { theme: t } }));
+  });
+
+  // Wallpaper mode
+  const wallpaperMode = document.getElementById('wallpaper-mode');
+  wallpaperMode.addEventListener('change', function() {
+    const m = this.value;
+    localStorage.setItem('dw_admin_wallpaper_mode', m);
+    window.dispatchEvent(new CustomEvent('dw_wallpaper_mode_change', { detail: { mode: m } }));
+  });
+
+  // Effects toggles
+  const effectToggles = {
+    'sakura-toggle': { key: 'dw_admin_sakura', event: 'dw_sakura_toggle' },
+    'waves-toggle': { key: 'dw_admin_waves', event: 'dw_waves_toggle' },
+    'gradient-toggle': { key: 'dw_admin_gradient', event: 'dw_gradient_toggle' },
+    'banner-title-toggle': { key: 'dw_admin_banner_title', event: 'dw_banner_title_toggle' },
+    'carousel-toggle': { key: 'dw_admin_carousel', event: 'dw_carousel_toggle' }
+  };
+  Object.entries(effectToggles).forEach(([id, cfg]) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const saved = localStorage.getItem(cfg.key);
+      if (saved !== null) el.checked = saved === 'true';
+      el.addEventListener('change', function() {
+        localStorage.setItem(cfg.key, this.checked);
+        window.dispatchEvent(new CustomEvent(cfg.event, { detail: { enabled: this.checked } }));
+      });
+    }
+  });
+
+  // Settings toggles
+  const settingToggles = {
+    'category-bar-toggle': 'dw_admin_category_bar',
+    'show-tags-toggle': 'dw_admin_show_tags',
+    'post-layout': 'dw_admin_post_layout'
+  };
+  Object.entries(settingToggles).forEach(([id, key]) => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (el.type === 'checkbox') {
+        const saved = localStorage.getItem(key);
+        if (saved !== null) el.checked = saved === 'true';
+        el.addEventListener('change', function() { localStorage.setItem(key, this.checked); });
+      } else {
+        const saved = localStorage.getItem(key);
+        if (saved) el.value = saved;
+        el.addEventListener('change', function() { localStorage.setItem(key, this.value); });
+      }
+    }
+  });
+
+  // Sync button
+  document.getElementById('sync-btn').addEventListener('click', function() {
+    const token = document.getElementById('github-token').value;
+    const repo = document.getElementById('github-repo').value;
+    if (!token || !repo) { alert('请填写 GitHub Token 和仓库名'); return; }
+    localStorage.setItem('dw_admin_github_token', token);
+    localStorage.setItem('dw_admin_github_repo', repo);
+    document.getElementById('sync-status').textContent = '已保存配置，同步功能开发中...';
+  });
+
+  // Load saved settings on init
+  (function loadSettings() {
+    const hue = localStorage.getItem('dw_admin_hue');
+    if (hue) { hueSlider.value = hue; hueValue.textContent = hue; document.querySelector(':root').style.setProperty('--hue', hue); }
+    const theme = localStorage.getItem('dw_admin_theme');
+    if (theme) { themeSelect.value = theme; document.documentElement.setAttribute('data-theme', theme); }
+    const wallpaperModeVal = localStorage.getItem('dw_admin_wallpaper_mode');
+    if (wallpaperModeVal) wallpaperMode.value = wallpaperModeVal;
+    const postLayout = localStorage.getItem('dw_admin_post_layout');
+    if (postLayout) document.getElementById('post-layout').value = postLayout;
+    Object.entries(effectToggles).forEach(([id, cfg]) => {
+      const el = document.getElementById(id);
+      if (el) el.checked = localStorage.getItem(cfg.key) === 'true';
+    });
+    Object.entries(settingToggles).forEach(([id, key]) => {
+      const el = document.getElementById(id);
+      if (el && el.type === 'checkbox') el.checked = localStorage.getItem(key) === 'true';
+    });
+    const token = localStorage.getItem('dw_admin_github_token');
+    if (token) document.getElementById('github-token').value = token;
+    const repo = localStorage.getItem('dw_admin_github_repo');
+    if (repo) document.getElementById('github-repo').value = repo;
+  })();
+
+  // Logout
+  document.getElementById('logout-btn').addEventListener('click', function() {
+    sessionStorage.removeItem('dw_admin_session');
+    window.location.href = '/';
+  });
+</script>
