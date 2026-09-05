@@ -78,24 +78,24 @@
         <div class="field-group"><label>网站开始日期</label><input type="date" on:input={(e)=>setVal('site.siteStartDate',e.target.value)} /></div>
         <h3>主题色调</h3>
         <div class="field-group"><label>色相值 (0-360)</label><input type="range" min="0" max="360" on:input={(e)=>setVal('site.themeColor.hue',e.target.value)} /><span>{allConfig.site?.themeColor?.hue}</span></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.site?.themeColor?.fixed} /> 固定色相</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.site?.themeColor?.fixed} on:change={(e)=>setVal('site.themeColor.fixed',e.target.checked)} /> 固定色相</label></div>
         <div class="field-group"><label>默认模式</label><select on:input={(e)=>setVal('site.themeColor.defaultMode',e.target.value)}><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></div>
         <h3>首页页面设置</h3>
         <div class="field-group"><label>屏幕宽度 (%)</label><input type="number" on:input={(e)=>setVal('site.pageWidth',e.target.value)} /></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.site?.categoryBar} /> 分类导航栏</label></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.site?.foldArticle} /> 文章折叠</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.site?.categoryBar} on:change={(e)=>setVal('site.categoryBar',e.target.checked)} /> 分类导航栏</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.site?.foldArticle} on:change={(e)=>setVal('site.foldArticle',e.target.checked)} /> 文章折叠</label></div>
         <h3>功能页面</h3>
         <div class="fields-row">
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.friends} /> friends</label>
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.sponsor} /> sponsor</label>
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.guestbook} /> guestbook</label>
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.bangumi} /> bangumi</label>
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.gallery} /> gallery</label>
-          <label><input type="checkbox" bind:checked={allConfig.site?.pages?.anime} /> anime</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.friends} on:change={(e)=>setVal('site.pages.friends',e.target.checked)} /> friends</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.sponsor} on:change={(e)=>setVal('site.pages.sponsor',e.target.checked)} /> sponsor</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.guestbook} on:change={(e)=>setVal('site.pages.guestbook',e.target.checked)} /> guestbook</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.bangumi} on:change={(e)=>setVal('site.pages.bangumi',e.target.checked)} /> bangumi</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.gallery} on:change={(e)=>setVal('site.pages.gallery',e.target.checked)} /> gallery</label>
+          <label><input type="checkbox" checked={allConfig.site?.pages?.anime} on:change={(e)=>setVal('site.pages.anime',e.target.checked)} /> anime</label>
         </div>
         <h3>文章列表设置</h3>
         <div class="field-group"><label>默认布局</label><select on:input={(e)=>setVal('site.postListLayout.defaultMode',e.target.value)}><option value="grid">网格</option><option value="list">列表</option></select></div>
-        <div class="fields-row"><label><input type="checkbox" bind:checked={allConfig.site?.postListLayout?.showTags} /> 显示标签</label><label><input type="checkbox" bind:checked={allConfig.site?.postListLayout?.allowSwitch} /> 允许切换布局</label></div>
+        <div class="fields-row"><label><input type="checkbox" checked={allConfig.site?.postListLayout?.showTags} on:change={(e)=>setVal('site.postListLayout.showTags',e.target.checked)} /> 显示标签</label><label><input type="checkbox" checked={allConfig.site?.postListLayout?.allowSwitch} on:change={(e)=>setVal('site.postListLayout.allowSwitch',e.target.checked)} /> 允许切换布局</label></div>
         <div class="field-group"><label>每页文章数</label><input type="number" on:input={(e)=>setVal('site.pagination.postsPerPage',e.target.value)} /></div>
         <h3>番组计划</h3>
         <div class="field-group"><label>Bangumi 用户ID</label><input type="text" on:input={(e)=>setVal('site.bangumi.userId',e.target.value)} /></div>
@@ -106,19 +106,19 @@
     {#if activeTab === "effects"}
       <div class="tab-panel">
         <h3>动画特效控制</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.effects?.enable} /> 整体特效开关</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.effects?.enable} on:change={(e)=>setVal('effects.enable',e.target.checked)} /> 整体特效开关</label></div>
         <h3>樱花特效</h3>
         <div class="field-group"><label>樱花数量</label><input type="number" on:input={(e)=>setVal('effects.sakuraNum',e.target.value)} /></div>
         <div class="field-group"><label>大小范围</label><div class="range-pair"><input type="number" step="0.1" on:input={(e)=>setVal('effects.size.min',e.target.value)} /><input type="number" step="0.1" on:input={(e)=>setVal('effects.size.min',e.target.value)} /></div></div>
         <div class="field-group"><label>透明度范围</label><div class="range-pair"><input type="number" step="0.1" on:input={(e)=>setVal('effects.opacity.min',e.target.value)} /><input type="number" step="0.1" on:input={(e)=>setVal('effects.opacity.min',e.target.value)} /></div></div>
         <h3>水波纹动画</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.common?.waves?.enable?.desktop} /> 水波纹开关</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.common?.waves?.enable?.desktop} on:change={(e)=>setVal('wallpaper.common.waves.enable.desktop',e.target.checked)} /> 水波纹开关</label></div>
         <h3>渐变过渡</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.common?.gradient?.enable?.desktop} /> 渐变过渡开关</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.common?.gradient?.enable?.desktop} on:change={(e)=>setVal('wallpaper.common.gradient.enable.desktop',e.target.checked)} /> 渐变过渡开关</label></div>
         <h3>首页横幅标题</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.common?.homeText?.enable} /> 首页标题显示</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.common?.homeText?.enable} on:change={(e)=>setVal('wallpaper.common.homeText.enable',e.target.checked)} /> 首页标题显示</label></div>
         <h3>轮播模式</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.common?.carousel?.enable} /> 背景轮播开关</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.common?.carousel?.enable} on:change={(e)=>setVal('wallpaper.common.carousel.enable',e.target.checked)} /> 背景轮播开关</label></div>
         <div class="save-notice">修改后请点击保存，再点击同步到 GitHub 生效</div>
       </div>
     {/if}
@@ -126,8 +126,8 @@
       <div class="tab-panel">
         <h3>背景壁纸</h3>
         <div class="field-group"><label>壁纸模式</label><select on:input={(e)=>setVal('wallpaper.mode',e.target.value)}><option value="fullscreen">全屏</option><option value="banner">横幅</option><option value="overlay">透明覆盖</option><option value="none">纯色背景</option></select></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.switchable} /> 允许用户切换背景</label></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.wallpaper?.playerEnable} /> 显示背景播放器</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.switchable} on:change={(e)=>setVal('wallpaper.switchable',e.target.checked)} /> 允许用户切换背景</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.playerEnable} on:change={(e)=>setVal('wallpaper.playerEnable',e.target.checked)} /> 显示背景播放器</label></div>
         <h3>桌面背景图</h3>
         <p class="note">当前配置的背景图列表（共 "{(allConfig.wallpaper?.src?.desktop || []).length}" 张）：</p>
         <div class="url-list">
@@ -142,8 +142,8 @@
       <div class="tab-panel">
         <h3>背景音乐</h3>
         <div class="field-group"><label>音乐源</label><input type="text" on:input={(e)=>setVal('music.src',e.target.value)} placeholder="https://example.com/music.mp3" /></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.music?.autoplay} /> 自动播放</label></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.music?.loop} /> 循环播放</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.music?.autoplay} on:change={(e)=>setVal('music.autoplay',e.target.checked)} /> 自动播放</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.music?.loop} on:change={(e)=>setVal('music.loop',e.target.checked)} /> 循环播放</label></div>
         <div class="field-group"><label>音乐图标</label><input type="text" on:input={(e)=>setVal('music.icon',e.target.value)} placeholder="/assets/images/music-icon.png" /></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
@@ -175,10 +175,10 @@
     {#if activeTab === "sidebar"}
       <div class="tab-panel">
         <h3>侧边栏设置</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.sidebar?.card?.enable !== false} /> 侧边栏卡片</label></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.sidebar?.top?.enable !== false} /> 顶部信息卡片</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.sidebar?.card?.enable !== false} on:change={(e)=>setVal('sidebar.card.enable',e.target.checked)} /> 侧边栏卡片</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.sidebar?.top?.enable !== false} on:change={(e)=>setVal('sidebar.top.enable',e.target.checked)} /> 顶部信息卡片</label></div>
         <div class="field-group"><label>信息卡片模式</label><select on:input={(e)=>setVal('sidebar.top.style',e.target.value)}><option value="post">文章卡片</option><option value="tagcloud">标签云</option></select></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.sidebar?.toc?.enable !== false} /> 文章目录</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.sidebar?.toc?.enable !== false} on:change={(e)=>setVal('sidebar.toc.enable',e.target.checked)} /> 文章目录</label></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
     {/if}
@@ -195,7 +195,7 @@
       <div class="tab-panel">
         <h3>公告设置</h3>
         <div class="field-group"><label>公告内容</label><textarea rows="3" on:input={(e)=>setVal('announcement.content',e.target.value)}></textarea></div>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.announcement?.enable !== false} /> 显示公告</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.announcement?.enable !== false} on:change={(e)=>setVal('announcement.enable',e.target.checked)} /> 显示公告</label></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
     {/if}
@@ -217,13 +217,13 @@
     {#if activeTab === "portfolio"}
       <div class="tab-panel">
         <h3>作品集</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.portfolio?.defaultEnabled} /> 默认启用</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.portfolio?.defaultEnabled} on:change={(e)=>setVal('portfolio.defaultEnabled',e.target.checked)} /> 默认启用</label></div>
         <div class="field-group"><label>默认角色 ID</label><input type="text" on:input={(e)=>setVal('portfolio.defaultCharacterId',e.target.value)} /></div>
         <h3>角色列表</h3>
         <div class="char-list">
           {#each (allConfig.portfolio?.characters || []) as char, i}
             <div class="char-item">
-              <input type="text" bind:value={char.label} placeholder="角色名" /><input type="text" bind:value={char.src} placeholder="图片路径" style="margin-top:4px" />
+              <input type="text" value={char.label} on:input={(e)=>{char.label=e.target.value}} placeholder="角色名" /><input type="text" value={char.src} on:input={(e)=>{char.src=e.target.value}} placeholder="图片路径" style="margin-top:4px" />
             </div>
           {/each}
         </div>
@@ -233,7 +233,7 @@
     {#if activeTab === "pio"}
       <div class="tab-panel">
         <h3>Spine 角色</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.pio?.model?.enable} /> 启用 Spine 角色</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.pio?.model?.enable} on:change={(e)=>setVal('pio.model.enable',e.target.checked)} /> 启用 Spine 角色</label></div>
         <div class="field-group"><label>模型路径</label><input type="text" on:input={(e)=>setVal('pio.model.path',e.target.value)} placeholder="/pio/models/..." /></div>
         <div class="field-group"><label>比例</label><input type="number" step="0.1" on:input={(e)=>setVal('pio.model.scale',e.target.value)} /></div>
         <div class="field-group"><label>位置</label><select on:input={(e)=>setVal('pio.position.corner',e.target.value)}><option value="bottom-left">左下</option><option value="bottom-right">右下</option></select></div>
@@ -243,7 +243,7 @@
     {#if activeTab === "plantuml"}
       <div class="tab-panel">
         <h3>PlantUML</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.plantuml?.enable !== false} /> 启用 PlantUML</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.plantuml?.enable !== false} on:change={(e)=>setVal('plantuml.enable',e.target.checked)} /> 启用 PlantUML</label></div>
         <div class="field-group"><label>服务器地址</label><input type="text" on:input={(e)=>setVal('plantuml.server',e.target.value)} /></div>
         <div class="field-group"><label>深色主题</label><input type="text" on:input={(e)=>setVal('plantuml.darkTheme',e.target.value)} /></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
@@ -268,7 +268,7 @@
     {#if activeTab === "gallery"}
       <div class="tab-panel">
         <h3>相册设置</h3>
-        <div class="field-group"><label><input type="checkbox" bind:checked={allConfig.gallery?.enable !== false} /> 启用相册功能</label></div>
+        <div class="field-group"><label><input type="checkbox" checked={allConfig.gallery?.enable !== false} on:change={(e)=>setVal('gallery.enable',e.target.checked)} /> 启用相册功能</label></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
     {/if}
@@ -279,8 +279,8 @@
       <div class="tab-panel">
         <h3>数据同步</h3>
         <p class="note">填写 GitHub Token 和仓库信息，点击保存并同步到 GitHub 自动推送所有配置。</p>
-        <div class="field-group"><label>GitHub Token</label><input type="password" bind:value={githubToken} placeholder="ghp_xxxxxxxxxxxx" /></div>
-        <div class="field-group"><label>仓库名（如 owner/repo）</label><input type="text" bind:value={githubRepo} placeholder="DongWanWangLuo/DWanAemeath" /></div>
+        <div class="field-group"><label>GitHub Token</label><input type="password" value={githubToken} on:input={(e)=>{ githubToken=e.target.value }} placeholder="ghp_xxxxxxxxxxxx" /></div>
+        <div class="field-group"><label>仓库名（如 owner/repo）</label><input type="text" value={githubRepo} on:input={(e)=>{ githubRepo=e.target.value }} placeholder="DongWanWangLuo/DWanAemeath" /></div>
         <div class="sync-actions">
           <button class="sync-btn" on:click={syncToGitHub} disabled={syncLoading}>{syncLoading ? "同步中..." : "保存并同步到 GitHub"}</button>
           <button class="export-btn" on:click={exportConfig}>导出配置为 JSON 文件</button>
@@ -306,7 +306,7 @@
             </div>
             <div class="fields-row">
               <div class="field-group"><label>发布日期</label><input type="date" on:input={(e)=>{editingPost.published=e.target.value}} /></div>
-              <div class="field-group"><label><input type="checkbox" bind:checked={editingPost.draft} /> 草稿模式</label></div>
+              <div class="field-group"><label><input type="checkbox" checked={editingPost.draft} on:change={(e)=>{ editingPost.draft=e.target.checked }} /> 草稿模式</label></div>
             </div>
             <div class="field-group"><label>封面图</label><input type="text" on:input={(e)=>{editingPost.cover=e.target.value}} placeholder="./cover.webp" /></div>
             <div class="field-group"><label>文章内容</label><textarea id="post-content-area" rows="20" on:input={(e)=>{editingPost.content=e.target.value}} style="font-family:monospace;min-height:400px"></textarea><p class="note">使用 Markdown 语法编写。保存后同步到 GitHub 即可生效。</p></div>
