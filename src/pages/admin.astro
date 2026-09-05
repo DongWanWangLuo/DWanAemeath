@@ -1,4 +1,5 @@
 ---
+import NavMenuAdmin from "@/components/admin/NavMenuAdmin.svelte";
 // Admin dashboard page - password protected
 ---
 <head>
@@ -16,6 +17,7 @@
         <a href="#wallpaper" class="nav-item" data-tab="wallpaper">壁纸管理</a>
         <a href="#effects" class="nav-item" data-tab="effects">特效控制</a>
         <a href="#settings" class="nav-item" data-tab="settings">网站设置</a>
+        <a href="#nav-menu" class="nav-item" data-tab="nav-menu">导航栏</a>
         <a href="#posts" class="nav-item" data-tab="posts">文章管理</a>
         <a href="#sync" class="nav-item" data-tab="sync">数据同步</a>
       </nav>
@@ -78,6 +80,10 @@
         <p>文章内容存储在 <code>src/content/posts/</code> 目录下。</p>
         <p style="color:#888;font-size:0.85rem">通过 GitHub 同步后，可直接编辑本地 Markdown 文件后提交变更。</p>
         <p style="margin-top:16px"><strong>待开发：</strong>富文本编辑器集成（Vditor）</p>
+      </div>
+      <div id="tab-nav-menu" class="tab-content">
+        <h3>导航栏管理</h3>
+        <NavMenuAdmin client:load />
       </div>
       <div id="tab-sync" class="tab-content">
         <h3>数据同步</h3>
