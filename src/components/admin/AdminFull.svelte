@@ -638,8 +638,44 @@
   .sync-actions .status { margin-top: 12px; font-size: 0.85rem; }
   @media (max-width: 768px) {
     .admin-full { flex-direction: column; }
-    .admin-sidebar { width: 100%; max-height: 300px; }
-    .admin-content { padding: 16px; }
+    .admin-sidebar { width: 100%; max-height: none; border-right: 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+    .admin-logo { padding: 14px 16px; }
+    .admin-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; max-height: 210px; overflow-y: auto; padding: 8px; }
+    .tab-btn { min-width: 0; margin: 0; padding: 9px 6px; text-align: center; font-size: 0.78rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .admin-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 8px; }
+    .back-link { padding: 8px; }
+    .status-bar { min-height: 28px; padding: 7px 10px; }
+    .admin-content { width: 100%; max-width: none; min-width: 0; padding: 16px 12px 32px; box-sizing: border-box; }
     .fields-row { flex-direction: column; gap: 0; }
+    .fields-row .field-group { min-width: 0; }
+    .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .media-card { padding: 6px; }
+    .media-card img, .media-card video { height: 96px; }
+    .media-actions { flex-wrap: wrap; }
+    .replace-btn, .mini-delete, .inline-add { min-height: 34px; padding: 7px 9px; }
+    .music-card { align-items: flex-start; flex-wrap: wrap; }
+    .music-info { min-width: calc(100% - 70px); }
+    .music-card .replace-btn { margin-left: 68px; }
+    .brand-preview-row { align-items: flex-start; }
+    .brand-preview { width: 68px; height: 68px; flex: 0 0 68px; }
+    .logo-preview { width: 90px; }
+    .cover-preview { grid-template-columns: 1fr; }
+    .cover-preview img { width: 100%; height: 130px; }
+    .char-preview { height: 120px; }
+    .sponsor-method-row { align-items: flex-start; }
+    .qr-preview { width: 72px; height: 72px; }
+    .posts-header { align-items: stretch; flex-direction: column; gap: 10px; }
+    .posts-actions, .sync-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .post-card { flex-direction: column; gap: 12px; }
+    .post-actions { width: 100%; }
+    .post-actions button { flex: 1; }
+    .post-editor-panel { max-width: none; }
+  }
+  @media (max-width: 420px) {
+    .admin-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 260px; }
+    .admin-actions { grid-template-columns: 1fr 1fr; }
+    .media-grid { grid-template-columns: 1fr; }
+    .sync-actions, .posts-actions { grid-template-columns: 1fr; }
+    .field-group input, .field-group textarea, .field-group select { font-size: 16px; }
   }
 </style>
