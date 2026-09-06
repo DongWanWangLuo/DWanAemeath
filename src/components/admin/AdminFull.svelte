@@ -133,7 +133,7 @@
       saveStatus = "文章已从 GitHub 删除";
     } catch (e) { saveStatus = "删除失败: " + String(e); }
   }
-  function createNewPost() { editingPost = { slug: "new-post-" + Date.now(), sourceFile: "", title: "新文章", description: "", category: "", tags: [], published: new Date().toISOString().slice(0,10), draft: true, cover: "", content: "" }; showPostEditor = true; }
+  function createNewPost() { editingPost = { slug: "new-post-" + Date.now(), sourceFile: "", title: "新文章", description: "", category: "", tags: [], published: new Date().toISOString().slice(0,10), draft: false, cover: "", content: "" }; showPostEditor = true; }
 
   async function uploadAsset() {
     if (!assetFile) { assetStatus = "请选择文件"; return; }
