@@ -29,6 +29,15 @@
           "name": "标签",
           "url": "/tags/",
           "icon": "material-symbols:tag-rounded"
+        },
+        {
+          "id": "child_1788738606153_xk36",
+          "name": "实用教程",
+          "url": "",
+          "icon": "",
+          "pageKey": "",
+          "external": false,
+          "enabled": true
         }
       ]
     },
