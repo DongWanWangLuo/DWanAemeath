@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { getNavConfig, setNavConfig, cloneLinks, genId, addChild, removeChild, moveItem, updateItem, deleteItem, findItem } from '@/utils/navMenuConfig';
   import type { NavMenuItem } from '@/types/navMenuConfig';
   import { defaultNavItems } from '@/types/navMenuConfig';
@@ -8,6 +9,7 @@
   let showAddModal = false;
   let editItem = null;
   let editChildParentId = '';
+  let editChildId = '';
   let syncStatus = '';
   let syncLoading = false;
   let githubToken = '';
@@ -23,14 +25,16 @@
 
 
   function openAdd(parentId) {
-    editItem = null;
+    editItem = { name: '', url: '', icon: '', pageKey: '', external: false, enabled: true };
     editChildParentId = parentId || '';
+    editChildId = '';
     showAddModal = true;
   }
 
   function openEdit(item) {
     editItem = JSON.parse(JSON.stringify(item));
     editChildParentId = '';
+    editChildId = '';
     showAddModal = true;
   }
 
@@ -38,8 +42,12 @@
     if (!editItem) return;
     const newLinks = cloneLinks(links);
     if (editChildParentId) {
-      var child = { id: genId('child'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false };
-      links = addChild(newLinks, editChildParentId, child);
+      if (editChildId) {
+        links = updateItem(newLinks, editChildId, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled });
+      } else {
+        var child = { id: genId('child'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false };
+        links = addChild(newLinks, editChildParentId, child);
+      }
     } else {
       if (editItem.id && findItem(newLinks, editItem.id)) {
         links = updateItem(newLinks, editItem.id, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled });
@@ -51,6 +59,8 @@
     setNavConfig(links);
     showAddModal = false;
     editItem = null;
+    editChildParentId = '';
+    editChildId = '';
   }
 
   function deleteItemById(id) {
@@ -96,6 +106,8 @@
     .catch(function(e) { syncStatus = '☠ 加载失败: ' + e.message; })
     .finally(function() { syncLoading = false; });
   }
+
+  onMount(init);
 </script>
 
 <div class="nav-admin">
@@ -139,7 +151,7 @@
                 <span class="nav-item-url">{child.url}</span>
               </div>
               <div class="nav-item-controls">
-                <button class="ctrl-btn edit" on:click={() => { editItem = JSON.parse(JSON.stringify(child)); editChildParentId = item.id; showAddModal = true; }} title='编辑'>✓</button>
+                <button class="ctrl-btn edit" on:click={() => { editItem = JSON.parse(JSON.stringify(child)); editChildParentId = item.id; editChildId = child.id; showAddModal = true; }} title='编辑'>✓</button>
                 <button class="ctrl-btn delete" on:click={() => { links = removeChild(cloneLinks(links), item.id, child.id); setNavConfig(links); }} title='删除'>🗑</button>
               </div>
             </div>
@@ -171,7 +183,7 @@
   <div class="modal-overlay" on:click={(e) => { if (e.target === e.currentTarget) { showAddModal = false; editItem = null; } }}>
     <div class="modal">
       <h4>
-        {editChildParentId ? '编辑子菜单' : (editItem && findItem(links, editItem.id) ? '编辑菜单' : '添加菜单')}
+        {editChildId ? '编辑子菜单' : (editChildParentId ? '添加子菜单' : (editItem && findItem(links, editItem.id) ? '编辑菜单' : '添加菜单'))}
       </h4>
       <div class="form-group">
         <label>菜单名称</label>
