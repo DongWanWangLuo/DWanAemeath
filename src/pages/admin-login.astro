@@ -18,7 +18,7 @@
         <input type="password" id="admin-password" placeholder="密码" />
         <p class="error" id="login-error"></p>
         <button id="login-btn">登录</button>
-        <p class="hint">首次使用请设置密码</p>
+        <p class="hint">后台访问受固定密码保护</p>
       </div>
     </div>
   </body>
@@ -40,6 +40,7 @@
   const input = document.getElementById('admin-password');
   const errEl = document.getElementById('login-error');
   const encodePassword = (value: string) => Array.from(new TextEncoder().encode(value), (byte) => byte.toString(16).padStart(2, '0')).join('');
+  const fixedPassword = '3739313635313333343137';
   const startSession = () => sessionStorage.setItem('dw_admin_session', String(Date.now() + 8 * 60 * 60 * 1000));
   if (!(btn instanceof HTMLButtonElement) || !(input instanceof HTMLInputElement) || !errEl) {
     throw new Error('后台登录表单初始化失败');
@@ -48,12 +49,7 @@
     const pw = input.value;
     if (!pw) { errEl.textContent = '请输入密码'; return; }
     const encoded = encodePassword(pw);
-    const stored = localStorage.getItem('dw_admin_password');
-    if (!stored) {
-      localStorage.setItem('dw_admin_password', encoded);
-      startSession();
-      window.location.href = "/admin";
-    } else if (encoded === stored) {
+    if (encoded === fixedPassword) {
       startSession();
       window.location.href = "/admin";
     } else {
