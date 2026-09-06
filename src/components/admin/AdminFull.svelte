@@ -74,7 +74,9 @@
   }
   function assetRepoPath(value) {
     const path = String(value || '').replace(/^\/+/, '');
-    return path.startsWith('public/') ? path : 'public/' + path;
+    if (path.startsWith('src/') || path.startsWith('public/')) return path;
+    if (String(value || '').startsWith('/')) return 'public/' + path;
+    return 'src/' + path;
   }
   async function replaceAsset(path, event) {
     const file = event.target.files?.[0];
@@ -237,6 +239,10 @@
         <h3>番组计划</h3>
         <div class="field-group"><label>Bangumi 用户ID</label><input type="text" value={getVal('site.bangumi.userId') ?? ''} on:input={(e)=>setVal('site.bangumi.userId',e.target.value)} /></div>
         <div class="field-group"><label>Bilibili UID</label><input type="text" value={getVal('site.anime.bilibili.uid') ?? ''} on:input={(e)=>setVal('site.anime.bilibili.uid',e.target.value)} /></div>
+        <h3>网站品牌图片</h3>
+        <div class="field-group"><label>导航栏 Logo</label><div class="brand-preview-row"><img src={getVal('site.navbar.logo.value') ?? ''} alt="网站 Logo" class="brand-preview logo-preview" /><div class="brand-fields"><input type="text" value={getVal('site.navbar.logo.value') ?? ''} on:input={(e)=>setVal('site.navbar.logo.value',e.target.value)} /><label class="replace-btn">替换 Logo<input type="file" accept="image/*" on:change={(e)=>replaceAsset(getVal('site.navbar.logo.value'),e)} /></label></div></div></div>
+        <h3>网站图标 Favicon</h3>
+        <div class="media-grid favicon-grid">{#each (allConfig.site?.favicon || []) as icon, i}<div class="media-card"><img src={icon.src} alt={'Favicon ' + (i + 1)} loading="lazy" /><input type="text" value={icon.src} on:input={(e)=>updateArrayItem('site.favicon', i, 'src', e.target.value)} /><label class="replace-btn">替换图标<input type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" on:change={(e)=>replaceAsset(icon.src,e)} /></label></div>{/each}</div>
         <div class="save-notice">修改后请点击保存，再点击同步到 GitHub 生效</div>
       </div>
     {/if}
@@ -319,7 +325,7 @@
     {#if activeTab === "profile"}
       <div class="tab-panel">
         <h3>个人资料</h3>
-        <div class="field-group"><label>头像 URL</label><input type="text" value={getVal('profile.avatar') ?? ''} on:input={(e)=>setVal('profile.avatar',e.target.value)} /></div>
+        <div class="field-group"><label>主页头像</label><div class="brand-preview-row"><img src={getVal('profile.avatar') ?? ''} alt="主页头像" class="brand-preview avatar-preview" /><div class="brand-fields"><input type="text" value={getVal('profile.avatar') ?? ''} on:input={(e)=>setVal('profile.avatar',e.target.value)} /><label class="replace-btn">替换头像<input type="file" accept="image/*" on:change={(e)=>replaceAsset(getVal('profile.avatar'),e)} /></label></div></div></div>
         <div class="field-group"><label>姓名</label><input type="text" value={getVal('profile.name') ?? ''} on:input={(e)=>setVal('profile.name',e.target.value)} /></div>
         <div class="field-group"><label>个人简介</label><textarea rows="3" on:input={(e)=>setVal('profile.bio',e.target.value)}>{getVal('profile.bio') ?? ''}</textarea></div>
         <h3>社交链接</h3>
@@ -381,6 +387,18 @@
         <h3>作品集</h3>
         <div class="field-group"><label><input type="checkbox" checked={allConfig.portfolio?.defaultEnabled} on:change={(e)=>setVal('portfolio.defaultEnabled',e.target.checked)} /> 默认启用</label></div>
         <div class="field-group"><label>默认角色 ID</label><input type="text" value={getVal('portfolio.defaultCharacterId') ?? ''} on:input={(e)=>setVal('portfolio.defaultCharacterId',e.target.value)} /></div>
+        <div class="fields-row"><div class="field-group"><label>桌面顶部默认横幅</label><select value={getVal('portfolio.defaultTopBannerId') ?? ''} on:change={(e)=>setVal('portfolio.defaultTopBannerId',e.target.value)}>{#each (getVal('portfolio.banners.desktop.top') || []) as banner}<option value={banner.id}>{banner.label}</option>{/each}</select></div><div class="field-group"><label>桌面底部默认横幅</label><select value={getVal('portfolio.defaultBottomBannerId') ?? ''} on:change={(e)=>setVal('portfolio.defaultBottomBannerId',e.target.value)}>{#each (getVal('portfolio.banners.desktop.bottom') || []) as banner}<option value={banner.id}>{banner.label}</option>{/each}</select></div></div>
+        <div class="fields-row"><div class="field-group"><label>移动顶部默认横幅</label><select value={getVal('portfolio.defaultMobileTopBannerId') ?? ''} on:change={(e)=>setVal('portfolio.defaultMobileTopBannerId',e.target.value)}>{#each (getVal('portfolio.banners.mobile.top') || []) as banner}<option value={banner.id}>{banner.label}</option>{/each}</select></div><div class="field-group"><label>移动底部默认横幅</label><select value={getVal('portfolio.defaultMobileBottomBannerId') ?? ''} on:change={(e)=>setVal('portfolio.defaultMobileBottomBannerId',e.target.value)}>{#each (getVal('portfolio.banners.mobile.bottom') || []) as banner}<option value={banner.id}>{banner.label}</option>{/each}</select></div></div>
+        <h3>开屏动画横幅</h3>
+        <p class="note">这些图片会显示在首页开屏动画中，可直接预览、修改路径或替换原文件。</p>
+        {#each [{ label: '桌面顶部横幅', path: 'portfolio.banners.desktop.top' }, { label: '桌面底部横幅', path: 'portfolio.banners.desktop.bottom' }, { label: '移动顶部横幅', path: 'portfolio.banners.mobile.top' }, { label: '移动底部横幅', path: 'portfolio.banners.mobile.bottom' }] as bannerGroup}
+          <h4 class="media-group-title">{bannerGroup.label}</h4>
+          <div class="media-grid banner-grid">
+            {#each (getVal(bannerGroup.path) || []) as banner, i}
+              <div class="media-card"><img src={banner.src} alt={banner.label} loading="lazy" /><input type="text" value={banner.label} on:input={(e)=>updateArrayItem(bannerGroup.path, i, 'label', e.target.value)} placeholder="名称" /><input type="text" value={banner.src} on:input={(e)=>updateArrayItem(bannerGroup.path, i, 'src', e.target.value)} placeholder="图片路径" /><div class="media-actions"><label class="replace-btn">替换横幅<input type="file" accept="image/*" on:change={(e)=>replaceAsset(banner.src,e)} /></label><button class="mini-delete" on:click={()=>removeArrayItem(bannerGroup.path, i)}>删除</button></div></div>
+            {/each}
+          </div>
+        {/each}
         <h3>角色列表</h3>
         <div class="char-list">
           {#each (allConfig.portfolio?.characters || []) as char, i}
@@ -573,6 +591,15 @@
   .music-info span { color: var(--text-muted, #9ca3af); font-size: 0.8rem; }
   .music-info input { min-width: 0; width: 100%; }
   .music-info audio { width: 100%; height: 28px; }
+  .brand-preview-row { display: flex; gap: 12px; align-items: center; }
+  .brand-preview { width: 88px; height: 88px; object-fit: contain; border-radius: 12px; background: #f3f4f6; }
+  .avatar-preview { border-radius: 50%; }
+  .logo-preview { width: 120px; }
+  .brand-fields { flex: 1; display: grid; gap: 8px; min-width: 0; }
+  .favicon-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .favicon-grid .media-card img { height: 90px; object-fit: contain; }
+  .banner-grid .media-card img { height: 100px; }
+  .media-group-title { margin: 16px 0 8px; font-size: 0.9rem; color: var(--text-main, #1a1a1a); }
   .char-list { display: flex; flex-direction: column; gap: 8px; }
   .char-item { padding: 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; }
   .char-preview { display: block; width: 100%; height: 150px; object-fit: contain; border-radius: 6px; background: #f3f4f6; margin-bottom: 8px; }
