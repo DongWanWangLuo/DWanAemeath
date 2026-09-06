@@ -40,7 +40,7 @@
   const input = document.getElementById('admin-password');
   const errEl = document.getElementById('login-error');
   const encodePassword = (value: string) => Array.from(new TextEncoder().encode(value), (byte) => byte.toString(16).padStart(2, '0')).join('');
-  const fixedPassword = '3739313635313333343137';
+  const fixedPassword = '37393136353133343137';
   const startSession = () => sessionStorage.setItem('dw_admin_session', String(Date.now() + 8 * 60 * 60 * 1000));
   if (!(btn instanceof HTMLButtonElement) || !(input instanceof HTMLInputElement) || !errEl) {
     throw new Error('后台登录表单初始化失败');
