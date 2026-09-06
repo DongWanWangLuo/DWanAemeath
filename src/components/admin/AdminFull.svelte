@@ -72,6 +72,10 @@
     const items = Array.isArray(getVal(path)) ? [...getVal(path)] : [];
     setVal(path, items.filter((_, itemIndex) => itemIndex !== index));
   }
+  function getPostFolderName(title, fallback) {
+    const folderName = String(title || "").trim().replace(/[\\/:*?"<>|]/g, "-").replace(/\s+/g, " ");
+    return folderName || fallback;
+  }
   function toggleBool(path) { const c = getVal(path); setVal(path, !c); }
   function saveToLocal() { try { localStorage.setItem("dw_all_configs", JSON.stringify(allConfig)); saveStatus = "保存成功！重新加载网页后生效"; setTimeout(() => { saveStatus = ""; }, 3000); } catch(e) { saveStatus = "保存失败: " + e.message; } }
   async function syncToGitHub() {
@@ -105,7 +109,7 @@
   async function savePost() {
     if (!editingPost) return;
     if (!githubToken || !githubRepo) { saveStatus = "请先在数据同步中填写 GitHub Token 和仓库名"; return; }
-    const sourceFile = editingPost.sourceFile || "src/content/posts/" + editingPost.slug + "/index.md";
+    const sourceFile = editingPost.sourceFile || "src/content/posts/" + getPostFolderName(editingPost.title, editingPost.slug) + "/index.md";
     const draft: DraftPost = { id: editingPost.slug, title: editingPost.title, description: editingPost.description, content: editingPost.content || "", image: editingPost.cover, tags: editingPost.tags || [], category: editingPost.category || "", published: editingPost.published, draft: editingPost.draft };
     saveStatus = "正在提交文章...";
     try {
@@ -129,7 +133,7 @@
       saveStatus = "文章已从 GitHub 删除";
     } catch (e) { saveStatus = "删除失败: " + String(e); }
   }
-  function createNewPost() { const slug = "new-post-" + Date.now(); editingPost = { slug, sourceFile: "src/content/posts/" + slug + "/index.md", title: "新文章", description: "", category: "", tags: [], published: new Date().toISOString().slice(0,10), draft: true, cover: "", content: "" }; showPostEditor = true; }
+  function createNewPost() { editingPost = { slug: "new-post-" + Date.now(), sourceFile: "", title: "新文章", description: "", category: "", tags: [], published: new Date().toISOString().slice(0,10), draft: true, cover: "", content: "" }; showPostEditor = true; }
 
   async function uploadAsset() {
     if (!assetFile) { assetStatus = "请选择文件"; return; }
