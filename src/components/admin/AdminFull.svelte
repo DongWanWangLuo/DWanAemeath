@@ -72,6 +72,26 @@
     const items = Array.isArray(getVal(path)) ? [...getVal(path)] : [];
     setVal(path, items.filter((_, itemIndex) => itemIndex !== index));
   }
+  function assetRepoPath(value) {
+    const path = String(value || '').replace(/^\/+/, '');
+    return path.startsWith('public/') ? path : 'public/' + path;
+  }
+  async function replaceAsset(path, event) {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file) return;
+    if (!githubToken || !githubRepo) { assetStatus = '请先填写 GitHub Token 和仓库名'; return; }
+    if (file.size > 8 * 1024 * 1024) { assetStatus = '文件不能超过 8 MB'; return; }
+    assetStatus = '正在替换资源...';
+    try {
+      const buffer = await file.arrayBuffer();
+      let binary = '';
+      for (const byte of new Uint8Array(buffer)) binary += String.fromCharCode(byte);
+      const result = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: assetRepoPath(path), encodedContent: btoa(binary), message: 'chore: replace asset ' + path });
+      if (!result.ok) throw new Error(result.error || '替换失败');
+      assetStatus = '资源已替换，重新构建后生效';
+    } catch (error) { assetStatus = '替换失败: ' + String(error); }
+  }
   function getPostFolderName(title, fallback) {
     const folderName = String(title || "").trim().replace(/[\\/:*?"<>|]/g, "-").replace(/\s+/g, " ");
     return folderName || fallback;
@@ -245,26 +265,25 @@
         <div class="field-group"><label>壁纸模式</label><select value={getVal('wallpaper.mode') ?? 'fullscreen'} on:change={(e)=>setVal('wallpaper.mode',e.target.value)}><option value="fullscreen">全屏</option><option value="banner">横幅</option><option value="overlay">透明覆盖</option><option value="none">纯色背景</option></select></div>
         <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.switchable} on:change={(e)=>setVal('wallpaper.switchable',e.target.checked)} /> 允许用户切换背景</label></div>
         <div class="field-group"><label><input type="checkbox" checked={allConfig.wallpaper?.playerEnable} on:change={(e)=>setVal('wallpaper.playerEnable',e.target.checked)} /> 显示背景播放器</label></div>
+        <p class="note">点击图片可预览；“替换”会覆盖当前 GitHub 路径中的文件。</p>
         <h3>桌面背景图</h3>
-        <p class="note">修改路径后请确认文件已存在于 public 或 src/assets 中。</p>
-        <h3>桌面背景图</h3>
-        <div class="url-list">
+        <div class="media-grid">
           {#each (allConfig.wallpaper?.src?.desktop || []) as url, i}
-            <div class="url-item"><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.desktop || [])]; items[i]=e.target.value; setVal('wallpaper.src.desktop',items); }} /><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.desktop', i)}>删除</button></div>
+            <div class="media-card"><img src={url} alt={'桌面壁纸 ' + (i + 1)} loading="lazy" on:error={(e)=>e.currentTarget.style.opacity='0.35'} /><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.desktop || [])]; items[i]=e.target.value; setVal('wallpaper.src.desktop',items); }} /><div class="media-actions"><label class="replace-btn">替换<input type="file" accept="image/*" on:change={(e)=>replaceAsset(url,e)} /></label><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.desktop', i)}>删除</button></div></div>
           {/each}
         </div>
         <button class="inline-add" on:click={()=>addArrayItem('wallpaper.src.desktop')}>添加桌面壁纸</button>
         <h3>移动背景图</h3>
-        <div class="url-list">
+        <div class="media-grid">
           {#each (allConfig.wallpaper?.src?.mobile || []) as url, i}
-            <div class="url-item"><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.mobile || [])]; items[i]=e.target.value; setVal('wallpaper.src.mobile',items); }} /><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.mobile', i)}>删除</button></div>
+            <div class="media-card"><img src={url} alt={'移动壁纸 ' + (i + 1)} loading="lazy" on:error={(e)=>e.currentTarget.style.opacity='0.35'} /><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.mobile || [])]; items[i]=e.target.value; setVal('wallpaper.src.mobile',items); }} /><div class="media-actions"><label class="replace-btn">替换<input type="file" accept="image/*" on:change={(e)=>replaceAsset(url,e)} /></label><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.mobile', i)}>删除</button></div></div>
           {/each}
         </div>
         <button class="inline-add" on:click={()=>addArrayItem('wallpaper.src.mobile')}>添加移动壁纸</button>
         <h3>背景视频</h3>
-        <div class="url-list">
+        <div class="media-grid video-grid">
           {#each (allConfig.wallpaper?.src?.playerUrl || []) as url, i}
-            <div class="url-item"><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.playerUrl || [])]; items[i]=e.target.value; setVal('wallpaper.src.playerUrl',items); }} /><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.playerUrl', i)}>删除</button></div>
+            <div class="media-card"><video src={url} controls muted preload="metadata"></video><input type="text" value={url} on:input={(e)=>{ const items=[...(allConfig.wallpaper?.src?.playerUrl || [])]; items[i]=e.target.value; setVal('wallpaper.src.playerUrl',items); }} /><div class="media-actions"><label class="replace-btn">替换<input type="file" accept="video/*" on:change={(e)=>replaceAsset(url,e)} /></label><button class="mini-delete" on:click={()=>removeArrayItem('wallpaper.src.playerUrl', i)}>删除</button></div></div>
           {/each}
         </div>
         <button class="inline-add" on:click={()=>addArrayItem('wallpaper.src.playerUrl')}>添加视频地址</button>
@@ -281,7 +300,7 @@
           <div class="fields-row"><div class="field-group"><label>平台</label><input type="text" value={getVal('music.meting.server') ?? ''} on:input={(e)=>setVal('music.meting.server',e.target.value)} /></div><div class="field-group"><label>类型</label><input type="text" value={getVal('music.meting.type') ?? ''} on:input={(e)=>setVal('music.meting.type',e.target.value)} /></div></div>
           <div class="field-group"><label>歌单/歌曲 ID</label><input type="text" value={getVal('music.meting.id') ?? ''} on:input={(e)=>setVal('music.meting.id',e.target.value)} /></div>
         {:else}
-          <div class="field-group"><label>本地歌单 JSON</label><textarea rows="8" value={JSON.stringify(getVal('music.local.playlist') ?? [], null, 2)} on:change={(e)=>{ try { setVal('music.local.playlist', JSON.parse(e.target.value)); saveStatus = '歌单 JSON 已更新'; } catch { saveStatus = '歌单 JSON 格式错误'; } }}></textarea><p class="note">每项使用 name、artist、url、cover、lrc 字段。</p></div>
+          <div class="field-group"><label>本地歌单</label><div class="music-list">{#each (allConfig.music?.local?.playlist || []) as song, i}<div class="music-card">{#if song.cover}<img src={song.cover} alt={song.name} loading="lazy" />{:else}<div class="music-placeholder">♪</div>{/if}<div class="music-info"><strong>{song.name || '未命名歌曲'}</strong><span>{song.artist || '未知艺术家'}</span><input type="text" value={song.url} on:input={(e)=>updateArrayItem('music.local.playlist', i, 'url', e.target.value)} /><audio src={song.url} controls preload="none"></audio></div><label class="replace-btn">替换音频<input type="file" accept="audio/*" on:change={(e)=>replaceAsset(song.url,e)} /></label></div>{/each}</div><textarea rows="8" value={JSON.stringify(getVal('music.local.playlist') ?? [], null, 2)} on:change={(e)=>{ try { setVal('music.local.playlist', JSON.parse(e.target.value)); saveStatus = '歌单 JSON 已更新'; } catch { saveStatus = '歌单 JSON 格式错误'; } }}></textarea><p class="note">每项使用 name、artist、url、cover、lrc 字段。</p></div>
         {/if}
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
@@ -353,7 +372,7 @@
         <h3>封面图片</h3>
         <div class="field-group"><label><input type="checkbox" checked={allConfig.coverImage?.enableInPost !== false} on:change={(e)=>setVal('coverImage.enableInPost',e.target.checked)} /> 文章页显示封面</label></div>
         <div class="field-group"><label><input type="checkbox" checked={allConfig.coverImage?.randomCoverImage?.enable} on:change={(e)=>setVal('coverImage.randomCoverImage.enable',e.target.checked)} /> 启用随机封面</label></div>
-        <div class="field-group"><label>随机封面回退图片</label><input type="text" value={getVal('coverImage.randomCoverImage.fallback') ?? ''} on:input={(e)=>setVal('coverImage.randomCoverImage.fallback',e.target.value)} /></div>
+        <div class="field-group"><label>随机封面回退图片</label><div class="cover-preview"><img src={getVal('coverImage.randomCoverImage.fallback') ?? ''} alt="封面回退图" /><input type="text" value={getVal('coverImage.randomCoverImage.fallback') ?? ''} on:input={(e)=>setVal('coverImage.randomCoverImage.fallback',e.target.value)} /></div></div>
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
     {/if}
@@ -366,7 +385,7 @@
         <div class="char-list">
           {#each (allConfig.portfolio?.characters || []) as char, i}
             <div class="char-item">
-              <input type="text" value={char.id} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'id', e.target.value)} placeholder="角色 ID" /><input type="text" value={char.label} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'label', e.target.value)} placeholder="角色名" /><input type="text" value={char.src} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'src', e.target.value)} placeholder="图片路径" style="margin-top:4px" /><input type="text" value={char.thumbnail || ''} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'thumbnail', e.target.value)} placeholder="缩略图路径" style="margin-top:4px" />
+              <img class="char-preview" src={char.thumbnail || char.src} alt={char.label} loading="lazy" /><input type="text" value={char.id} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'id', e.target.value)} placeholder="角色 ID" /><input type="text" value={char.label} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'label', e.target.value)} placeholder="角色名" /><input type="text" value={char.src} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'src', e.target.value)} placeholder="图片路径" style="margin-top:4px" /><input type="text" value={char.thumbnail || ''} on:input={(e)=>updateArrayItem('portfolio.characters', i, 'thumbnail', e.target.value)} placeholder="缩略图路径" style="margin-top:4px" />
             </div>
           {/each}
         </div>
@@ -399,7 +418,7 @@
         <div class="field-group"><label>标题</label><input type="text" value={getVal('sponsor.title') ?? ''} on:input={(e)=>setVal('sponsor.title',e.target.value)} /></div>
         <div class="field-group"><label>说明</label><textarea rows="2" on:input={(e)=>setVal('sponsor.description',e.target.value)}>{getVal('sponsor.description') ?? ''}</textarea></div>
         {#each (allConfig.sponsor?.methods || []) as method, i}
-          <div class="fields-row profile-link-row"><div class="field-group"><label>方式名称</label><input type="text" value={method.name} on:input={(e)=>updateArrayItem('sponsor.methods', i, 'name', e.target.value)} /></div><div class="field-group"><label>二维码路径</label><input type="text" value={method.qrCode} on:input={(e)=>updateArrayItem('sponsor.methods', i, 'qrCode', e.target.value)} /></div><label><input type="checkbox" checked={method.enabled !== false} on:change={(e)=>updateArrayItem('sponsor.methods', i, 'enabled', e.target.checked)} /> 启用</label></div>
+          <div class="fields-row profile-link-row sponsor-method-row"><img src={method.qrCode} alt={method.name} class="qr-preview" /><div class="field-group"><label>方式名称</label><input type="text" value={method.name} on:input={(e)=>updateArrayItem('sponsor.methods', i, 'name', e.target.value)} /></div><div class="field-group"><label>二维码路径</label><input type="text" value={method.qrCode} on:input={(e)=>updateArrayItem('sponsor.methods', i, 'qrCode', e.target.value)} /></div><label><input type="checkbox" checked={method.enabled !== false} on:change={(e)=>updateArrayItem('sponsor.methods', i, 'enabled', e.target.checked)} /> 启用</label></div>
         {/each}
         <div class="save-notice">修改后请点击保存并同步。</div>
       </div>
@@ -531,14 +550,36 @@
   .save-notice { margin-top: 24px; padding: 12px 16px; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; font-size: 0.82rem; color: #92400e; }
   .note { font-size: 0.82rem; color: var(--text-muted, #9ca3af); margin-bottom: 12px; }
   .url-list { max-height: 200px; overflow-y: auto; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; }
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+  .media-card { min-width: 0; padding: 8px; border: 1px solid var(--border, #e5e7eb); border-radius: 10px; background: var(--card-bg, #fff); }
+  .media-card img, .media-card video { display: block; width: 100%; height: 112px; object-fit: cover; border-radius: 7px; background: #111827; margin-bottom: 8px; }
+  .video-grid .media-card video { object-fit: contain; }
+  .media-card input[type="text"] { width: 100%; box-sizing: border-box; margin-bottom: 7px; }
+  .media-actions { display: flex; gap: 6px; align-items: center; }
+  .replace-btn { display: inline-flex; align-items: center; padding: 6px 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; cursor: pointer; font-size: 0.78rem; background: var(--hover-bg, #f3f4f6); }
+  .replace-btn input { display: none; }
   .url-item { display: flex; gap: 6px; align-items: center; padding: 6px 10px; font-size: 0.8rem; font-family: monospace; border-bottom: 1px solid var(--border, #e5e7eb); word-break: break-all; color: var(--text-secondary, #6b7280); }
   .url-item input { flex: 1; min-width: 0; }
   .url-item:last-child { border-bottom: none; }
   .inline-add, .mini-delete { padding: 6px 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 6px; cursor: pointer; font-size: 0.78rem; }
   .inline-add { margin: 8px 0 18px; background: var(--hover-bg, #f3f4f6); color: var(--text-main, #1a1a1a); }
   .mini-delete { flex-shrink: 0; background: #fff; color: #dc2626; }
+  .music-list { display: grid; gap: 10px; margin-bottom: 12px; }
+  .music-card { display: flex; gap: 10px; align-items: center; padding: 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 10px; background: var(--card-bg, #fff); }
+  .music-card img, .music-placeholder { width: 58px; height: 58px; flex: 0 0 58px; object-fit: cover; border-radius: 8px; background: #e5e7eb; }
+  .music-placeholder { display: grid; place-items: center; font-size: 1.5rem; color: #6b7280; }
+  .music-info { display: grid; gap: 3px; min-width: 0; flex: 1; }
+  .music-info strong, .music-info span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .music-info span { color: var(--text-muted, #9ca3af); font-size: 0.8rem; }
+  .music-info input { min-width: 0; width: 100%; }
+  .music-info audio { width: 100%; height: 28px; }
   .char-list { display: flex; flex-direction: column; gap: 8px; }
   .char-item { padding: 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; }
+  .char-preview { display: block; width: 100%; height: 150px; object-fit: contain; border-radius: 6px; background: #f3f4f6; margin-bottom: 8px; }
+  .cover-preview { display: grid; grid-template-columns: 160px 1fr; gap: 10px; align-items: center; }
+  .cover-preview img { width: 160px; height: 90px; object-fit: cover; border-radius: 8px; background: #f3f4f6; }
+  .sponsor-method-row { align-items: center; padding: 10px; border: 1px solid var(--border, #e5e7eb); border-radius: 8px; }
+  .qr-preview { width: 92px; height: 92px; object-fit: contain; border-radius: 6px; background: #f3f4f6; }
   .char-item input { margin-bottom: 4px; }
   .posts-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
   .posts-header h3 { margin: 0; font-size: 1.1rem; text-transform: none; letter-spacing: 0; color: var(--text-main, #1a1a1a); }
