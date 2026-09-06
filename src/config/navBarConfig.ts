@@ -4,12 +4,17 @@ import {
 	type NavBarSearchConfig,
 	NavBarSearchMethod,
 } from "../types/navBarConfig";
+import syncedNavConfig from "../data/nav-config.json";
 
 // ============================================================================
 // 导航栏配置 - 根据顺序动态生成导航栏链接
 // NavBar Configuration - Dynamically generate navigation bar links based on order
 // ============================================================================
 const getDynamicNavBarConfig = (): NavBarConfig => {
+	if (Array.isArray(syncedNavConfig?.links) && syncedNavConfig.links.length > 0) {
+		return { links: syncedNavConfig.links as NavBarLink[] };
+	}
+
 	// 基础导航栏链接
 	const links: NavBarLink[] = [
 		// 主页

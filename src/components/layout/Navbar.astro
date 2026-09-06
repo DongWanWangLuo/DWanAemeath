@@ -66,11 +66,14 @@ function isPageEnabled(link: NavBarLink): boolean {
 }
 
 function filterLinks(link: NavBarLink): NavBarLink | null {
+    if (link.enabled === false) return null;
 	if (!link.children) {
 		return isPageEnabled(link) ? link : null;
 	}
 
-	const filteredChildren = link.children.filter(isPageEnabled);
+    const filteredChildren = link.children
+        .map(filterLinks)
+        .filter((child): child is NavBarLink => child !== null);
 
 	if (filteredChildren.length === 0) return null;
 	if (filteredChildren.length === 1) return filteredChildren[0];
