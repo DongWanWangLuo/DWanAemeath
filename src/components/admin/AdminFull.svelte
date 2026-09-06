@@ -82,17 +82,21 @@
     const file = event.target.files?.[0];
     event.target.value = '';
     if (!file) return;
-    if (!githubToken || !githubRepo) { assetStatus = '请先填写 GitHub Token 和仓库名'; return; }
-    if (file.size > 8 * 1024 * 1024) { assetStatus = '文件不能超过 8 MB'; return; }
-    assetStatus = '正在替换资源...';
+    const setAssetStatus = (message) => { assetStatus = message; saveStatus = message; };
+    if (!path) { setAssetStatus('当前资源没有路径，无法替换'); return; }
+    if (!githubToken || !githubRepo) { setAssetStatus('请先在“数据同步”中填写 GitHub Token 和仓库名'); return; }
+    if (file.size > 8 * 1024 * 1024) { setAssetStatus('文件不能超过 8 MB'); return; }
+    setAssetStatus('正在替换资源，请稍候...');
     try {
       const buffer = await file.arrayBuffer();
       let binary = '';
       for (const byte of new Uint8Array(buffer)) binary += String.fromCharCode(byte);
       const result = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: assetRepoPath(path), encodedContent: btoa(binary), message: 'chore: replace asset ' + path });
       if (!result.ok) throw new Error(result.error || '替换失败');
-      assetStatus = '资源已替换，重新构建后生效';
-    } catch (error) { assetStatus = '替换失败: ' + String(error); }
+      const previewUrl = URL.createObjectURL(file);
+      document.querySelectorAll(`[src="${CSS.escape(path)}"]`).forEach((element) => { element.setAttribute('src', previewUrl); });
+      setAssetStatus('资源已替换，重新构建后生效');
+    } catch (error) { setAssetStatus('替换失败: ' + String(error)); }
   }
   function getPostFolderName(title, fallback) {
     const folderName = String(title || "").trim().replace(/[\\/:*?"<>|]/g, "-").replace(/\s+/g, " ");
