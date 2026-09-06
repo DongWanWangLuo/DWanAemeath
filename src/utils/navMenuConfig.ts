@@ -100,8 +100,9 @@ export function deleteItem(links: NavMenuItem[], id: string): NavMenuItem[] {
 export function findItem(links: NavMenuItem[], id: string): NavMenuItem | null {
   for (var i = 0; i < links.length; i++) {
     if (links[i].id === id) return links[i];
-    if (links[i].children) {
-      var found = findItem(links[i].children, id);
+    const children = links[i].children;
+    if (children) {
+      var found = findItem(children, id);
       if (found) return found;
     }
   }

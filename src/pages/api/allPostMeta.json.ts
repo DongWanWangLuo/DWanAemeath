@@ -38,9 +38,11 @@ export async function GET(): Promise<Response> {
 	const allPostsData = await Promise.all(
 		posts.map(async (post) => ({
 			id: post.id,
+			sourceFile: post.filePath,
 			url: getPostUrlBySlug(post.id),
 			title: post.data.title,
 			description: post.data.description,
+			draft: post.data.draft === true,
 			image: await getPostCover(post.data.image, post.id, post.filePath),
 			published: post.data.published.getTime(),
 			category: post.data.category || "",

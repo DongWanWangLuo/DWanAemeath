@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(JSON.stringify({ ok: false, error: '仓库格式错误' }), { status: 400 });
     }
 
-    var filePath = 'src/data/admin-config.json';
+    var filePath = 'src/data/all-configs.json';
     var content = JSON.stringify(config, null, 2);
     var contentB64 = Buffer.from(content).toString('base64');
 

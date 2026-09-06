@@ -1853,6 +1853,57 @@ function disableAnimation() {
   });
 </script>
 
+<script is:inline data-swup-ignore-script>
+  (() => {
+    const applyAdminConfig = (config) => {
+      if (!config || typeof config !== "object") return;
+      const site = config.site || {};
+      const themeColor = site.themeColor || {};
+      const wallpaper = config.wallpaper || {};
+      const effects = config.effects || {};
+      const root = document.documentElement;
+
+      if (Number.isFinite(Number(themeColor.hue))) root.style.setProperty("--hue", String(themeColor.hue));
+      if (typeof themeColor.defaultMode === "string") {
+        localStorage.setItem("theme", themeColor.defaultMode);
+        window.dispatchEvent(new CustomEvent("dw_theme_change", { detail: { theme: themeColor.defaultMode } }));
+      }
+      if (typeof wallpaper.mode === "string") {
+        root.dataset.wallpaperMode = wallpaper.mode;
+        localStorage.setItem("dw_admin_wallpaper_mode", wallpaper.mode);
+        window.dispatchEvent(new CustomEvent("dw_wallpaper_mode_change", { detail: { mode: wallpaper.mode } }));
+      }
+      if (typeof site.categoryBar === "boolean") {
+        const categoryBar = document.getElementById("category-bar");
+        if (categoryBar) categoryBar.hidden = !site.categoryBar;
+      }
+      if (typeof effects.enable === "boolean") {
+        root.dataset.effectsEnabled = String(effects.enable);
+        window.dispatchEvent(new CustomEvent("dw_sakura_toggle", { detail: { enabled: effects.enable } }));
+      }
+      root.dataset.wavesEnabled = String(effects.enable !== false && wallpaper.common?.waves?.enable?.desktop !== false);
+      root.dataset.gradientEnabled = String(effects.enable !== false && wallpaper.common?.gradient?.enable?.desktop !== false);
+    };
+
+    const loadAdminConfig = async () => {
+      try {
+        const stored = localStorage.getItem("dw_all_configs");
+        if (stored) {
+          applyAdminConfig(JSON.parse(stored));
+          return;
+        }
+        const response = await fetch("/api/configs.json", { credentials: "same-origin" });
+        if (response.ok) applyAdminConfig(await response.json());
+      } catch (error) {
+        console.warn("后台配置加载失败", error);
+      }
+    };
+
+    loadAdminConfig();
+    document.addEventListener("astro:page-load", loadAdminConfig);
+  })();
+</script>
+
 <!-- 关于我页面的服务器状态由持久布局统一管理，确保 Swup 无刷新切页后仍会初始化。 -->
 <script is:inline data-swup-ignore-script>
   (() => {

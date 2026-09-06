@@ -2,12 +2,17 @@
 import AdminFull from '@/components/admin/AdminFull.svelte';
 // Admin dashboard page - password protected
 ---
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DWan博客 - 后台管理</title>
-</head>
-
-<div class="admin-page">
-  <AdminFull client:load />
-</div>
+<!doctype html>
+<html lang="zh-CN" data-pagefind-ignore>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DWan博客 - 后台管理</title>
+  </head>
+  <body>
+    <div class="admin-page">
+      <AdminFull client:load />
+    </div>
+  </body>
+</html>

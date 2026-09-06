@@ -2,6 +2,7 @@
   import { getNavConfig, setNavConfig, cloneLinks, genId, addChild, removeChild, moveItem, updateItem, deleteItem, findItem } from '@/utils/navMenuConfig';
   import type { NavMenuItem } from '@/types/navMenuConfig';
   import { defaultNavItems } from '@/types/navMenuConfig';
+  import { githubFileRequest } from '@/utils/githubClient';
 
   let links = [];
   let showAddModal = false;
@@ -16,8 +17,8 @@
     const stored = getNavConfig();
     if (stored) { links = cloneLinks(stored); }
     else { links = cloneLinks(defaultNavItems); }
-    try { githubToken = localStorage.getItem("dw_admin_github_token") ?? ""; } catch(e) {}
-    try { githubRepo = localStorage.getItem("dw_admin_github_repo") ?? ""; } catch(e) {}
+    try { githubToken = sessionStorage.getItem("dw_admin_github_token") ?? ""; } catch(e) {}
+    try { githubRepo = sessionStorage.getItem("dw_admin_github_repo") ?? ""; } catch(e) {}
   }
 
 
@@ -75,8 +76,7 @@
     syncLoading = true;
     syncStatus = '同步中...';
     try {
-      const res = await fetch('/api/nav-sync.json', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: githubToken, repo: githubRepo, config: { links } }) });
-      const data = await res.json();
+      const data = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: 'src/data/nav-config.json', content: JSON.stringify({ links }, null, 2), message: 'chore: sync nav menu config' });
       syncStatus = data.ok ? '★ 同步成功！' : '☠ ' + (data.error || '同步失败');
     } catch (e) { syncStatus = '☠ 网络错误: ' + String(e); }
     finally { syncLoading = false; }
@@ -86,13 +86,12 @@
     if (!githubToken || !githubRepo) { syncStatus = '请先填写 GitHub Token 和仓库名'; return; }
     syncLoading = true;
     syncStatus = '加载中...';
-    fetch('https://api.github.com/repos/' + githubRepo + '/contents/src/data/nav-config.json', { headers: { Authorization: 'Bearer ' + githubToken } })
-    .then(function(r) { return r.json(); })
+    githubFileRequest({ token: githubToken, repo: githubRepo, action: 'read', path: 'src/data/nav-config.json' })
     .then(function(data) {
-      if (data.content) {
-        var decoded = JSON.parse(atob(data.content));
+      if (data.ok && data.content) {
+        var decoded = JSON.parse(data.content);
         if (decoded.links) { links = cloneLinks(decoded.links); setNavConfig(links); syncStatus = '★ 已从 GitHub 加载'; }
-      }
+      } else { throw new Error(data.error || '加载失败'); }
     })
     .catch(function(e) { syncStatus = '☠ 加载失败: ' + e.message; })
     .finally(function() { syncLoading = false; });
@@ -155,11 +154,11 @@
   <h4>同步到 GitHub</h4>
   <div class="setting-group">
     <label>GitHub Token</label>
-    <input type="password" value={githubToken} on:input={(e) => { githubToken = e.target.value; }} placeholder="ghp_xxxxxxxxxxxx" />
+    <input type="password" value={githubToken} on:input={(e) => { githubToken = e.target.value; sessionStorage.setItem("dw_admin_github_token", githubToken); }} placeholder="ghp_xxxxxxxxxxxx" />
   </div>
   <div class="setting-group">
     <label>仓库名</label>
-    <input type="text" value={githubRepo} on:input={(e) => { githubRepo = e.target.value; }} placeholder="DongWanWangLuo/DWanAemeath" />
+    <input type="text" value={githubRepo} on:input={(e) => { githubRepo = e.target.value; sessionStorage.setItem("dw_admin_github_repo", githubRepo); }} placeholder="DongWanWangLuo/DWanAemeath" />
   </div>
   <div class="sync-buttons">
     <button class="btn-sync" on:click={syncToGitHub} disabled={syncLoading}>同步到 GitHub</button>

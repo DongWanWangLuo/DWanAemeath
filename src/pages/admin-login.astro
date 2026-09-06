@@ -2,16 +2,27 @@
 // Admin login page - password protected entry to admin panel
 ---
 
-<div class="login-page">
-  <div class="login-box">
-    <h1>DWan博客 - 后台管理</h1>
-    <p class="subtitle">请输入密码以访问管理面板</p>
-    <input type="password" id="admin-password" placeholder="密码" />
-    <p class="error" id="login-error"></p>
-    <button id="login-btn">登录</button>
-    <p class="hint">首次使用请设置密码</p>
-  </div>
-</div>
+<!doctype html>
+<html lang="zh-CN" data-pagefind-ignore>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>DWan博客 - 后台登录</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-box">
+        <h1>DWan博客 - 后台管理</h1>
+        <p class="subtitle">请输入密码以访问管理面板</p>
+        <input type="password" id="admin-password" placeholder="密码" />
+        <p class="error" id="login-error"></p>
+        <button id="login-btn">登录</button>
+        <p class="hint">首次使用请设置密码</p>
+      </div>
+    </div>
+  </body>
+</html>
 
 <style>
   .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg, #f8fafc); }
@@ -28,16 +39,22 @@
   const btn = document.getElementById('login-btn');
   const input = document.getElementById('admin-password');
   const errEl = document.getElementById('login-error');
+  const encodePassword = (value: string) => Array.from(new TextEncoder().encode(value), (byte) => byte.toString(16).padStart(2, '0')).join('');
+  const startSession = () => sessionStorage.setItem('dw_admin_session', String(Date.now() + 8 * 60 * 60 * 1000));
+  if (!(btn instanceof HTMLButtonElement) || !(input instanceof HTMLInputElement) || !errEl) {
+    throw new Error('后台登录表单初始化失败');
+  }
   btn.addEventListener('click', () => {
     const pw = input.value;
     if (!pw) { errEl.textContent = '请输入密码'; return; }
+    const encoded = encodePassword(pw);
     const stored = localStorage.getItem('dw_admin_password');
     if (!stored) {
-      localStorage.setItem('dw_admin_password', btoa(pw));
-      sessionStorage.setItem('dw_admin_session', '1');
+      localStorage.setItem('dw_admin_password', encoded);
+      startSession();
       window.location.href = "/admin";
-    } else if (btoa(pw) === stored) {
-      sessionStorage.setItem('dw_admin_session', '1');
+    } else if (encoded === stored) {
+      startSession();
       window.location.href = "/admin";
     } else {
       errEl.textContent = '密码错误';
