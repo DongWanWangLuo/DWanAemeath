@@ -73,7 +73,7 @@
     setVal(path, items.filter((_, itemIndex) => itemIndex !== index));
   }
   function assetRepoPath(value) {
-    const path = String(value || '').replace(/^\/+/, '');
+    const path = String(value || '').split(/[?#]/, 1)[0].replace(/^\/+/, '');
     if (path.startsWith('src/') || path.startsWith('public/')) return path;
     if (String(value || '').startsWith('/')) return 'public/' + path;
     return 'src/' + path;
