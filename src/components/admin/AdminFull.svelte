@@ -42,13 +42,25 @@
     { id: "sync", label: "数据同步" },
   ];
 
+  function mergeCategories(...sources) {
+    return [...new Set(sources.flatMap((source) => Array.isArray(source) ? source : [])
+      .map((category) => String(category).trim())
+      .filter(Boolean))];
+  }
+
   async function loadAllConfigs() {
     try {
       const res = await fetch("/api/configs.json");
       if (!res.ok) { syncStatus = "找不到配置文件"; return; }
       const serverConfig = await res.json();
       const localConfig = localStorage.getItem("dw_all_configs");
-      allConfig = localConfig ? JSON.parse(localConfig) : serverConfig;
+      const cachedConfig = localConfig ? JSON.parse(localConfig) : {};
+      allConfig = {
+        ...serverConfig,
+        ...cachedConfig,
+        categories: mergeCategories(serverConfig.categories, cachedConfig.categories),
+      };
+      localStorage.setItem("dw_all_configs", JSON.stringify(allConfig));
     } catch (e) { syncStatus = "请求失败: " + e.message; }
   }
   function getVal(path) { const keys = path.split("."); let cur = allConfig; for (const k of keys) { if (cur == null) return undefined; cur = cur[k]; } return cur; }
@@ -118,7 +130,15 @@
   function exportConfig() { const blob = new Blob([JSON.stringify(allConfig, null, 2)], { type: "application/json" }); const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = "dwan-config-" + new Date().toISOString().slice(0,10) + ".json"; a.click(); URL.revokeObjectURL(url); }
   function importConfig(e) { const file = e.target.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = function(ev) { try { allConfig = JSON.parse(ev.target.result); saveStatus = "导入成功！请点击保存。"; } catch(err) { saveStatus = "文件格式错误"; } }; reader.readAsText(file); e.target.value = ""; }
   async function loadPosts() {
-    try { const res = await fetch("/api/allPostMeta.json"); if (res.ok) { const data = await res.json(); posts = (data.posts || data).map(function(p) { return { slug: p.id || p.slug || p.fileSlug, sourceFile: p.sourceFile || "", title: p.frontmatter?.title || p.title || p.id || p.slug, description: p.frontmatter?.description || p.description || "", category: p.frontmatter?.category || p.category || "", tags: p.frontmatter?.tags || p.tags || [], published: p.frontmatter?.published || (p.published ? new Date(p.published).toISOString().slice(0, 10) : ""), draft: p.frontmatter?.draft === true || p.draft === true, cover: p.frontmatter?.image || p.image || "" }; }); } } catch(e) { posts = []; }
+    try {
+      const res = await fetch("/api/allPostMeta.json");
+      if (res.ok) {
+        const data = await res.json();
+        posts = (data.posts || data).map(function(p) { return { slug: p.id || p.slug || p.fileSlug, sourceFile: p.sourceFile || "", title: p.frontmatter?.title || p.title || p.id || p.slug, description: p.frontmatter?.description || p.description || "", category: p.frontmatter?.category || p.category || "", tags: p.frontmatter?.tags || p.tags || [], published: p.frontmatter?.published || (p.published ? new Date(p.published).toISOString().slice(0, 10) : ""), draft: p.frontmatter?.draft === true || p.draft === true, cover: p.frontmatter?.image || p.image || "" }; });
+        const postCategories = posts.map((post) => post.category);
+        allConfig = { ...allConfig, categories: mergeCategories(allConfig.categories, postCategories) };
+      }
+    } catch(e) { posts = []; }
   }
   async function openEditPost(post) {
     editingPost = JSON.parse(JSON.stringify(post));

@@ -29,7 +29,7 @@
     editItem = { name: '', url: '', icon: '', pageKey: '', external: false, enabled: true };
     editChildParentId = parentId || '';
     editChildId = '';
-    createPage = true;
+    createPage = Boolean(githubToken && githubRepo);
     showAddModal = true;
   }
 
@@ -56,6 +56,11 @@
 
   async function saveItem() {
     if (!editItem) return;
+    editItem.name = String(editItem.name || '').trim();
+    if (!editItem.name) {
+      syncStatus = '请输入菜单名称';
+      return;
+    }
     const newLinks = cloneLinks(links);
     const pageSlug = getPageSlug(editItem.name);
     const pageUrl = `/custom/${pageSlug}/`;
@@ -63,15 +68,13 @@
       syncStatus = '独立页面不能同时设置为外部链接';
       return;
     }
-    if (createPage && (!githubToken || !githubRepo)) {
-      syncStatus = '创建独立页面前，请先在数据同步中填写 GitHub Token 和仓库名';
-      return;
-    }
-    if (createPage && githubToken && githubRepo) {
+    const canCreatePage = createPage && githubToken && githubRepo;
+    if (createPage && !canCreatePage) syncStatus = '菜单已保存到本机；配置 GitHub Token 和仓库名后可创建独立页面';
+    if (canCreatePage) {
       const pageResult = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: `src/content/spec/${pageSlug}.md`, content: getPageContent(editItem), message: `chore: sync custom page ${pageSlug}` });
       if (!pageResult.ok) { syncStatus = '页面创建失败：' + (pageResult.error || '未知错误'); return; }
     }
-    if (createPage) { editItem.url = pageUrl; editItem.createPage = true; }
+    if (canCreatePage) { editItem.url = pageUrl; editItem.createPage = true; }
     if (editChildParentId) {
       if (editChildId) {
         links = updateItem(newLinks, editChildId, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled, createPage: editItem.createPage, pageTitle: editItem.pageTitle, pageContent: editItem.pageContent });
