@@ -669,7 +669,7 @@
         "qrCode": "/assets/images/sponsor/alipay.webp",
         "link": "",
         "description": "使用 支付宝 扫码打赏",
-        "enabled": true
+        "enabled": false
       },
       {
         "name": "微信",
@@ -677,7 +677,7 @@
         "qrCode": "/assets/images/sponsor/wechat.webp",
         "link": "",
         "description": "使用 微信 扫码打赏",
-        "enabled": true
+        "enabled": false
       }
     ],
     "sponsors": []
