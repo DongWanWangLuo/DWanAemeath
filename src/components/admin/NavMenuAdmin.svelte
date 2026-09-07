@@ -10,6 +10,7 @@
   let editItem = null;
   let editChildParentId = '';
   let editChildId = '';
+  let createPage = false;
   let syncStatus = '';
   let syncLoading = false;
   let githubToken = '';
@@ -28,6 +29,7 @@
     editItem = { name: '', url: '', icon: '', pageKey: '', external: false, enabled: true };
     editChildParentId = parentId || '';
     editChildId = '';
+    createPage = true;
     showAddModal = true;
   }
 
@@ -35,24 +37,53 @@
     editItem = JSON.parse(JSON.stringify(item));
     editChildParentId = '';
     editChildId = '';
+    createPage = item.createPage === true;
     showAddModal = true;
   }
 
-  function saveItem() {
+  function getPageSlug(name) {
+    return String(name || '')
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-')
+      .replace(/^-+|-+$/g, '') || genId('page');
+  }
+
+  function getPageContent(item) {
+    const title = item.pageTitle || item.name || '新页面';
+    return `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(item.name || '')}\n---\n\n${item.pageContent || `# ${title}\n\n在后台编辑这个页面。`}\n`;
+  }
+
+  async function saveItem() {
     if (!editItem) return;
     const newLinks = cloneLinks(links);
+    const pageSlug = getPageSlug(editItem.name);
+    const pageUrl = `/custom/${pageSlug}/`;
+    if (createPage && editItem.external) {
+      syncStatus = '独立页面不能同时设置为外部链接';
+      return;
+    }
+    if (createPage && (!githubToken || !githubRepo)) {
+      syncStatus = '创建独立页面前，请先在数据同步中填写 GitHub Token 和仓库名';
+      return;
+    }
+    if (createPage && githubToken && githubRepo) {
+      const pageResult = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: `src/content/spec/${pageSlug}.md`, content: getPageContent(editItem), message: `chore: sync custom page ${pageSlug}` });
+      if (!pageResult.ok) { syncStatus = '页面创建失败：' + (pageResult.error || '未知错误'); return; }
+    }
+    if (createPage) { editItem.url = pageUrl; editItem.createPage = true; }
     if (editChildParentId) {
       if (editChildId) {
-        links = updateItem(newLinks, editChildId, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled });
+        links = updateItem(newLinks, editChildId, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled, createPage: editItem.createPage, pageTitle: editItem.pageTitle, pageContent: editItem.pageContent });
       } else {
-        var child = { id: genId('child'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false };
+        var child = { id: genId('child'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false, createPage: editItem.createPage, pageTitle: editItem.pageTitle, pageContent: editItem.pageContent };
         links = addChild(newLinks, editChildParentId, child);
       }
     } else {
       if (editItem.id && findItem(newLinks, editItem.id)) {
-        links = updateItem(newLinks, editItem.id, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled });
+        links = updateItem(newLinks, editItem.id, { name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external, enabled: editItem.enabled, createPage: editItem.createPage, pageTitle: editItem.pageTitle, pageContent: editItem.pageContent });
       } else {
-        var newItem = { id: genId('item'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false };
+        var newItem = { id: genId('item'), name: editItem.name, url: editItem.url, icon: editItem.icon || '', pageKey: editItem.pageKey, external: editItem.external || false, enabled: editItem.enabled !== false, createPage: editItem.createPage, pageTitle: editItem.pageTitle, pageContent: editItem.pageContent };
         links = [...newLinks, newItem];
       }
     }
@@ -61,6 +92,7 @@
     editItem = null;
     editChildParentId = '';
     editChildId = '';
+    createPage = false;
   }
 
   function deleteItemById(id) {
@@ -198,11 +230,19 @@
         <input type="text" value={editItem.icon} on:input={(e) => { editItem.icon = e.target.value; }} placeholder="material-symbols:info" />
       </div>
       <div class="form-group">
-        <label><input type="checkbox" checked={editItem.external} on:change={(e) => { editItem.external = e.target.checked; }} /> 外部链接</label>
+        <label><input type="checkbox" checked={editItem.external} on:change={(e) => { editItem.external = e.target.checked; if (editItem.external) createPage = false; }} /> 外部链接</label>
       </div>
       <div class="form-group">
         <label><input type="checkbox" checked={editItem.enabled !== false} on:change={(e) => { editItem.enabled = e.target.checked; }} /> 启用</label>
       </div>
+      <div class="form-group">
+        <label><input type="checkbox" checked={createPage} disabled={editItem.external} on:change={(e) => { createPage = e.target.checked; }} /> 为此菜单创建独立页面</label>
+      </div>
+      {#if createPage}
+        <div class="form-group"><label>页面标题</label><input type="text" value={editItem.pageTitle || editItem.name} on:input={(e) => { editItem.pageTitle = e.target.value; }} /></div>
+        <div class="form-group"><label>页面内容（Markdown）</label><textarea rows="8" value={editItem.pageContent || ''} on:input={(e) => { editItem.pageContent = e.target.value; }} placeholder="输入页面内容"></textarea></div>
+        <p class="form-note">保存时会创建 src/content/spec/页面标识.md，页面地址自动设为 /custom/页面标识/。</p>
+      {/if}
       <div class="modal-actions">
         <button class="btn-save" on:click={saveItem}>保存</button>
         <button class="btn-cancel" on:click={() => { showAddModal = false; editItem = null; }}>取消</button>

@@ -37,6 +37,7 @@
     { id: "gallery", label: "相册设置" },
     { id: "assets", label: "资源上传" },
     { id: "posts", label: "文章管理" },
+    { id: "categories", label: "分类管理" },
     { id: "nav", label: "导航栏" },
     { id: "sync", label: "数据同步" },
   ];
@@ -177,6 +178,16 @@
       assetStatus = "上传成功：" + path;
     } catch (e) { assetStatus = "上传失败: " + String(e); }
     finally { assetLoading = false; }
+  }
+  async function saveCategories() {
+    const categories = [...new Set((Array.isArray(allConfig.categories) ? allConfig.categories : [])
+      .map((category) => String(category).trim())
+      .filter(Boolean))];
+    allConfig = { ...allConfig, categories };
+    try { localStorage.setItem('dw_all_configs', JSON.stringify(allConfig)); } catch (e) { saveStatus = '分类本地保存失败'; return; }
+    if (!githubToken || !githubRepo) { saveStatus = '分类已保存到本机；填写 GitHub Token 和仓库名后可同步到网站'; return; }
+    const result = await githubFileRequest({ token: githubToken, repo: githubRepo, action: 'write', path: 'src/data/categories.json', content: JSON.stringify({ categories }, null, 2), message: 'chore: sync categories from admin' });
+    saveStatus = result.ok ? '分类已同步，重新构建后生效' : '分类同步失败: ' + (result.error || '未知错误');
   }
 
   onMount(() => {
@@ -535,6 +546,9 @@
           <div class="save-notice">文章修改后请点击保存到本地再点击同步到 GitHub。</div>
         </div>
       {/if}
+    {/if}
+    {#if activeTab === "categories"}
+      <div class="tab-panel"><h3>分类管理</h3><p class="note">分类会显示在分类页，即使暂时没有文章。文章 frontmatter 中的 category 仍会自动加入分类。</p><div class="category-admin-list">{#each (allConfig.categories || []) as category, i}<div class="url-item"><input type="text" value={category} on:input={(e)=>{ const items=[...(allConfig.categories || [])]; items[i]=e.target.value; allConfig={...allConfig, categories: items}; }} /><button class="mini-delete" title="删除分类" on:click={()=>{ allConfig={...allConfig, categories:(allConfig.categories || []).filter((_,index)=>index !== i)}; }}>删除</button></div>{/each}</div><button class="inline-add" on:click={()=>{ allConfig={...allConfig, categories:[...(allConfig.categories || []), '新分类']}; }}>添加分类</button><button class="sync-btn" on:click={saveCategories}>保存并同步分类</button></div>
     {/if}
 
   </div>
