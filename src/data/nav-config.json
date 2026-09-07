@@ -29,26 +29,8 @@
           "name": "标签",
           "url": "/tags/",
           "icon": "material-symbols:tag-rounded"
-        },
-        {
-          "id": "child_1788738606153_xk36",
-          "name": "实用教程",
-          "url": "",
-          "icon": "",
-          "pageKey": "",
-          "external": false,
-          "enabled": true
         }
       ]
-    },
-    {
-      "id": "item_1788738206137_kfmo",
-      "name": "DWan飞车",
-      "url": "https://www.dwancc.cn/",
-      "icon": "",
-      "pageKey": "",
-      "external": true,
-      "enabled": true
     },
     {
       "id": "changelog",
@@ -131,6 +113,15 @@
           "icon": "material-symbols:person"
         }
       ]
+    },
+    {
+      "id": "item_1788737018303_v9md",
+      "name": "DWan飞车",
+      "url": "www.dwancc/cn",
+      "icon": "",
+      "pageKey": "",
+      "external": true,
+      "enabled": true
     }
   ]
 }

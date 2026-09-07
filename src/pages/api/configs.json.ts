@@ -7,7 +7,12 @@ export const GET: APIRoute = () => {
     const configPath = path.resolve("src/data/all-configs.json");
     if (fs.existsSync(configPath)) {
       const data = fs.readFileSync(configPath, "utf-8");
-      return new Response(data, {
+      const config = JSON.parse(data);
+      const categoriesPath = path.resolve("src/data/categories.json");
+      if (fs.existsSync(categoriesPath)) {
+        config.categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8")).categories || [];
+      }
+      return new Response(JSON.stringify(config), {
         headers: { "Content-Type": "application/json; charset=utf-8" },
       });
     }

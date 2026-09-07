@@ -9,6 +9,9 @@ export type NavMenuItem = {
   external?: boolean;
   children?: NavMenuItem[];
   enabled?: boolean;
+  createPage?: boolean;
+  pageTitle?: string;
+  pageContent?: string;
 };
 
 export type NavMenuConfig = {

@@ -6,6 +6,7 @@ export type NavBarLink = {
 	iconImage?: string; // 外部链接使用的图片图标
 	children?: NavBarLink[]; // 支持子菜单
 	pageKey?: string;
+	enabled?: boolean;
 };
 
 export enum NavBarSearchMethod {
