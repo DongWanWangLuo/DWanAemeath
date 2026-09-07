@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+export async function getStaticPaths() {
+	const pages = await getCollection("spec");
+	return pages
+		.filter((page) => !["about", "friends", "guestbook"].includes(page.id))
+		.map((page) => ({ params: { slug: page.id }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const title = page.data?.title || page.id;
+---
+
+<MainGridLayout title={title}>
+	<article class="card-base px-6 py-8 md:px-10">
+		<h1 class="text-3xl font-bold text-(--primary) mb-6">{title}</h1>
+		<div class="prose dark:prose-invert max-w-none"><Content /></div>
+	</article>
+</MainGridLayout>
