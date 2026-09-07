@@ -1103,5 +1103,14 @@
         "thumbnail": "/assets/images/home-truncated/b-1.webp"
       }
     ]
-  }
+  },
+  "categories": [
+    "实用分享",
+    "随笔",
+    "生活随笔",
+    "跨境电商",
+    "博客改造",
+    "项目作品",
+    "博客指南"
+  ]
 }
